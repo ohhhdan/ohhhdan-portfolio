@@ -1,0 +1,25 @@
+services:
+  portfolio:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: ohhhdan-portfolio
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - /volume1/scorm-packages:/app/scorm-packages:ro
+    environment:
+      - NODE_ENV=production
+      - SCORM_PACKAGES_PATH=/app/scorm-packages
+      - CONTACT_EMAIL_TO=${CONTACT_EMAIL_TO}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
