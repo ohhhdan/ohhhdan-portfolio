@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(taskkill //PID 52448 //F)",
+      "Bash(ls -la /c/Users/danie/Documents/GitHub/ohhhdan-portfolio/*.*)",
+      "Bash(ls -la \"C:\\\\Users\\\\danie\\\\Documents\\\\GitHub\\\\ohhhdan-portfolio\\\\src\\\\lib\"\" 2>/dev/null || echo \"Directory not found \")",
+      "Bash(npx tsx:*)"
+    ]
+  }
+}

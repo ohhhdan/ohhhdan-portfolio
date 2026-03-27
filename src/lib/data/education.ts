@@ -1,38 +1,12 @@
-export interface EducationItem {
-  degree: string;
-  institution: string;
-  year?: string;
-  details?: string;
+import { getCollection } from './db';
+import type { EducationItem, CredentialItem } from './types';
+
+export type { EducationItem, CredentialItem } from './types';
+
+export function getEducation(): EducationItem[] {
+  return getCollection<EducationItem>('education');
 }
 
-export interface CredentialItem {
-  name: string;
-  issuer: string;
-  year?: string;
+export function getCredentials(): CredentialItem[] {
+  return getCollection<CredentialItem>('credentials');
 }
-
-export const education: EducationItem[] = [
-  {
-    degree: 'Master of Science in Instructional Design and Technology',
-    institution: 'Western Governors University',
-    year: '2018',
-  },
-  {
-    degree: 'Bachelor of Science in Business Management',
-    institution: 'Western Governors University',
-    year: '2015',
-  },
-];
-
-export const credentials: CredentialItem[] = [
-  {
-    name: 'Certified Professional in Talent Development (CPTD)',
-    issuer: 'Association for Talent Development (ATD)',
-    year: '2020',
-  },
-  {
-    name: 'Articulate Storyline Certified Developer',
-    issuer: 'Articulate',
-    year: '2019',
-  },
-];

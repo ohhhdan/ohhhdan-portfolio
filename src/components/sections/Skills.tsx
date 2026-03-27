@@ -1,34 +1,34 @@
 'use client';
 
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { skillCategories } from '@/lib/data/skills';
+import type { SkillCategoryItem } from '@/lib/data/types';
 
-export function Skills() {
+export function Skills({ data: skillCategories }: { data: SkillCategoryItem[] }) {
   const ref = useIntersectionObserver();
 
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-24 px-6 bg-white">
       <div ref={ref} className="fade-in mx-auto max-w-4xl">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mb-2 text-3xl font-bold text-forest-500 sm:text-4xl">
             Skills
           </h2>
-          <div className="mx-auto h-1 w-16 rounded bg-accent-500" />
+          <div className="mx-auto h-1 w-16 rounded bg-mint-400" />
         </div>
         <div className="grid gap-8 md:grid-cols-2">
           {skillCategories.map((category) => (
             <div
               key={category.name}
-              className="rounded-xl border border-navy-700 bg-navy-800/50 p-6"
+              className="rounded-xl border border-charcoal-100 bg-cream p-6 shadow-sm"
             >
-              <h3 className="mb-4 text-lg font-semibold text-accent-400">
+              <h3 className="mb-4 text-lg font-semibold text-forest-500">
                 {category.name}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-navy-600 bg-navy-900/50 px-3 py-1 text-sm text-navy-200 transition hover:border-accent-500/50 hover:text-accent-400"
+                    className="rounded-full border border-forest-100 bg-white px-3 py-1 text-sm text-charcoal-700 transition hover:border-mint-400 hover:text-forest-500"
                   >
                     {skill}
                   </span>

@@ -42,3 +42,7 @@ next-env.d.ts
 # scorm packages (hosted on NAS, not in repo)
 /scorm-packages/*
 !/scorm-packages/.gitkeep
+
+# data files (managed by admin CMS, not in repo)
+/data/*.json
+/data/*.tmp

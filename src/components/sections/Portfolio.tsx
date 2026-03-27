@@ -1,22 +1,22 @@
 'use client';
 
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { projects } from '@/lib/data/projects';
+import type { Project } from '@/lib/data/types';
 import Link from 'next/link';
 import { ExternalLink, Play } from 'lucide-react';
 
-export function Portfolio() {
+export function Portfolio({ data: projects }: { data: Project[] }) {
   const ref = useIntersectionObserver();
 
   return (
-    <section id="portfolio" className="bg-navy-900/50 py-24 px-6">
+    <section id="portfolio" className="bg-cream py-24 px-6">
       <div ref={ref} className="fade-in mx-auto max-w-6xl">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mb-2 text-3xl font-bold text-forest-500 sm:text-4xl">
             Portfolio
           </h2>
-          <div className="mx-auto h-1 w-16 rounded bg-accent-500" />
-          <p className="mt-4 text-navy-300">
+          <div className="mx-auto h-1 w-16 rounded bg-mint-400" />
+          <p className="mt-4 text-charcoal-500">
             Selected projects showcasing learning experiences across industries
           </p>
         </div>
@@ -24,29 +24,29 @@ export function Portfolio() {
           {projects.map((project) => (
             <div
               key={project.slug}
-              className="group rounded-xl border border-navy-700 bg-navy-800/50 p-6 transition hover:border-accent-500/30 hover:bg-navy-800"
+              className="group rounded-xl border border-charcoal-100 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-mint-400/50"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-500/10 text-accent-400">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-forest-50 text-forest-500">
                 <ExternalLink size={24} />
               </div>
-              <h3 className="mb-1 text-lg font-semibold text-white group-hover:text-accent-400 transition">
+              <h3 className="mb-1 text-lg font-semibold text-charcoal-800 group-hover:text-forest-500 transition">
                 {project.title}
               </h3>
-              <p className="mb-3 text-sm text-accent-400">{project.client}</p>
-              <p className="mb-4 text-sm text-navy-300 line-clamp-3">
+              <p className="mb-3 text-sm text-forest-400 font-medium">{project.client}</p>
+              <p className="mb-4 text-sm text-charcoal-500 line-clamp-3">
                 {project.description}
               </p>
               <div className="mb-4 flex flex-wrap gap-1.5">
                 {project.technologies.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full bg-navy-900/50 px-2 py-0.5 text-xs text-navy-300"
+                    className="rounded-full bg-cream px-2 py-0.5 text-xs text-charcoal-500 border border-charcoal-100"
                   >
                     {tech}
                   </span>
                 ))}
                 {project.technologies.length > 3 && (
-                  <span className="rounded-full bg-navy-900/50 px-2 py-0.5 text-xs text-navy-400">
+                  <span className="rounded-full bg-cream px-2 py-0.5 text-xs text-charcoal-400 border border-charcoal-100">
                     +{project.technologies.length - 3}
                   </span>
                 )}
@@ -54,14 +54,14 @@ export function Portfolio() {
               <div className="flex gap-3">
                 <Link
                   href={`/portfolio/${project.slug}`}
-                  className="text-sm font-medium text-accent-400 transition hover:text-accent-300"
+                  className="text-sm font-medium text-forest-500 transition hover:text-forest-400"
                 >
                   View Case Study
                 </Link>
                 {project.scormPackageId && (
                   <Link
                     href={`/scorm/${project.scormPackageId}`}
-                    className="flex items-center gap-1 text-sm font-medium text-navy-300 transition hover:text-accent-400"
+                    className="flex items-center gap-1 text-sm font-medium text-charcoal-400 transition hover:text-forest-500"
                   >
                     <Play size={14} />
                     Launch Demo

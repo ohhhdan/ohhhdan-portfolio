@@ -46,28 +46,28 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-24 px-6 bg-forest-500">
       <div ref={ref} className="fade-in mx-auto max-w-2xl">
         <div className="mb-12 text-center">
           <h2 className="mb-2 text-3xl font-bold text-white sm:text-4xl">
             Get In Touch
           </h2>
-          <div className="mx-auto h-1 w-16 rounded bg-accent-500" />
-          <p className="mt-4 text-navy-300">
+          <div className="mx-auto h-1 w-16 rounded bg-mint-400" />
+          <p className="mt-4 text-white/70">
             Have a project in mind? Let&apos;s talk about how I can help.
           </p>
         </div>
 
         {status === 'sent' ? (
-          <div className="flex flex-col items-center gap-4 rounded-xl border border-green-500/30 bg-green-500/10 p-8 text-center">
-            <CheckCircle size={48} className="text-green-400" />
+          <div className="flex flex-col items-center gap-4 rounded-xl border border-mint-400/30 bg-white/10 p-8 text-center">
+            <CheckCircle size={48} className="text-mint-400" />
             <h3 className="text-xl font-semibold text-white">Message Sent!</h3>
-            <p className="text-navy-300">
+            <p className="text-white/70">
               Thanks for reaching out. I&apos;ll get back to you soon.
             </p>
             <button
               onClick={() => setStatus('idle')}
-              className="mt-2 text-sm text-accent-400 hover:text-accent-300"
+              className="mt-2 text-sm text-mustard-500 hover:text-mustard-400"
             >
               Send another message
             </button>
@@ -78,7 +78,7 @@ export function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  className="mb-2 block text-sm font-medium text-navy-200"
+                  className="mb-2 block text-sm font-medium text-white/90"
                 >
                   Name
                 </label>
@@ -88,14 +88,14 @@ export function Contact() {
                   name="name"
                   required
                   maxLength={100}
-                  className="w-full rounded-lg border border-navy-600 bg-navy-800 px-4 py-3 text-white placeholder-navy-400 transition focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500"
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 transition focus:border-mint-400 focus:outline-none focus:ring-1 focus:ring-mint-400"
                   placeholder="Your name"
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-sm font-medium text-navy-200"
+                  className="mb-2 block text-sm font-medium text-white/90"
                 >
                   Email
                 </label>
@@ -105,7 +105,7 @@ export function Contact() {
                   name="email"
                   required
                   maxLength={254}
-                  className="w-full rounded-lg border border-navy-600 bg-navy-800 px-4 py-3 text-white placeholder-navy-400 transition focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500"
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 transition focus:border-mint-400 focus:outline-none focus:ring-1 focus:ring-mint-400"
                   placeholder="your@email.com"
                 />
               </div>
@@ -113,7 +113,7 @@ export function Contact() {
             <div>
               <label
                 htmlFor="subject"
-                className="mb-2 block text-sm font-medium text-navy-200"
+                className="mb-2 block text-sm font-medium text-white/90"
               >
                 Subject
               </label>
@@ -123,14 +123,14 @@ export function Contact() {
                 name="subject"
                 required
                 maxLength={200}
-                className="w-full rounded-lg border border-navy-600 bg-navy-800 px-4 py-3 text-white placeholder-navy-400 transition focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500"
+                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 transition focus:border-mint-400 focus:outline-none focus:ring-1 focus:ring-mint-400"
                 placeholder="Project inquiry"
               />
             </div>
             <div>
               <label
                 htmlFor="message"
-                className="mb-2 block text-sm font-medium text-navy-200"
+                className="mb-2 block text-sm font-medium text-white/90"
               >
                 Message
               </label>
@@ -140,13 +140,13 @@ export function Contact() {
                 required
                 maxLength={5000}
                 rows={5}
-                className="w-full rounded-lg border border-navy-600 bg-navy-800 px-4 py-3 text-white placeholder-navy-400 transition focus:border-accent-500 focus:outline-none focus:ring-1 focus:ring-accent-500 resize-none"
+                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 transition focus:border-mint-400 focus:outline-none focus:ring-1 focus:ring-mint-400 resize-none"
                 placeholder="Tell me about your project..."
               />
             </div>
 
             {status === 'error' && (
-              <div className="flex items-center gap-2 rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-400">
+              <div className="flex items-center gap-2 rounded-lg border border-crimson/30 bg-crimson/10 p-3 text-sm text-white">
                 <AlertCircle size={16} />
                 {errorMsg}
               </div>
@@ -155,11 +155,11 @@ export function Contact() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-accent-500 px-8 py-3 font-semibold text-white transition hover:bg-accent-600 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-mustard-500 px-8 py-3 font-semibold text-charcoal-800 transition hover:bg-mustard-400 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
             >
               {status === 'sending' ? (
                 <>
-                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-charcoal-800/30 border-t-charcoal-800" />
                   Sending...
                 </>
               ) : (

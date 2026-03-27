@@ -1,25 +1,25 @@
 'use client';
 
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { User } from 'lucide-react';
+import { BowTieLogo } from '@/components/ui/BowTieLogo';
 
 export function Profile() {
   const ref = useIntersectionObserver();
 
   return (
-    <section id="profile" className="py-24 px-6">
+    <section id="profile" className="py-24 px-6 bg-white">
       <div ref={ref} className="fade-in mx-auto max-w-4xl">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mb-2 text-3xl font-bold text-forest-500 sm:text-4xl">
             Profile
           </h2>
-          <div className="mx-auto h-1 w-16 rounded bg-accent-500" />
+          <div className="mx-auto h-1 w-16 rounded bg-mint-400" />
         </div>
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
-          <div className="flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-navy-800 text-accent-400">
-            <User size={64} />
+          <div className="flex h-32 w-32 shrink-0 items-center justify-center rounded-full bg-cream text-forest-500 border-2 border-forest-100">
+            <BowTieLogo size={64} className="text-mint-400" />
           </div>
-          <div className="space-y-4 text-navy-200 leading-relaxed">
+          <div className="space-y-4 text-charcoal-500 leading-relaxed">
             <p>
               I&apos;m a full-stack learning experience designer with a passion
               for creating educational content that actually sticks. With over 15
