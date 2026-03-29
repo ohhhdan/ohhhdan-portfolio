@@ -1,4 +1,4 @@
-import { projects } from '@/lib/data/projects';
+import { getProjects } from '@/lib/data/projects';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Play, ExternalLink } from 'lucide-react';
@@ -9,7 +9,7 @@ interface PageProps {
 
 export default async function ProjectPage({ params }: PageProps) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = getProjects().find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
@@ -117,7 +117,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = getProjects().find((p) => p.slug === slug);
   if (!project) return { title: 'Not Found' };
 
   return {
@@ -127,5 +127,5 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return getProjects().map((p) => ({ slug: p.slug }));
 }

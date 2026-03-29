@@ -5,7 +5,13 @@
       "Bash(taskkill //PID 52448 //F)",
       "Bash(ls -la /c/Users/danie/Documents/GitHub/ohhhdan-portfolio/*.*)",
       "Bash(ls -la \"C:\\\\Users\\\\danie\\\\Documents\\\\GitHub\\\\ohhhdan-portfolio\\\\src\\\\lib\"\" 2>/dev/null || echo \"Directory not found \")",
-      "Bash(npx tsx:*)"
+      "Bash(npx tsx:*)",
+      "Bash(mkdir -p /c/Users/danie/Documents/GitHub/ohhhdan-portfolio/src/app/\\\\\\(public\\\\\\)/portfolio/[slug])",
+      "Bash(mkdir -p /c/Users/danie/Documents/GitHub/ohhhdan-portfolio/src/app/\\\\\\(public\\\\\\)/scorm/[packageId])",
+      "Bash(mkdir -p /c/Users/danie/Documents/GitHub/ohhhdan-portfolio/src/app/admin/[collection])",
+      "Bash(cp /c/Users/danie/Documents/GitHub/ohhhdan-portfolio/src/app/portfolio/[slug]/page.tsx /c/Users/danie/Documents/GitHub/ohhhdan-portfolio/src/app/\\\\\\(public\\\\\\)/portfolio/[slug]/page.tsx)",
+      "Bash(cp /c/Users/danie/Documents/GitHub/ohhhdan-portfolio/src/app/scorm/[packageId]/page.tsx /c/Users/danie/Documents/GitHub/ohhhdan-portfolio/src/app/\\\\\\(public\\\\\\)/scorm/[packageId]/page.tsx)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

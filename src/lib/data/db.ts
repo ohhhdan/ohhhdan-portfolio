@@ -17,10 +17,8 @@ export function getCollection<T>(name: string): T[] {
   const fp = filePath(name);
   if (!fs.existsSync(fp)) return [];
   const raw = fs.readFileSync(fp, 'utf-8');
-  const items = JSON.parse(raw) as T[];
-  return items.sort((a: T & { sortOrder?: number }, b: T & { sortOrder?: number }) =>
-    (a.sortOrder ?? 0) - (b.sortOrder ?? 0)
-  );
+  const items = JSON.parse(raw) as (T & { sortOrder?: number })[];
+  return items.sort((a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0)) as T[];
 }
 
 export function writeCollection<T>(name: string, data: T[]): void {
