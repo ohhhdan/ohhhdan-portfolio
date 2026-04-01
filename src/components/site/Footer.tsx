@@ -10,7 +10,7 @@ export async function Footer() {
   return (
     <footer className="relative border-t border-mint/25 bg-forest text-pine-100">
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-mint via-mustard to-teal" aria-hidden />
-      <div className="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-14 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div>
           <p className="font-heading text-lg font-bold uppercase tracking-wide text-white">
             {profile?.name ?? 'Dan Winter'}
@@ -26,6 +26,9 @@ export async function Footer() {
           >
             <Mail size={18} className="text-mustard" /> {email}
           </a>
+          <Link href="/background" className="text-sm font-medium text-mint transition hover:text-white">
+            Background &amp; print-friendly CV
+          </Link>
           <Link
             href="/#contact"
             className="text-sm font-medium text-mint transition hover:text-white"

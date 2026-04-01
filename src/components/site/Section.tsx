@@ -14,7 +14,7 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`scroll-mt-24 px-4 py-16 sm:px-6 lg:py-20 ${className}`}>
+    <section id={id} className={`scroll-mt-24 px-4 py-12 sm:px-6 sm:py-14 ${className}`}>
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <header className="border-l-4 border-mint pl-4 sm:pl-5">
@@ -24,7 +24,7 @@ export function Section({
             </h2>
           </header>
         </Reveal>
-        <Reveal delayMs={90} className="mt-8">
+        <Reveal delayMs={90} className="mt-6">
           {children}
         </Reveal>
       </div>

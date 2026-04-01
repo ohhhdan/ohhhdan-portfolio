@@ -136,3 +136,41 @@ body {
     transform: rotate(-4deg) translateY(-6px);
   }
 }
+
+/* Print: background / CV page — hide chrome, plain paper */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  header,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #1a1a1a !important;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  .print-resume,
+  .print-resume-header {
+    background: #fff !important;
+  }
+
+  .print-resume section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-resume a {
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+  }
+
+  .print-resume a[href^='mailto:'] {
+    text-decoration: underline !important;
+  }
+}

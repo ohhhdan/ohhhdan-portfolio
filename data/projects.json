@@ -48,7 +48,8 @@
       {
         "label": "Launch sample (hosted)",
         "href": "https://s3.us-east-1.amazonaws.com/ohhhdan.com/portfolio/Explore+Identity+and+Access+Management/index.html",
-        "kind": "external"
+        "kind": "external",
+        "embedOnSite": true
       },
       {
         "label": "Okta Learning platform",
@@ -71,7 +72,8 @@
       {
         "label": "Launch sample (hosted)",
         "href": "https://s3.us-east-1.amazonaws.com/ohhhdan.com/portfolio/Mitigate+Threats+Using+ThreatInsight/index.html",
-        "kind": "external"
+        "kind": "external",
+        "embedOnSite": true
       }
     ],
     "scormPackageId": null
@@ -100,13 +102,15 @@
     "links": [
       {
         "label": "Level 1",
-        "href": "http://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed1/story_html5.html",
-        "kind": "external"
+        "href": "https://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed1/story_html5.html",
+        "kind": "external",
+        "embedOnSite": true
       },
       {
         "label": "Level 2",
-        "href": "http://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed2/story_html5.html",
-        "kind": "external"
+        "href": "https://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed2/story_html5.html",
+        "kind": "external",
+        "embedOnSite": true
       }
     ],
     "scormPackageId": null
@@ -141,8 +145,9 @@
     "links": [
       {
         "label": "View sample",
-        "href": "http://www.elearningandtraining.com/wp-content/uploads/articulate_uploads/PTA/story_html5.html",
-        "kind": "external"
+        "href": "https://www.elearningandtraining.com/wp-content/uploads/articulate_uploads/PTA/story_html5.html",
+        "kind": "external",
+        "embedOnSite": true
       }
     ],
     "scormPackageId": null
@@ -159,8 +164,9 @@
     "links": [
       {
         "label": "ECG interpretations",
-        "href": "http://danwinterportfoliodemo.s3.amazonaws.com/portfolio/ECG%20Interpretation/story_html5.html",
-        "kind": "external"
+        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/ECG%20Interpretation/story_html5.html",
+        "kind": "external",
+        "embedOnSite": true
       },
       {
         "label": "7 Core Communication Skills (Rise)",
@@ -192,8 +198,9 @@
     "links": [
       {
         "label": "View sample",
-        "href": "http://danwinterportfoliodemo.s3.amazonaws.com/portfolio/accounting/index.html#/?_k=ojo2nu",
-        "kind": "external"
+        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/accounting/index.html#/?_k=ojo2nu",
+        "kind": "external",
+        "embedOnSite": true
       }
     ],
     "scormPackageId": null
@@ -210,8 +217,9 @@
     "links": [
       {
         "label": "View sample",
-        "href": "http://danwinterportfoliodemo.s3.amazonaws.com/portfolio/course1/story.html",
-        "kind": "external"
+        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/course1/story.html",
+        "kind": "external",
+        "embedOnSite": true
       }
     ],
     "scormPackageId": null
@@ -228,8 +236,9 @@
     "links": [
       {
         "label": "View course",
-        "href": "http://danwinterportfoliodemo.s3.amazonaws.com/portfolio/NYL/story.html",
-        "kind": "external"
+        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/NYL/story.html",
+        "kind": "external",
+        "embedOnSite": true
       }
     ],
     "scormPackageId": null

@@ -126,7 +126,9 @@ export default function ItemForm({ collection, fields, initial, onSave, onCancel
         <div>
           <label className="block text-sm font-medium text-pine-800">Links</label>
           <p className="mt-0.5 text-xs text-ink-muted">
-            Structured list: each item has a label, a URL, and optionally a kind (external, video, or articulate).
+            JSON array: label, href, optional kind (external, video, articulate). Add{' '}
+            <code className="rounded bg-pine-100 px-0.5">&quot;embedOnSite&quot;: true</code> on an{' '}
+            <strong>https</strong> hosted HTML sample to show an in-page player on the public project page.
           </p>
           <textarea
             value={String(data._linksJson ?? '[]')}

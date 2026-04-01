@@ -66,6 +66,8 @@ export interface ProjectLink {
   label: string;
   href: string;
   kind?: 'external' | 'video' | 'articulate';
+  /** If true and href is https, portfolio shows an in-page player (playback-only; not SCORM). */
+  embedOnSite?: boolean;
 }
 
 export interface Project {

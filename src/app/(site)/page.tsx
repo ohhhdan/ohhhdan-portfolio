@@ -1,22 +1,10 @@
 import { Hero } from '@/components/site/Hero';
 import { ProfileBlock } from '@/components/site/ProfileBlock';
-import { ExperienceBlock } from '@/components/site/ExperienceBlock';
-import { SkillsBlock } from '@/components/site/SkillsBlock';
-import { EducationBlock } from '@/components/site/EducationBlock';
-import { AwardsBlock } from '@/components/site/AwardsBlock';
+import { ResumeTeaser } from '@/components/site/ResumeTeaser';
 import { PortfolioGrid } from '@/components/site/PortfolioGrid';
 import { ContactForm } from '@/components/site/ContactForm';
 import { getCollection, getSingleton } from '@/lib/cms/db';
-import type {
-  Profile,
-  ExperienceItem,
-  SkillCategory,
-  EducationItem,
-  CredentialItem,
-  AwardItem,
-  EngagementItem,
-  Project,
-} from '@/lib/cms/types';
+import type { Profile, Project } from '@/lib/cms/types';
 
 export const dynamic = 'force-dynamic';
 
@@ -30,22 +18,13 @@ export default function HomePage() {
     );
   }
 
-  const experience = getCollection<ExperienceItem>('experience');
-  const skills = getCollection<SkillCategory>('skills');
-  const education = getCollection<EducationItem>('education');
-  const credentials = getCollection<CredentialItem>('credentials');
-  const awards = getCollection<AwardItem>('awards');
-  const engagements = getCollection<EngagementItem>('engagements');
   const projects = getCollection<Project>('projects');
 
   return (
     <>
       <Hero profile={profile} />
       <ProfileBlock profile={profile} />
-      <ExperienceBlock items={experience} />
-      <SkillsBlock categories={skills} />
-      <EducationBlock education={education} credentials={credentials} />
-      <AwardsBlock awards={awards} engagements={engagements} />
+      <ResumeTeaser />
       <PortfolioGrid projects={projects} />
       <ContactForm />
     </>

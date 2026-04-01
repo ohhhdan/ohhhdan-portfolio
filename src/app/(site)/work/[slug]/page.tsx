@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ExternalLink, Play } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { getCollection } from '@/lib/cms/db';
 import type { Project } from '@/lib/cms/types';
 import { scormPackageExists } from '@/lib/scorm/package-root';
+import { ProjectWorkLinks } from '@/components/site/ProjectWorkLinks';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -54,27 +55,11 @@ export default async function WorkProjectPage({ params }: PageProps) {
           </div>
         ) : null}
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          {hasLocalScorm && project.scormPackageId ? (
-            <Link
-              href={`/learn/${encodeURIComponent(project.scormPackageId)}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-forest px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-pine-600 hover:shadow-lg motion-reduce:hover:translate-y-0"
-            >
-              <Play size={18} /> Open interactive sample
-            </Link>
-          ) : null}
-          {project.links?.map((link) => (
-            <a
-              key={link.href + link.label}
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-forest/15 bg-surface px-5 py-3 text-sm font-semibold text-forest transition hover:border-mustard/60 hover:bg-mustard/5"
-            >
-              {link.label} <ExternalLink size={16} />
-            </a>
-          ))}
-        </div>
+        <ProjectWorkLinks
+          links={project.links ?? []}
+          hasLocalScorm={Boolean(hasLocalScorm)}
+          scormPackageId={project.scormPackageId}
+        />
 
         {!hasLocalScorm && project.scormPackageId ? (
           <p className="mt-6 text-sm text-ink-muted">

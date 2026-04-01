@@ -41,8 +41,8 @@ export function ContactForm() {
   }
 
   return (
-    <Section id="contact" eyebrow="Contact" title="Let’s talk">
-      <div className="grid gap-10 lg:grid-cols-2">
+    <Section id="contact" eyebrow="Contact" title="Let’s talk" className="pb-8 sm:pb-10">
+      <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
         <p className="leading-relaxed text-ink-muted">
           Send a note below, or reach me anytime via the email link in the header or footer.
         </p>
