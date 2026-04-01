@@ -1,64 +1,138 @@
 @import "tailwindcss";
 
+/* Brand: brand.html — Deep Forest, Mint, Charcoal, Mustard, Teal, WCAG-conscious pairings */
 @theme {
-  --color-forest-50: #f0f7f3;
-  --color-forest-100: #d1e8da;
-  --color-forest-200: #a3d1b5;
-  --color-forest-300: #69bc92;
-  --color-forest-400: #3d9b6e;
-  --color-forest-500: #1b4a38;
-  --color-forest-600: #163d2e;
-  --color-forest-700: #112f24;
-  --color-forest-800: #0c211a;
-  --color-forest-900: #071310;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-display), 'Arial Narrow', 'Helvetica Neue', sans-serif;
 
-  --color-mint-300: #a3d9b8;
-  --color-mint-400: #69bc92;
-  --color-mint-500: #4aad7a;
+  /* Core */
+  --color-paper: #f5f9f7;
+  --color-surface: #ffffff;
+  --color-ink: #2d2b2a;
+  --color-ink-muted: #5c5856;
 
-  --color-charcoal-50: #f5f5f4;
-  --color-charcoal-100: #e5e4e3;
-  --color-charcoal-200: #c9c7c5;
-  --color-charcoal-300: #a19e9b;
-  --color-charcoal-400: #7a7572;
-  --color-charcoal-500: #5c5856;
-  --color-charcoal-600: #4a4644;
-  --color-charcoal-700: #3b3836;
-  --color-charcoal-800: #2d2b2a;
-  --color-charcoal-900: #1f1d1c;
+  /* Greens (keep pine-* as forest scale for compatibility) */
+  --color-pine-50: #f0f7f3;
+  --color-pine-100: #d1e8da;
+  --color-pine-200: #a3d1b5;
+  --color-pine-300: #69bc92;
+  --color-pine-400: #3d9b6e;
+  --color-pine-500: #1b4a38;
+  --color-pine-600: #163d2e;
+  --color-pine-700: #112f24;
+  --color-pine-800: #0c211a;
+  --color-pine-900: #071310;
 
-  --color-mustard-400: #f0b429;
-  --color-mustard-500: #e69f00;
-  --color-mustard-600: #cc8d00;
-
-  --color-cream: #f5f9f7;
-  --color-teal: #2a9d8f;
+  --color-forest: #1b4a38;
+  --color-mint: #69bc92;
+  --color-mustard: #e69f00;
   --color-crimson: #c1292e;
-
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-teal: #2a9d8f;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
-  @apply bg-white text-charcoal-800 antialiased;
+  @apply bg-paper text-ink antialiased;
 }
 
-/* Scroll offset for sticky header */
-[id] {
-  scroll-margin-top: 5rem;
+::selection {
+  @apply bg-mint/35 text-ink;
 }
 
-/* Fade-in animation for sections */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+/* Hero ambient mesh (subtle motion) */
+.hero-mesh {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(105, 188, 146, 0.22), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 15%, rgba(230, 159, 0, 0.14), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 70% 80%, rgba(42, 157, 143, 0.12), transparent 45%),
+    linear-gradient(180deg, #f5f9f7 0%, #fafcfb 100%);
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+@media (prefers-reduced-motion: no-preference) {
+  .hero-mesh-animated {
+    animation: mesh-breathe 14s ease-in-out infinite alternate;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  .animate-float-soft {
+    animation: float-soft 7s ease-in-out infinite;
+  }
+
+  .link-underline-grow {
+    position: relative;
+  }
+
+  .link-underline-grow::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-mustard);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-underline-grow:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-float-soft,
+  .hero-mesh-animated {
+    animation: none !important;
+  }
+
+  .link-underline-grow::after {
+    transform: scaleX(1);
+    opacity: 0.35;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mesh-breathe {
+  0% {
+    filter: hue-rotate(0deg) saturate(1);
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    filter: hue-rotate(4deg) saturate(1.05);
+    transform: scale(1.03) translate(-1%, 0.5%);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: rotate(-3deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-4deg) translateY(-6px);
+  }
 }

@@ -40,22 +40,16 @@ export default function StringArrayInput({
 
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-charcoal-700">
-        {label}
-      </label>
-      <div className="min-h-[2.75rem] w-full rounded-lg border border-charcoal-200 bg-white px-3 py-2 focus-within:border-forest-400 focus-within:ring-2 focus-within:ring-forest-100">
+      <label className="mb-1.5 block text-sm font-medium text-pine-800">{label}</label>
+      <div className="min-h-[2.75rem] w-full rounded-lg border border-pine-200 bg-white px-3 py-2 focus-within:border-pine-400 focus-within:ring-2 focus-within:ring-pine-100">
         <div className="flex flex-wrap gap-1.5">
           {values.map((val, i) => (
             <span
               key={i}
-              className="inline-flex items-center gap-1 rounded-md bg-forest-50 px-2 py-0.5 text-sm text-forest-700"
+              className="inline-flex items-center gap-1 rounded-md bg-pine-100 px-2 py-0.5 text-sm text-pine-800"
             >
               {val}
-              <button
-                type="button"
-                onClick={() => remove(i)}
-                className="text-forest-400 hover:text-forest-600"
-              >
+              <button type="button" onClick={() => remove(i)} className="text-pine-500 hover:text-pine-700">
                 <X size={12} />
               </button>
             </span>
@@ -67,7 +61,7 @@ export default function StringArrayInput({
             onKeyDown={onKeyDown}
             onBlur={add}
             placeholder={values.length === 0 ? placeholder : ''}
-            className="min-w-[8rem] flex-1 bg-transparent text-sm text-charcoal-800 outline-none placeholder:text-charcoal-400"
+            className="min-w-[8rem] flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-ink-muted"
           />
         </div>
       </div>

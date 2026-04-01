@@ -1,7 +1,5 @@
-// SCORM version discriminator
 export type ScormVersion = '1.2' | '2004';
 
-// Parsed SCORM package metadata
 export interface ScormPackage {
   id: string;
   title: string;
@@ -11,7 +9,6 @@ export interface ScormPackage {
   manifestPath: string;
 }
 
-// Runtime API state holding CMI data model values
 export interface ScormApiState {
   initialized: boolean;
   terminated: boolean;
@@ -19,7 +16,6 @@ export interface ScormApiState {
   cmiData: Map<string, string>;
 }
 
-// SCORM 1.2 error codes
 export enum Scorm12ErrorCode {
   NoError = 0,
   GeneralException = 101,
@@ -34,7 +30,6 @@ export enum Scorm12ErrorCode {
   IncorrectDataType = 405,
 }
 
-// SCORM 2004 error codes
 export enum Scorm2004ErrorCode {
   NoError = 0,
   GeneralException = 101,
@@ -61,7 +56,6 @@ export enum Scorm2004ErrorCode {
   DataModelDependencyNotEstablished = 408,
 }
 
-// Error description maps
 export const SCORM_12_ERROR_STRINGS: Record<number, string> = {
   [Scorm12ErrorCode.NoError]: 'No error',
   [Scorm12ErrorCode.GeneralException]: 'General exception',

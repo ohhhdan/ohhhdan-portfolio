@@ -1,0 +1,37 @@
+[
+  {
+    "id": "g1",
+    "sortOrder": 0,
+    "name": "Customer Education Management Association (CEdMA)",
+    "role": "Member",
+    "description": "2023 – Present"
+  },
+  {
+    "id": "g2",
+    "sortOrder": 1,
+    "name": "Association for Talent Development",
+    "role": "Member",
+    "description": "2015 – Present"
+  },
+  {
+    "id": "g3",
+    "sortOrder": 2,
+    "name": "American Field Service",
+    "role": "Hosted student liaison & pre-departure orientation coordinator",
+    "description": "2016 – Present"
+  },
+  {
+    "id": "g4",
+    "sortOrder": 3,
+    "name": "Association for Talent Development",
+    "role": "\"One to Watch\" award recipient",
+    "description": "2015"
+  },
+  {
+    "id": "g5",
+    "sortOrder": 4,
+    "name": "ATD Forum Spring Lab",
+    "role": "Guest participant",
+    "description": "2015"
+  }
+]

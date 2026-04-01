@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ed1",
+    "sortOrder": 0,
+    "degree": "Certificate in UX & Visual Interface Design",
+    "institution": "University of Washington",
+    "year": "",
+    "details": ""
+  },
+  {
+    "id": "ed2",
+    "sortOrder": 1,
+    "degree": "M.S., Instructional Systems Technology",
+    "institution": "University of Colorado, Denver",
+    "year": "",
+    "details": ""
+  },
+  {
+    "id": "ed3",
+    "sortOrder": 2,
+    "degree": "B.A., Ethics & Public Policy; B.S., Sociology",
+    "institution": "University of Iowa",
+    "year": "",
+    "details": ""
+  }
+]

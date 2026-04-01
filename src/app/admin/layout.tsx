@@ -1,7 +1,5 @@
-import AdminShell from '@/components/admin/AdminShell';
+export const metadata = { title: 'Site editor | Dan Winter' };
 
-export const metadata = { title: 'Admin | ohhhdan' };
-
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  return <AdminShell>{children}</AdminShell>;
+export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
+  return children;
 }

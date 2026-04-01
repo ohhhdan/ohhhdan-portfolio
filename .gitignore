@@ -1,4 +1,3 @@
-# dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -8,41 +7,24 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
 /coverage
-
-# next.js
 /.next/
 /out/
-
-# production
 /build
 
-# misc
 .DS_Store
 *.pem
-
-# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
 .env
 .env*.local
 
-# vercel
 .vercel
-
-# typescript
 *.tsbuildinfo
-next-env.d.ts
 
-# scorm packages (hosted on NAS, not in repo)
+# Large SCORM extracts (add each package folder locally or in deploy volume)
 /scorm-packages/*
 !/scorm-packages/.gitkeep
-
-# data files (managed by admin CMS, not in repo)
-/data/*.json
-/data/*.tmp

@@ -1,8 +1,3 @@
-/**
- * SCORM CMI data model defaults for 1.2 and 2004 versions.
- */
-
-// Default CMI values for SCORM 1.2
 export function getScorm12Defaults(): Map<string, string> {
   return new Map<string, string>([
     ['cmi.core.student_id', ''],
@@ -34,7 +29,6 @@ export function getScorm12Defaults(): Map<string, string> {
   ]);
 }
 
-// Default CMI values for SCORM 2004
 export function getScorm2004Defaults(): Map<string, string> {
   return new Map<string, string>([
     ['cmi.learner_id', ''],
@@ -69,7 +63,6 @@ export function getScorm2004Defaults(): Map<string, string> {
   ]);
 }
 
-// Read-only elements for SCORM 1.2 (SCO cannot set these)
 export const SCORM_12_READ_ONLY: ReadonlySet<string> = new Set([
   'cmi.core.student_id',
   'cmi.core.student_name',
@@ -84,13 +77,11 @@ export const SCORM_12_READ_ONLY: ReadonlySet<string> = new Set([
   'cmi.student_data.time_limit_action',
 ]);
 
-// Write-only elements for SCORM 1.2 (SCO cannot get these)
 export const SCORM_12_WRITE_ONLY: ReadonlySet<string> = new Set([
   'cmi.core.session_time',
   'cmi.core.exit',
 ]);
 
-// Read-only elements for SCORM 2004
 export const SCORM_2004_READ_ONLY: ReadonlySet<string> = new Set([
   'cmi.learner_id',
   'cmi.learner_name',
@@ -105,7 +96,6 @@ export const SCORM_2004_READ_ONLY: ReadonlySet<string> = new Set([
   'cmi.time_limit_action',
 ]);
 
-// Write-only elements for SCORM 2004
 export const SCORM_2004_WRITE_ONLY: ReadonlySet<string> = new Set([
   'cmi.session_time',
   'cmi.exit',

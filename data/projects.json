@@ -1,0 +1,237 @@
+[
+  {
+    "id": "p0",
+    "sortOrder": 0,
+    "slug": "rise-for-dummies",
+    "title": "Rise for Dummies",
+    "client": "Skills demo",
+    "summary": "Skills demonstration covering the basics of Articulate Rise 360.",
+    "body": "",
+    "technologies": ["Articulate Rise 360"],
+    "links": [
+      {
+        "label": "Open in Articulate Review",
+        "href": "https://360.articulate.com/review/content/ca3eb161-564d-4358-9d22-b8f731ee300a/review",
+        "kind": "articulate"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p1",
+    "sortOrder": 1,
+    "slug": "city-targeting-hasoffers",
+    "title": "City Targeting in HasOffers",
+    "client": "Instructional video series",
+    "summary": "One in a series of over 40 instructional videos using the Adobe Creative Suite (After Effects, Premiere Pro, Audition).",
+    "body": "",
+    "technologies": ["Adobe After Effects", "Premiere Pro", "Audition"],
+    "links": [
+      {
+        "label": "Watch on YouTube",
+        "href": "https://www.youtube.com/watch?v=fAPSvcnNhMI&list=PLyboL9e2rDWjQwSD2OGwnXFRh1eIgLIRL&index=3",
+        "kind": "video"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p2",
+    "sortOrder": 2,
+    "slug": "okta-explore-identity",
+    "title": "Explore Identity and Access Management",
+    "client": "Okta",
+    "summary": "Identity security and access management courseware with AI-generated interactions where appropriate. Additional examples on Okta Learning.",
+    "body": "Okta is a leading independent provider of identity management that enables organizations to securely connect the right people to the right technologies at the right time.",
+    "technologies": ["Parta.io", "Adobe Illustrator", "Google Gemini", "Google Vertex", "OpenAI", "Claude"],
+    "links": [
+      {
+        "label": "Launch sample (hosted)",
+        "href": "https://s3.us-east-1.amazonaws.com/ohhhdan.com/portfolio/Explore+Identity+and+Access+Management/index.html",
+        "kind": "external"
+      },
+      {
+        "label": "Okta Learning platform",
+        "href": "https://learning.okta.com/",
+        "kind": "external"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p3",
+    "sortOrder": 3,
+    "slug": "okta-threatinsight",
+    "title": "Mitigate Threats Using ThreatInsight",
+    "client": "Okta",
+    "summary": "Customer education module for ThreatInsight.",
+    "body": "",
+    "technologies": ["Parta.io", "Adobe Creative Suite", "AI tooling"],
+    "links": [
+      {
+        "label": "Launch sample (hosted)",
+        "href": "https://s3.us-east-1.amazonaws.com/ohhhdan.com/portfolio/Mitigate+Threats+Using+ThreatInsight/index.html",
+        "kind": "external"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p4",
+    "sortOrder": 4,
+    "slug": "acvim",
+    "title": "Various projects",
+    "client": "American College of Veterinary Internal Medicine (ACVIM)",
+    "summary": "National certifying organization for veterinary specialists — eLearning, video, LMS transition, annual Forum recordings, and on-demand builds.",
+    "body": "Samples are available to members and students registered with ACVIM.",
+    "technologies": ["Articulate 360", "Adobe Creative Suite", "Caveon", "Cadmium", "Moodle", "VetBloom"],
+    "links": [],
+    "scormPackageId": null
+  },
+  {
+    "id": "p5",
+    "sortOrder": 5,
+    "slug": "superspeed-certified",
+    "title": "SuperSpeed Certified",
+    "client": "SuperSpeed",
+    "summary": "Three-level PGA-accredited credential: videos, interactions, quizzes, and final assessment on a virtual platform for golf coaches worldwide.",
+    "body": "",
+    "technologies": ["Articulate 360", "Adobe Illustrator", "Photoshop", "Camtasia", "Moodle", "YouTube"],
+    "links": [
+      {
+        "label": "Level 1",
+        "href": "http://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed1/story_html5.html",
+        "kind": "external"
+      },
+      {
+        "label": "Level 2",
+        "href": "http://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed2/story_html5.html",
+        "kind": "external"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p6",
+    "sortOrder": 6,
+    "slug": "id9-performance",
+    "title": "The Performance Company",
+    "client": "id9",
+    "summary": "Soft-skill curriculum based on Catherine Mattiske's methodologies — managed global delivery of 550+ products.",
+    "body": "Immersive e-learning modules, assessments, job aids, animated videos, learning journals, and activity booklets.",
+    "technologies": ["Articulate 360", "Adobe Acrobat", "Illustrator", "InDesign", "Camtasia", "Moodle"],
+    "links": [
+      {
+        "label": "View sample (Articulate Review)",
+        "href": "https://360.articulate.com/review/content/7069f4ff-e05f-4263-96a6-4a8987fa7b3c/review",
+        "kind": "articulate"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p7",
+    "sortOrder": 7,
+    "slug": "piano-technician-academy",
+    "title": "Piano tuning & moving",
+    "client": "Piano Technician Academy",
+    "summary": "Interactive courses from SME storyboards and raw video; first-year revenue noted on public portfolio.",
+    "body": "To access via external host, accept the pop-up and disable pop-up blockers.",
+    "technologies": ["Articulate 360", "Adobe Captivate", "Audition", "Illustrator", "Premiere Pro", "LearnUpon"],
+    "links": [
+      {
+        "label": "View sample",
+        "href": "http://www.elearningandtraining.com/wp-content/uploads/articulate_uploads/PTA/story_html5.html",
+        "kind": "external"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p8",
+    "sortOrder": 8,
+    "slug": "ethosvet-ecg",
+    "title": "ECG interpretations",
+    "client": "EthosVet",
+    "summary": "Responsive learning aid introducing heart rhythms from ECGs on domestic animals — hotspots, narration, video.",
+    "body": "",
+    "technologies": ["Articulate Rise & Storyline", "Adobe Creative Suite", "Camtasia", "KnowledgeVision", "PowerPoint"],
+    "links": [
+      {
+        "label": "ECG interpretations",
+        "href": "http://danwinterportfoliodemo.s3.amazonaws.com/portfolio/ECG%20Interpretation/story_html5.html",
+        "kind": "external"
+      },
+      {
+        "label": "7 Core Communication Skills (Rise)",
+        "href": "https://rise.articulate.com/share/NDntOY62g7g_XzD1jC1V1NmfEju0EzMD",
+        "kind": "external"
+      },
+      {
+        "label": "Interactive worksheet",
+        "href": "https://360.articulate.com/review/content/14f86eef-c3df-4ba2-a8d8-9441d163e5bd/review",
+        "kind": "articulate"
+      },
+      {
+        "label": "Conflict Management Styles Assessment",
+        "href": "https://360.articulate.com/review/content/5b45c446-e4e1-47f4-be06-549b8b51b238/review",
+        "kind": "articulate"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p9",
+    "sortOrder": 9,
+    "slug": "randstad-singapore",
+    "title": "Job specializations",
+    "client": "Randstad Singapore",
+    "summary": "Industry knowledge courses for recruiters and business development — media, interactions, glossary.",
+    "body": "",
+    "technologies": ["Articulate Rise", "Adobe Photoshop"],
+    "links": [
+      {
+        "label": "View sample",
+        "href": "http://danwinterportfoliodemo.s3.amazonaws.com/portfolio/accounting/index.html#/?_k=ojo2nu",
+        "kind": "external"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p10",
+    "sortOrder": 10,
+    "slug": "circle-education-leadership",
+    "title": "Contemporary leadership",
+    "client": "Circle Education",
+    "summary": "Self-paced WBT from synchronous VBT — external articles, video, and interactive objects for Australian primary-school educators.",
+    "body": "",
+    "technologies": ["Articulate Storyline", "Adobe Acrobat", "Illustrator", "MatrixONE LMS"],
+    "links": [
+      {
+        "label": "View sample",
+        "href": "http://danwinterportfoliodemo.s3.amazonaws.com/portfolio/course1/story.html",
+        "kind": "external"
+      }
+    ],
+    "scormPackageId": null
+  },
+  {
+    "id": "p11",
+    "sortOrder": 11,
+    "slug": "new-york-life-annuity",
+    "title": "SECURE Fixed Term Annuity IV",
+    "client": "New York Life",
+    "summary": "Modernized compliance eLearning with interactions, media, and knowledge checks for annual training.",
+    "body": "",
+    "technologies": ["Adobe Captivate"],
+    "links": [
+      {
+        "label": "View course",
+        "href": "http://danwinterportfoliodemo.s3.amazonaws.com/portfolio/NYL/story.html",
+        "kind": "external"
+      }
+    ],
+    "scormPackageId": null
+  }
+]

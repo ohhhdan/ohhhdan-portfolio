@@ -2,16 +2,14 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
-      <h1 className="mb-4 text-6xl font-bold text-white">404</h1>
-      <p className="mb-8 text-lg text-navy-300">
-        The page you&apos;re looking for doesn&apos;t exist.
-      </p>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-paper px-6 text-center">
+      <h1 className="font-heading mb-2 text-5xl font-bold uppercase tracking-wide text-forest">404</h1>
+      <p className="mb-8 text-ink-muted">This page doesn&apos;t exist.</p>
       <Link
         href="/"
-        className="rounded-lg bg-accent-500 px-6 py-3 font-semibold text-white transition hover:bg-accent-600"
+        className="rounded-full bg-forest px-6 py-3 text-sm font-semibold text-white transition hover:bg-pine-600"
       >
-        Go Home
+        Home
       </Link>
     </div>
   );

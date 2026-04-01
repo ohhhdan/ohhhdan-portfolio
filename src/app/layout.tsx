@@ -1,37 +1,37 @@
 import type { Metadata } from 'next';
+import { DM_Sans, Barlow_Condensed } from 'next/font/google';
 import './globals.css';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
+
+const display = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  variable: '--font-display',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Dan Winter | Learning Experience Designer',
   description:
-    'Full-stack learning experience designer with 15+ years in L&D and customer education. Specializing in SCORM, Articulate 360, and AI-powered learning.',
+    'Full-stack learning experience designer with 15+ years in L&D and customer education—interactive curriculum, Articulate 360, and AI-enabled learning.',
+  metadataBase: new URL('https://www.ohhhdan.com'),
   openGraph: {
     title: 'Dan Winter | Learning Experience Designer',
-    description:
-      'Full-stack learning experience designer with 15+ years in L&D and customer education.',
+    description: 'Portfolio and professional background in learning design, development, and customer education.',
     type: 'website',
-    url: 'https://ohhhdan.com',
+    url: 'https://www.ohhhdan.com',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Dan Winter | Learning Experience Designer',
-  },
-  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
-      </head>
-      <body>{children}</body>
+    <html lang="en" className={`${dmSans.variable} ${display.variable}`}>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }

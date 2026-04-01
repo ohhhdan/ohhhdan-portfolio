@@ -1,99 +1,81 @@
 'use client';
 
-import { useState, FormEvent, Suspense } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { setToken } from '@/components/admin/AdminShell';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { KeyRound, Eye, EyeOff } from 'lucide-react';
 
-function LoginForm() {
+export default function AdminLoginPage() {
   const router = useRouter();
-  const params = useSearchParams();
-  const [token, setTokenInput] = useState('');
+  const [password, setPassword] = useState('');
   const [show, setShow] = useState(false);
-  const [error, setError] = useState('');
+  const [err, setErr] = useState('');
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!token.trim()) return;
-
+    setErr('');
     setLoading(true);
-    setError('');
-
     try {
-      const res = await fetch('/api/admin/profile', {
-        headers: { Authorization: `Bearer ${token.trim()}` },
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ password }),
       });
-      if (res.ok) {
-        setToken(token.trim());
-        const from = params.get('from') ?? '/admin/profile';
-        router.push(from);
-      } else {
-        setError('Invalid token. Please try again.');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setErr(data.error ?? 'Login failed');
+        return;
       }
-    } catch {
-      setError('Connection error. Please try again.');
+      router.push('/admin');
+      router.refresh();
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-cream px-4">
-      <div className="w-full max-w-sm">
-        <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-forest-800">
-            <KeyRound size={22} className="text-mint-400" />
-          </div>
-          <h1 className="text-xl font-semibold text-charcoal-800">Admin Access</h1>
-          <p className="mt-1 text-sm text-charcoal-500">Enter your admin token to continue</p>
+    <div className="flex min-h-screen items-center justify-center bg-pine-100 px-4">
+      <div className="w-full max-w-sm rounded-2xl border border-pine-200 bg-white p-8 shadow-sm">
+        <div className="mb-6 flex justify-center text-pine-600">
+          <KeyRound size={32} />
         </div>
-
-        <form onSubmit={handleSubmit} className="rounded-xl border border-charcoal-100 bg-white p-6 shadow-sm">
-          <div className="mb-4">
-            <label className="mb-1.5 block text-sm font-medium text-charcoal-700">
-              Admin Token
+        <h1 className="text-center text-lg font-semibold text-pine-900">Sign in</h1>
+        <p className="mt-2 text-center text-sm text-ink-muted">Edit your public site content.</p>
+        <form onSubmit={onSubmit} className="mt-8 space-y-4">
+          <div>
+            <label htmlFor="pw" className="block text-sm font-medium text-pine-800">
+              Password
             </label>
-            <div className="relative">
+            <div className="relative mt-1">
               <input
+                id="pw"
                 type={show ? 'text' : 'password'}
-                value={token}
-                onChange={(e) => setTokenInput(e.target.value)}
-                placeholder="Paste your token"
-                autoFocus
-                className="w-full rounded-lg border border-charcoal-200 bg-white py-2 pl-3 pr-10 text-sm text-charcoal-800 placeholder:text-charcoal-400 focus:border-forest-400 focus:outline-none focus:ring-2 focus:ring-forest-100"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
+                className="w-full rounded-lg border border-pine-200 py-2 pl-3 pr-10 text-sm outline-none focus:ring-2 focus:ring-pine-300"
               />
               <button
                 type="button"
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-pine-500"
                 onClick={() => setShow(!show)}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-charcoal-400 hover:text-charcoal-600"
+                tabIndex={-1}
               >
-                {show ? <EyeOff size={16} /> : <Eye size={16} />}
+                {show ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
           </div>
-
-          {error && (
-            <p className="mb-4 rounded-lg bg-crimson/10 px-3 py-2 text-sm text-crimson">{error}</p>
-          )}
-
+          {err ? <p className="text-sm text-red-600">{err}</p> : null}
           <button
             type="submit"
-            disabled={loading || !token.trim()}
-            className="w-full rounded-lg bg-forest-500 py-2.5 text-sm font-medium text-white transition-colors hover:bg-forest-600 active:bg-forest-700 disabled:pointer-events-none disabled:opacity-50"
+            disabled={loading || !password}
+            className="w-full rounded-lg bg-pine-600 py-2.5 text-sm font-medium text-white hover:bg-pine-500 disabled:opacity-50"
           >
-            {loading ? 'Verifying…' : 'Sign In'}
+            {loading ? 'Signing in…' : 'Sign in'}
           </button>
         </form>
       </div>
     </div>
-  );
-}
-
-export default function LoginPage() {
-  return (
-    <Suspense>
-      <LoginForm />
-    </Suspense>
   );
 }

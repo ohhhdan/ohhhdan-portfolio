@@ -1,15 +1,18 @@
 {
-  "name": "ohhhdan-portfolio",
+  "name": "ohhhdan-site",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "hash-password": "node scripts/hash-password.mjs"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "fast-xml-parser": "^5.5.8",
+    "jose": "^6.1.0",
     "lucide-react": "^0.577.0",
     "next": "^16.2.1",
     "nodemailer": "^8.0.3",
@@ -18,10 +21,12 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^25.5.0",
     "@types/nodemailer": "^7.0.11",
     "@types/react": "^19.2.14",
     "eslint": "^10.1.0",
+    "eslint-config-next": "^16.2.1",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"

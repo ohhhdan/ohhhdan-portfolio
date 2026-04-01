@@ -1,0 +1,20 @@
+[
+  {
+    "id": "s1",
+    "sortOrder": 0,
+    "name": "Methodology & strategy",
+    "skills": ["ADDIE & SAM Methodology", "Design Thinking", "Needs analysis", "User research", "Program management", "Customer education"]
+  },
+  {
+    "id": "s2",
+    "sortOrder": 1,
+    "name": "Authoring & media",
+    "skills": ["Articulate 360", "eLearning", "Content development", "Camtasia / SnagIt", "Figma", "Parta.io"]
+  },
+  {
+    "id": "s3",
+    "sortOrder": 2,
+    "name": "Platforms & delivery",
+    "skills": ["LMS administration", "Training delivery", "Data analysis"]
+  }
+]

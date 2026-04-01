@@ -1,0 +1,81 @@
+[
+  {
+    "id": "e1",
+    "sortOrder": 0,
+    "title": "Staff Learning Experience Designer",
+    "company": "Okta",
+    "period": "2023 – Present",
+    "description": "Customer-facing learning content, AI-enabled workflows, and design systems at scale.",
+    "highlights": [
+      "Implemented AI workflows to speed up and improve the quality of customer-facing deliverables, resulting in a 15% increase in team output.",
+      "Led initiatives to bring AI models into courseware to improve efficacy and facilitate skill transfer.",
+      "Structured content database with over 300 records of courses, labs, assessments, and achievement badges for maintenance cycles and internal consumption.",
+      "Created and maintained content templates for on-demand customer-facing content used in certifications and exam preparations.",
+      "Developed design system and standards for on-demand content, generating a 30% increase in retention and user satisfaction.",
+      "Drove company initiative to modernize content offering to increase content effectiveness and stickiness by evaluating new authoring tools and approaches.",
+      "Built content review process to streamline peer review before semi-monthly publication, reducing re-publishing time by 10%.",
+      "Implemented education team's customer feedback mechanism to make informed decisions about content direction and focus.",
+      "Recognition: GCAS Collaborator Award, GCAS Innovator Award, CEdMA Pinnacle Award for innovation."
+    ],
+    "presentationLabel": "Watch my presentation on \"Next Generation Learning\"",
+    "presentationUrl": "https://youtu.be/IE3jG8aDrds?si=ER1Y9mrMdKf3Zv4q"
+  },
+  {
+    "id": "e2",
+    "sortOrder": 1,
+    "title": "Founder & Learning Evangelist",
+    "company": "DS Group, LLC",
+    "period": "2014 – Present",
+    "description": "Consulting practice for L&D, eLearning, video, LMS, and interactive development.",
+    "highlights": [
+      "Developed a book of business of clients seeking learning and development skills on a temporary basis, including eLearning content development, video production, audio engineering, assessments and feedback, interactive games, LMS implementation and administration.",
+      "Increased client consumption by 400% YoY by bringing in-person offering to on-demand format.",
+      "Transitioned content for over 250 courses into client's new LMS, offering consulting services during conversations with LMS vendor for veterinary continuing education client.",
+      "Reduced time to value by over 2 months by developing templates and optimized delivery strategy for veterinary client."
+    ]
+  },
+  {
+    "id": "e3",
+    "sortOrder": 2,
+    "title": "Learning Experience Designer",
+    "company": "Envestnet",
+    "period": "2022 – 2023 (RIF)",
+    "description": "Product education and template systems for large course catalogs.",
+    "highlights": [
+      "Partnered with instructional designers to deliver quarterly product feature updates with customers and employees using video, product simulation, and assessment via knowledge checks and quizzes.",
+      "Designed Storyline template for a battery of 300 courses to align with company branding and reduce quality assurance process by 2.5 business days.",
+      "Implemented JIRA workflow process for cross-team project management, saving an average of 20 working hours per week across the team.",
+      "Launched and managed professional development program for the learning team to enhance their professional skills."
+    ]
+  },
+  {
+    "id": "e4",
+    "sortOrder": 3,
+    "title": "LMS Analyst (Sales Enablement)",
+    "company": "Intermedia",
+    "period": "2020 – 2022",
+    "description": "Global LMS operations, localization, and integrations.",
+    "highlights": [
+      "Localized platform and content for 5 languages worldwide.",
+      "Maintained and improved functionality of LMS for employee and partner-facing content, including over 1,200 courses.",
+      "Identified optimal user experience of on-demand course content and created template for all 7 instructional designers to use for authoring courses.",
+      "Developed strategy for internal training efforts around compliance and security resulting in a 95% completion rate, up from 70% year prior.",
+      "Integrated new technical solutions to send data from the LMS into Salesforce for visibility into partner certification status and progress.",
+      "Deployed employee compliance cycle to ensure compliance and company de-risking."
+    ]
+  },
+  {
+    "id": "e5",
+    "sortOrder": 4,
+    "title": "Additional experience",
+    "company": "Amazon, Microsoft, Tune, P2 Solutions (Microsoft Retail), and more",
+    "period": "2013 – 2020",
+    "description": "Program management, instructional design, LMS specialization, and training leadership across tech and retail.",
+    "highlights": [
+      "Program Manager, LMS Specialist — Amazon Advertising (2018 – 2020)",
+      "Instructional Designer / Program Manager — Microsoft GDCO (2014 – 2017, RIF)",
+      "Senior Training Program Manager — Tune (2013 – 2014, Contract)",
+      "Learning & Development Manager — P2 Solutions, Microsoft Retail"
+    ]
+  }
+]

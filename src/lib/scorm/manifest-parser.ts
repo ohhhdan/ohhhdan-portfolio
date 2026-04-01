@@ -3,12 +3,6 @@ import { join } from 'path';
 import { XMLParser } from 'fast-xml-parser';
 import type { ScormPackage, ScormVersion } from './types';
 
-/**
- * Parse an imsmanifest.xml file from a SCORM package directory
- * and return structured package metadata.
- *
- * @param packagePath - Absolute filesystem path to the extracted SCORM package directory
- */
 export async function parseManifest(packagePath: string): Promise<ScormPackage> {
   const manifestPath = join(packagePath, 'imsmanifest.xml');
   const xml = await readFile(manifestPath, 'utf-8');
@@ -42,9 +36,6 @@ export async function parseManifest(packagePath: string): Promise<ScormPackage> 
   };
 }
 
-/**
- * Detect the SCORM version from the manifest metadata.
- */
 function detectVersion(manifest: Record<string, unknown>): ScormVersion {
   const metadata = manifest.metadata as Record<string, unknown> | undefined;
 
@@ -61,19 +52,14 @@ function detectVersion(manifest: Record<string, unknown>): ScormVersion {
     }
   }
 
-  // Fallback: check namespace hints in manifest attributes
   const rawAttrs = JSON.stringify(manifest).toLowerCase();
   if (rawAttrs.includes('adlscorm_v1p3') || rawAttrs.includes('2004')) {
     return '2004';
   }
 
-  // Default to 1.2 if version cannot be determined
   return '1.2';
 }
 
-/**
- * Extract the package title from the first organization element.
- */
 function extractTitle(manifest: Record<string, unknown>): string {
   const organizations = manifest.organizations as Record<string, unknown> | undefined;
   if (!organizations) return 'Untitled';
@@ -81,7 +67,6 @@ function extractTitle(manifest: Record<string, unknown>): string {
   const org = organizations.organization;
   if (!org) return 'Untitled';
 
-  // Could be a single org or an array
   const firstOrg = Array.isArray(org) ? org[0] : org;
   const title = (firstOrg as Record<string, unknown>)?.title;
 
@@ -93,10 +78,6 @@ function extractTitle(manifest: Record<string, unknown>): string {
   return 'Untitled';
 }
 
-/**
- * Extract the package description from the first organization's metadata
- * or from the manifest-level metadata.
- */
 function extractDescription(manifest: Record<string, unknown>): string {
   const metadata = manifest.metadata as Record<string, unknown> | undefined;
   if (metadata) {
@@ -106,10 +87,6 @@ function extractDescription(manifest: Record<string, unknown>): string {
   return '';
 }
 
-/**
- * Extract the SCO launch URL from resource elements.
- * Looks for the resource with adlcp:scormtype="sco" or adlcp:scormType="sco".
- */
 function extractLaunchUrl(manifest: Record<string, unknown>): string {
   const resources = manifest.resources as Record<string, unknown> | undefined;
   if (!resources) {
@@ -125,7 +102,6 @@ function extractLaunchUrl(manifest: Record<string, unknown>): string {
     ? resourceList
     : [resourceList as Record<string, unknown>];
 
-  // Find the SCO resource
   for (const resource of items) {
     const scormType =
       (resource['@_adlcp:scormtype'] as string) ??
@@ -140,7 +116,6 @@ function extractLaunchUrl(manifest: Record<string, unknown>): string {
     }
   }
 
-  // Fallback: use the first resource with an href
   for (const resource of items) {
     const href = resource['@_href'] as string | undefined;
     if (href) return href;

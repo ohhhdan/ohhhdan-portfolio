@@ -31,15 +31,12 @@ export async function GET() {
           id: entry.name,
         });
       } catch {
-        // Skip packages with invalid manifests
+        // skip invalid
       }
     }
 
     return NextResponse.json(packages);
   } catch {
-    return NextResponse.json(
-      { error: 'Failed to list packages' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to list packages' }, { status: 500 });
   }
 }
