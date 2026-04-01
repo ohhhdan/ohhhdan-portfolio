@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import type { Profile } from '@/lib/cms/types';
 import { Save, CheckCircle } from 'lucide-react';
 import StringArrayInput from '@/components/admin/StringArrayInput';
+import { cmsErrorFromResponse } from '@/lib/admin/fetch-cms';
 
 const inputClass =
   'w-full rounded-lg border border-pine-200 bg-white px-3 py-2 text-sm text-ink outline-none focus:ring-2 focus:ring-pine-300';
@@ -16,16 +17,26 @@ export default function ProfilePage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('/api/cms/profile', { credentials: 'include' })
-      .then((r) => r.json())
-      .then((data: Profile) =>
+    void (async () => {
+      setError('');
+      try {
+        const res = await fetch('/api/cms/profile', { credentials: 'include' });
+        if (!res.ok) {
+          setError(await cmsErrorFromResponse(res, 'Failed to load profile'));
+          setLoading(false);
+          return;
+        }
+        const data = (await res.json()) as Profile;
         setForm({
           ...data,
           bioParagraphs: data.bioParagraphs ?? [],
-        })
-      )
-      .catch(() => setError('Failed to load profile.'))
-      .finally(() => setLoading(false));
+        });
+      } catch {
+        setError('Could not reach the server.');
+      } finally {
+        setLoading(false);
+      }
+    })();
   }, []);
 
   function set<K extends keyof Profile>(key: K, value: Profile[K]) {
@@ -45,18 +56,29 @@ export default function ProfilePage() {
         credentials: 'include',
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error('Save failed');
+      if (!res.ok) throw new Error(await cmsErrorFromResponse(res, 'Save failed'));
       setSaved(true);
       setTimeout(() => setSaved(false), 2500);
-    } catch {
-      setError('Failed to save.');
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to save.');
     } finally {
       setSaving(false);
     }
   }
 
-  if (loading || !form) {
+  if (loading) {
     return <p className="text-sm text-ink-muted">Loading…</p>;
+  }
+
+  if (!form) {
+    return (
+      <p className="text-sm text-red-700">
+        {error || 'Something went wrong.'}{' '}
+        <button type="button" className="underline" onClick={() => window.location.reload()}>
+          Reload
+        </button>
+      </p>
+    );
   }
 
   return (

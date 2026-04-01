@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/auth';
-import { getCollection, writeCollection } from '@/lib/cms/db';
+import { getCollection, tryWriteCollection } from '@/lib/cms/db';
 import { COLLECTIONS } from '@/lib/cms/fields';
 
 const VALID = new Set(COLLECTIONS);
@@ -42,7 +42,10 @@ export async function PUT(
   }
 
   items[index] = updated;
-  writeCollection(collection, items);
+  const w = tryWriteCollection(collection, items);
+  if (!w.ok) {
+    return NextResponse.json({ error: w.error }, { status: 503 });
+  }
   return NextResponse.json(updated);
 }
 
@@ -64,6 +67,9 @@ export async function DELETE(
     return NextResponse.json({ error: 'Item not found' }, { status: 404 });
   }
 
-  writeCollection(collection, filtered);
+  const w = tryWriteCollection(collection, filtered);
+  if (!w.ok) {
+    return NextResponse.json({ error: w.error }, { status: 503 });
+  }
   return new Response(null, { status: 204 });
 }

@@ -16,6 +16,8 @@ export async function middleware(request: NextRequest) {
 
   const isLearn = pathname.startsWith('/learn/');
   const isScormApi = pathname.startsWith('/api/scorm/');
+  /** CMS needs the same script allowances as SCORM player: Next dev uses eval; client bundles need inline. */
+  const isAdminUi = pathname.startsWith('/admin');
 
   const csp = isLearn || isScormApi
     ? [
@@ -29,17 +31,28 @@ export async function middleware(request: NextRequest) {
         "connect-src 'self'",
         "frame-ancestors 'self'",
       ].join('; ')
-    : [
-        "default-src 'self'",
-        "script-src 'self'",
-        "style-src 'self' 'unsafe-inline'",
-        "img-src 'self' data: blob:",
-        "font-src 'self' data:",
-        "frame-src 'none'",
-        "connect-src 'self'",
-        "frame-ancestors 'none'",
-        "upgrade-insecure-requests",
-      ].join('; ');
+    : isAdminUi
+      ? [
+          "default-src 'self'",
+          "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+          "style-src 'self' 'unsafe-inline'",
+          "img-src 'self' data: blob: https:",
+          "font-src 'self' data:",
+          "connect-src 'self'",
+          "frame-src 'self' https:",
+          "frame-ancestors 'none'",
+        ].join('; ')
+      : [
+          "default-src 'self'",
+          "script-src 'self'",
+          "style-src 'self' 'unsafe-inline'",
+          "img-src 'self' data: blob:",
+          "font-src 'self' data:",
+          "frame-src 'none'",
+          "connect-src 'self'",
+          "frame-ancestors 'none'",
+          "upgrade-insecure-requests",
+        ].join('; ');
 
   response.headers.set('Content-Security-Policy', csp);
   response.headers.set('X-Content-Type-Options', 'nosniff');

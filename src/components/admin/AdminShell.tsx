@@ -2,13 +2,11 @@
 
 import { useRouter } from 'next/navigation';
 import { ReactNode, useState } from 'react';
-import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import AdminNav from './AdminNav';
 
 export default function AdminShell({ children }: { children: ReactNode }) {
   const router = useRouter();
-  const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);
 
   async function logout() {
@@ -21,21 +19,11 @@ export default function AdminShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-pine-50">
       <header className="border-b border-pine-200 bg-white px-4 py-3">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              className="rounded-lg border border-pine-200 p-2 lg:hidden"
-              onClick={() => setOpen(!open)}
-              aria-label="Menu"
-            >
-              {open ? <X size={20} /> : <Menu size={20} />}
-            </button>
-            <Link href="/admin" className="font-semibold text-pine-900">
-              Site editor
-            </Link>
-          </div>
-          <div className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3">
+          <Link href="/admin" className="font-semibold text-pine-900">
+            Site editor
+          </Link>
+          <div className="flex items-center gap-4">
             <Link href="/" className="text-sm text-pine-600 hover:text-pine-500">
               View site
             </Link>
@@ -50,8 +38,9 @@ export default function AdminShell({ children }: { children: ReactNode }) {
           </div>
         </div>
       </header>
-      <div className="mx-auto flex max-w-6xl gap-8 px-4 py-8">
-        <aside className={`w-56 shrink-0 lg:block ${open ? 'block' : 'hidden'}`}>
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-8 lg:flex-row">
+        <aside className="w-full shrink-0 lg:w-56">
+          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-pine-500 lg:mb-3">Sections</p>
           <AdminNav />
         </aside>
         <div className="min-w-0 flex-1">{children}</div>

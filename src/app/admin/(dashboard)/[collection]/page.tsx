@@ -11,6 +11,7 @@ import {
   getItemLabel,
 } from '@/lib/cms/fields';
 import ItemForm from '@/components/admin/ItemForm';
+import { cmsErrorFromResponse } from '@/lib/admin/fetch-cms';
 
 type Item = Record<string, unknown> & { id: string };
 
@@ -32,11 +33,25 @@ export default function CollectionAdminPage() {
       setLoading(false);
       return;
     }
-    fetch(`/api/cms/${collection}`, { credentials: 'include' })
-      .then((r) => r.json())
-      .then((data: Item[]) => setItems(Array.isArray(data) ? data : []))
-      .catch(() => setErr('Failed to load'))
-      .finally(() => setLoading(false));
+    setLoading(true);
+    setErr('');
+    void (async () => {
+      try {
+        const res = await fetch(`/api/cms/${collection}`, { credentials: 'include' });
+        if (!res.ok) {
+          setErr(await cmsErrorFromResponse(res, 'Failed to load list'));
+          setItems([]);
+          return;
+        }
+        const data: unknown = await res.json();
+        setItems(Array.isArray(data) ? (data as Item[]) : []);
+      } catch {
+        setErr('Could not reach the server. Check that the app is running.');
+        setItems([]);
+      } finally {
+        setLoading(false);
+      }
+    })();
   }, [collection]);
 
   useEffect(() => {
@@ -45,11 +60,13 @@ export default function CollectionAdminPage() {
 
   async function remove(id: string) {
     if (!confirm('Delete this item?')) return;
+    setErr('');
     const res = await fetch(`/api/cms/${collection}/${id}`, {
       method: 'DELETE',
       credentials: 'include',
     });
     if (res.ok) load();
+    else setErr(await cmsErrorFromResponse(res, 'Delete failed'));
   }
 
   async function save(data: Record<string, unknown>) {
@@ -60,7 +77,7 @@ export default function CollectionAdminPage() {
         credentials: 'include',
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error('Create failed');
+      if (!res.ok) throw new Error(await cmsErrorFromResponse(res, 'Create failed'));
     } else if (editing && typeof editing === 'object') {
       const res = await fetch(`/api/cms/${collection}/${editing.id}`, {
         method: 'PUT',
@@ -68,7 +85,7 @@ export default function CollectionAdminPage() {
         credentials: 'include',
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error('Update failed');
+      if (!res.ok) throw new Error(await cmsErrorFromResponse(res, 'Update failed'));
     }
     setEditing(null);
     load();
@@ -118,6 +135,13 @@ export default function CollectionAdminPage() {
       {err ? <p className="text-sm text-red-600">{err}</p> : null}
       {loading ? (
         <p className="text-sm text-ink-muted">Loading…</p>
+      ) : items.length === 0 && !err ? (
+        <div className="rounded-xl border border-dashed border-pine-300 bg-white px-6 py-10 text-center">
+          <p className="text-sm font-medium text-pine-800">No entries yet</p>
+          <p className="mt-2 text-sm text-ink-muted">
+            Use <strong>Add</strong> to create one—same idea as a new post in WordPress.
+          </p>
+        </div>
       ) : (
         <ul className="space-y-2">
           {items.map((item) => (

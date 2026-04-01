@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { randomUUID } from 'crypto';
 import { requireAdmin } from '@/lib/auth';
-import { getCollection, writeCollection } from '@/lib/cms/db';
+import { getCollection, tryWriteCollection } from '@/lib/cms/db';
 import { COLLECTIONS } from '@/lib/cms/fields';
 
 const VALID = new Set(COLLECTIONS);
@@ -58,6 +58,9 @@ export async function POST(
     }
   }
 
-  writeCollection(collection, [...items, newItem]);
+  const w = tryWriteCollection(collection, [...items, newItem]);
+  if (!w.ok) {
+    return NextResponse.json({ error: w.error }, { status: 503 });
+  }
   return NextResponse.json(newItem, { status: 201 });
 }

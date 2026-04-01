@@ -1,17 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/auth';
-import { getSingleton, writeSingleton } from '@/lib/cms/db';
+import { getSingleton, tryWriteSingleton } from '@/lib/cms/db';
 import type { Profile } from '@/lib/cms/types';
+
+const EMPTY_PROFILE: Profile = {
+  name: '',
+  tagline: '',
+  headline: '',
+  summary: '',
+  location: '',
+  email: '',
+  rolesLine: '',
+  bioParagraphs: [],
+};
 
 export async function GET(request: NextRequest) {
   const deny = await requireAdmin(request);
   if (deny) return deny;
 
   const profile = getSingleton<Profile>('profile');
-  if (!profile) {
-    return NextResponse.json({ error: 'Profile not found' }, { status: 404 });
-  }
-  return NextResponse.json(profile);
+  return NextResponse.json(profile ?? EMPTY_PROFILE);
 }
 
 export async function PUT(request: NextRequest) {
@@ -32,6 +40,9 @@ export async function PUT(request: NextRequest) {
     bioParagraphs: Array.isArray(body.bioParagraphs) ? body.bioParagraphs : existing.bioParagraphs ?? [],
   };
 
-  writeSingleton('profile', updated);
+  const w = tryWriteSingleton('profile', updated);
+  if (!w.ok) {
+    return NextResponse.json({ error: w.error }, { status: 503 });
+  }
   return NextResponse.json(updated);
 }

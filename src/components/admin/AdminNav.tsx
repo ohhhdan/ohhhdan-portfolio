@@ -23,10 +23,10 @@ const icons: Record<string, React.ReactNode> = {
 
 export default function AdminNav() {
   return (
-    <nav className="space-y-1 border-b border-pine-200 pb-4 lg:border-b-0 lg:pb-0">
+    <nav className="flex flex-row flex-wrap gap-1 border-b border-pine-200 pb-4 lg:flex-col lg:flex-nowrap lg:border-b-0 lg:pb-0">
       <Link
         href="/admin/profile"
-        className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-pine-800 hover:bg-pine-100"
+        className="flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm text-pine-800 hover:bg-pine-100"
       >
         <UserCircle size={18} /> Profile
       </Link>
@@ -34,7 +34,7 @@ export default function AdminNav() {
         <Link
           key={key}
           href={`/admin/${key}`}
-          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-pine-800 hover:bg-pine-100"
+          className="flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm text-pine-800 hover:bg-pine-100"
         >
           {icons[key]} {label}
         </Link>
