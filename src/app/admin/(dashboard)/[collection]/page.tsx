@@ -132,7 +132,7 @@ export default function CollectionAdminPage() {
           <Plus size={18} /> Add
         </button>
       </div>
-      {err ? <p className="text-sm text-red-600">{err}</p> : null}
+      {err ? <p className="whitespace-pre-line text-sm text-red-600">{err}</p> : null}
       {loading ? (
         <p className="text-sm text-ink-muted">Loading…</p>
       ) : items.length === 0 && !err ? (

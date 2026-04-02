@@ -103,7 +103,9 @@ export default function ProfilePage() {
         </button>
       </div>
 
-      {error ? <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p> : null}
+      {error ? (
+        <p className="mb-4 whitespace-pre-line rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>
+      ) : null}
 
       <div className="space-y-4 rounded-xl border border-pine-200 bg-white p-6 shadow-sm">
         {(

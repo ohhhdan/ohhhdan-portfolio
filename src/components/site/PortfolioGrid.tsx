@@ -6,12 +6,11 @@ import { Reveal } from './Reveal';
 
 export function PortfolioGrid({ projects }: { projects: Project[] }) {
   return (
-    <Section id="work" eyebrow="Portfolio" title="Selected work">
-      <p className="max-w-2xl leading-relaxed text-ink-muted">
-        Selected courseware and learning experiences—interactive modules (some launch directly on this site), Articulate
-        Review samples, and video. Open any card to explore.
+    <Section id="work" eyebrow="Work" title="Samples">
+      <p className="max-w-xl text-sm leading-snug text-ink-muted sm:text-base">
+        Modules, video, enterprise builds—open a card.
       </p>
-      <ul className="mt-10 grid gap-6 sm:grid-cols-2">
+      <ul className="mt-8 grid gap-6 sm:grid-cols-2">
         {projects.map((p, i) => (
           <li key={p.id} className="h-full">
             <Reveal delayMs={i * 55} className="h-full">

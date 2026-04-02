@@ -1,9 +1,7 @@
 import Link from 'next/link';
-import { ChevronDown, Sparkles } from 'lucide-react';
 import type { Profile } from '@/lib/cms/types';
-import { BowTieLogo } from './BowTieLogo';
+import { HeroBrandVisual } from './HeroBrandVisual';
 
-/** Welcoming, exploratory tone inspired by strong LXD portfolios (e.g. Milloway): craft + tech, invitation to dig in. */
 export function Hero({ profile }: { profile: Profile }) {
   return (
     <section
@@ -17,69 +15,54 @@ export function Hero({ profile }: { profile: Profile }) {
       <div className="relative mx-auto grid max-w-5xl gap-12 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-16">
         <div>
           <p
-            className="animate-fade-up font-heading text-xs font-bold uppercase tracking-[0.28em] text-forest/85"
+            className="animate-fade-up text-[11px] font-medium uppercase tracking-[0.22em] text-ink-muted sm:text-xs"
             style={{ animationDelay: '80ms' }}
           >
             {profile.rolesLine}
           </p>
 
           <h1
-            className="animate-fade-up mt-5 font-heading text-4xl font-bold leading-[1.12] tracking-tight text-forest sm:text-5xl sm:leading-[1.1] lg:text-[2.65rem]"
-            style={{ animationDelay: '160ms' }}
+            className="animate-fade-up mt-4 font-heading text-4xl font-bold leading-[1.08] tracking-tight text-forest sm:text-5xl lg:text-[2.65rem]"
+            style={{ animationDelay: '140ms' }}
           >
             {profile.tagline}
           </h1>
 
           <p
-            className="animate-fade-up mt-6 max-w-xl text-base leading-relaxed text-ink-muted sm:text-lg"
-            style={{ animationDelay: '240ms' }}
+            className="animate-fade-up mt-5 max-w-[34rem] text-[15px] leading-relaxed text-ink sm:text-base"
+            style={{ animationDelay: '200ms' }}
           >
             {profile.summary}
           </p>
 
-          <p
-            className="animate-fade-up mt-5 max-w-xl text-sm leading-relaxed text-ink sm:text-[0.95rem]"
-            style={{ animationDelay: '300ms' }}
-          >
-            Below you’ll find selected work—interactive modules, video, and enterprise courseware. Some projects include
-            more detail behind confidentiality; I’m always happy to speak further if there’s a fit.
-          </p>
-
-          <div
-            className="animate-fade-up mt-8 flex flex-wrap items-center gap-4"
-            style={{ animationDelay: '380ms' }}
+          <nav
+            className="animate-fade-up mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
+            style={{ animationDelay: '260ms' }}
+            aria-label="Primary actions"
           >
             <Link
               href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-pine-600 hover:shadow-lg motion-reduce:hover:translate-y-0"
+              className="inline-flex h-11 min-w-[8.5rem] items-center justify-center rounded-full bg-forest px-6 text-[15px] font-medium text-white transition-colors hover:bg-pine-700"
             >
-              <Sparkles size={16} className="text-mustard" aria-hidden />
-              Email me
+              Email
             </Link>
             <Link
               href="/#work"
-              className="group inline-flex items-center gap-1 text-sm font-semibold text-forest transition hover:text-mustard"
+              className="inline-flex h-11 min-w-[8.5rem] items-center justify-center rounded-full border border-forest/22 bg-surface/90 px-6 text-[15px] font-medium text-forest shadow-sm transition-colors hover:border-forest/35 hover:bg-paper"
             >
-              See portfolio
-              <ChevronDown size={16} className="transition group-hover:translate-y-0.5" />
+              Work
             </Link>
             <Link
               href="/background"
-              className="text-sm font-medium text-ink-muted underline decoration-mint/60 decoration-2 underline-offset-4 transition hover:text-forest"
+              className="inline-flex h-11 min-w-[8.5rem] items-center justify-center rounded-full border border-forest/22 bg-surface/90 px-6 text-[15px] font-medium text-forest shadow-sm transition-colors hover:border-forest/35 hover:bg-paper"
             >
-              Full background →
+              Background
             </Link>
-          </div>
+          </nav>
         </div>
 
-        <div
-          className="animate-fade-up flex justify-center lg:justify-end"
-          style={{ animationDelay: '220ms' }}
-        >
-          <div className="relative">
-            <div className="absolute inset-0 scale-110 rounded-3xl bg-gradient-to-br from-mint/25 via-transparent to-mustard/20 blur-2xl motion-reduce:hidden" />
-            <BowTieLogo size="lg" className="relative" />
-          </div>
+        <div className="animate-fade-up lg:pt-1" style={{ animationDelay: '180ms' }}>
+          <HeroBrandVisual />
         </div>
       </div>
     </section>

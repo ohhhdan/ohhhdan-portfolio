@@ -9,5 +9,5 @@ if (!plain || plain.length < 8) {
   console.error('Use at least 8 characters.');
   process.exit(1);
 }
-console.log('\nAdd this to .env.local as ADMIN_PASSWORD_BCRYPT:\n');
+console.log('\nAdd this to .env as ADMIN_PASSWORD_BCRYPT:\n');
 console.log(bcrypt.hashSync(plain, 12));

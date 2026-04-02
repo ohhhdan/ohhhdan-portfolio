@@ -1,4 +1,5 @@
 import { Hero } from '@/components/site/Hero';
+import { BrandScrollBand } from '@/components/site/BrandScrollBand';
 import { ProfileBlock } from '@/components/site/ProfileBlock';
 import { ResumeTeaser } from '@/components/site/ResumeTeaser';
 import { PortfolioGrid } from '@/components/site/PortfolioGrid';
@@ -23,6 +24,7 @@ export default function HomePage() {
   return (
     <>
       <Hero profile={profile} />
+      <BrandScrollBand />
       <ProfileBlock profile={profile} />
       <ResumeTeaser />
       <PortfolioGrid projects={projects} />

@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { jwtVerify } from 'jose';
+import { readCmsSecretRaw } from '@/lib/admin-env-read';
 
 const COOKIE = 'cms_session';
 
 function getSecret() {
-  const s = process.env.CMS_SECRET;
+  const s = readCmsSecretRaw();
   if (!s || s.length < 16) return null;
   return new TextEncoder().encode(s);
 }
