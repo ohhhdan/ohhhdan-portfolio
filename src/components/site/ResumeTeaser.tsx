@@ -7,8 +7,8 @@ export function ResumeTeaser() {
       aria-labelledby="resume-teaser-heading"
       className="border-y border-forest/10 bg-surface/80 px-4 py-8 sm:px-6 sm:py-9"
     >
-      <div className="mx-auto flex max-w-5xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="max-w-xl">
+      <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
+        <div>
           <h2
             id="resume-teaser-heading"
             className="font-heading text-lg font-bold uppercase tracking-wide text-forest sm:text-xl"
