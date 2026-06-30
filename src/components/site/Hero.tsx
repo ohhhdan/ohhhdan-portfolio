@@ -75,31 +75,28 @@ export function Hero({ profile }: { profile: Profile }) {
           </p>
 
           <h1
-            className="animate-fade-up mt-4 font-heading text-4xl font-bold leading-[1.08] tracking-tight text-forest sm:text-5xl sm:leading-[1.06]"
+            className="animate-fade-up mt-4 font-heading text-5xl font-bold leading-[1.08] tracking-tight text-forest sm:text-6xl sm:leading-[1.06] lg:text-7xl"
             style={{ animationDelay: '140ms' }}
           >
-            Learning experiences people{' '}
-            <span className="text-gradient">actually finish</span>.
+            Dan Winter
           </h1>
 
           <p
-            className="animate-fade-up mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-ink sm:text-lg"
+            className="animate-fade-up mx-auto mt-6 max-w-xl text-lg font-medium text-teal sm:text-xl"
             style={{ animationDelay: '200ms' }}
           >
-            Fifteen years in customer education, interactive curriculum, and learning experience design.
-            Started building storyboards, now leading teams that ship production-ready courses at enterprise scale.
+            Designing and building interactive customer education.
           </p>
 
-          {/* Credentials line */}
           <p
-            className="animate-fade-up mx-auto mt-4 max-w-lg text-sm text-ink-muted"
+            className="animate-fade-up mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-ink-muted sm:text-base"
             style={{ animationDelay: '230ms' }}
           >
-            Okta · Amazon · Microsoft · Envestnet · CEdMA Pinnacle winner · ATD One to Watch
+            Currently leading learning experience and digital design at Okta.
           </p>
 
           <div
-            className="animate-fade-up mt-3 flex items-center justify-center gap-2 text-sm text-ink-muted"
+            className="animate-fade-up mt-6 flex items-center justify-center gap-2 text-sm text-ink-muted"
             style={{ animationDelay: '250ms' }}
           >
             <Linkedin size={15} className="text-forest/50" />
@@ -116,7 +113,7 @@ export function Hero({ profile }: { profile: Profile }) {
 
         {/* Doors */}
         <nav
-          className="animate-fade-up mx-auto mt-14 grid max-w-3xl gap-4 sm:grid-cols-3"
+          className="animate-fade-up mx-auto mt-16 grid max-w-4xl gap-6 sm:grid-cols-3"
           style={{ animationDelay: '320ms' }}
           aria-label="Primary navigation"
         >
@@ -124,16 +121,16 @@ export function Hero({ profile }: { profile: Profile }) {
             <Link
               key={door.href}
               href={door.href}
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-forest/10 bg-surface/80 px-5 py-6 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-mint/40 hover:shadow-lg motion-reduce:hover:translate-y-0"
+              className="group flex flex-col items-center gap-4 rounded-3xl border-2 border-forest/15 bg-surface p-8 text-center shadow-md transition duration-300 hover:-translate-y-1.5 hover:border-mustard hover:shadow-2xl motion-reduce:hover:translate-y-0"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-forest/8 text-forest transition group-hover:bg-forest group-hover:text-white">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-forest/8 text-forest transition duration-300 group-hover:bg-forest group-hover:text-white">
                 {door.icon}
               </div>
               <div>
-                <p className="font-heading text-sm font-bold uppercase tracking-wide text-forest">
+                <p className="font-heading text-lg font-bold uppercase tracking-wider text-forest sm:text-xl">
                   {door.label}
                 </p>
-                <p className="mt-1.5 text-xs leading-relaxed text-ink-muted">
+                <p className="mt-2 text-xs leading-relaxed text-ink-muted sm:text-sm">
                   {door.description}
                 </p>
               </div>

@@ -44,9 +44,8 @@ export function ContactForm() {
     <Section id="contact" eyebrow="Contact" title="Say hi" className="pb-8 sm:pb-10" align="center">
       <div className="mx-auto flex max-w-md flex-col gap-8">
         <p className="text-sm leading-relaxed text-ink-muted sm:text-base">
-          Always happy to hear from people working on interesting problems in learning and education.
-          Drop a note below or reach out at{' '}
-          <a href="mailto:dan@ohhhdan.com" className="font-medium text-forest underline decoration-mint underline-offset-2 transition hover:text-mustard">
+          Get in touch via the form below, or directly at{' '}
+          <a href="mailto:dan@ohhhdan.com" className="font-semibold text-forest underline decoration-mint underline-offset-2 transition hover:text-mustard">
             dan@ohhhdan.com
           </a>.
         </p>
