@@ -23,7 +23,7 @@ export default async function WorkProjectPage({ params }: PageProps) {
 
   return (
     <article className="border-b border-forest/10 bg-paper px-4 py-12 sm:px-6 sm:py-16">
-      <div className="mx-auto max-w-3xl">
+      <div className="mx-auto max-w-6xl">
         <Link
           href="/#work"
           className="inline-flex items-center gap-1 text-sm font-semibold text-forest transition hover:text-mustard"
@@ -59,11 +59,12 @@ export default async function WorkProjectPage({ params }: PageProps) {
           links={project.links ?? []}
           hasLocalScorm={Boolean(hasLocalScorm)}
           scormPackageId={project.scormPackageId}
+          projectTitle={project.title}
         />
 
         {!hasLocalScorm && project.scormPackageId ? (
           <p className="mt-6 text-sm text-ink-muted">
-            On-site playback isn&apos;t available for this sample—the links above open the hosted version.
+            On-site playback is not available for this sample. Use the links above to open the hosted version.
           </p>
         ) : null}
       </div>

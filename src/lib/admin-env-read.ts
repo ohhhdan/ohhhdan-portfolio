@@ -29,6 +29,13 @@ export function readAdminBcryptHashRaw(): string {
   return stripOuterQuotes(v).replace(/\s+/g, '');
 }
 
+/** Simple password from ADMIN_PASSWORD (easiest local / personal-site option). */
+export function readAdminPasswordPlain(): string {
+  const v = process.env.ADMIN_PASSWORD;
+  if (v == null) return '';
+  return stripOuterQuotes(v);
+}
+
 /**
  * Development-only mirror password (same value `npm run setup-admin` prints).
  * Ignored unless NODE_ENV === 'development'. Never set this in production hosting.

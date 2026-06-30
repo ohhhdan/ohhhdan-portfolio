@@ -20,7 +20,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Background | Dan Winter',
   description:
-    'Experience, skills, education, and recognition—learning experience design and customer education.',
+    'Experience, skills, education, and recognition in learning design and customer education.',
 };
 
 export default function BackgroundPage() {

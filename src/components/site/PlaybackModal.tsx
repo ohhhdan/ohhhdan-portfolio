@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-import { X } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { PlaybackFrame } from './PlaybackFrame';
 
 interface PlaybackModalProps {
   url: string;
@@ -30,12 +31,12 @@ export function PlaybackModal({ url, title, open, onClose }: PlaybackModalProps)
 
   if (!open) return null;
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6"
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="playback-modal-title"
+      aria-labelledby="sample-viewer-title"
     >
       <button
         type="button"
@@ -43,37 +44,17 @@ export function PlaybackModal({ url, title, open, onClose }: PlaybackModalProps)
         onClick={onClose}
         aria-label="Close sample viewer"
       />
-      <div className="relative z-10 flex h-[min(90vh,920px)] w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-pine-600/40 bg-pine-950 shadow-2xl">
-        <div className="flex shrink-0 items-center justify-between gap-3 border-b border-pine-700 px-4 py-3">
-          <h2 id="playback-modal-title" className="truncate text-sm font-semibold text-pine-50">
-            {title}
-          </h2>
-          <div className="flex shrink-0 items-center gap-3">
-            <a
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              className="text-xs font-medium text-pine-300 underline-offset-2 transition hover:text-white hover:underline"
-            >
-              Open in new tab
-            </a>
-            <button
-              type="button"
-              onClick={onClose}
-              className="rounded-lg p-2 text-pine-300 transition hover:bg-pine-800 hover:text-white"
-              aria-label="Close"
-            >
-              <X size={20} />
-            </button>
-          </div>
-        </div>
-        <iframe
-          src={url}
+      <div className="relative z-10 h-[min(90vh,920px)] w-full max-w-6xl">
+        <PlaybackFrame
           title={title}
-          className="min-h-0 w-full flex-1 border-0 bg-black"
-          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+          embedUrl={url}
+          externalUrl={url}
+          embeddable
+          className="h-full"
+          onClose={onClose}
         />
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

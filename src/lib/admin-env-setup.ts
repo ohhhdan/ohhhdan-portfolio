@@ -1,19 +1,19 @@
-import { readAdminBcryptHashRaw, readCmsSecretRaw } from './admin-env-read';
+import { readAdminBcryptHashRaw, readAdminPasswordPlain, readCmsSecretRaw } from './admin-env-read';
 
 /** Human-readable steps shown when admin auth env vars are missing (login API + UI). */
 export const ADMIN_ENV_SETUP_STEPS = [
-  'Run `npm run setup-admin` in the project root. It updates `.env` (and `.env.local` if present) and prints your password.',
-  'Stop the dev server completely, then `npm run dev` again.',
-  'If you still have an old `.env.local`, it overrides `.env` — the setup script syncs both now.',
-  'Production: set `CMS_SECRET` and `ADMIN_PASSWORD_BCRYPT` in the host dashboard (do not set `ADMIN_LOGIN_PLAIN` there).',
+  'On this page, use Quick local setup (development only), or run npm run setup-admin in the project root.',
+  'Stop the dev server completely, then npm run dev again so .env reloads.',
+  'Sign in with the password you chose or the one the setup step printed.',
 ] as const;
 
 export function describeAdminLoginEnvIssues(): string[] {
   const hash = readAdminBcryptHashRaw();
+  const plain = readAdminPasswordPlain();
   const secret = readCmsSecretRaw();
   const issues: string[] = [];
-  if (!hash) {
-    issues.push('ADMIN_PASSWORD_BCRYPT is missing or empty.');
+  if (!hash && !plain) {
+    issues.push('No admin password is set (add ADMIN_PASSWORD or ADMIN_PASSWORD_BCRYPT).');
   }
   if (!secret) {
     issues.push('CMS_SECRET is missing or empty.');
@@ -27,6 +27,5 @@ export function isAdminLoginEnvReady(): boolean {
   return describeAdminLoginEnvIssues().length === 0;
 }
 
-/** Short hint when bcrypt rejects (avoid blaming hash-password if they used setup-admin). */
 export const ADMIN_LOGIN_PASSWORD_HELP =
-  'Run `npm run setup-admin`, use the password it prints, restart `npm run dev`. In development, `.env` can also include ADMIN_LOGIN_PLAIN=that_same_password so login matches even if the bcrypt line is wrong.';
+  'Use Quick local setup on this page, restart npm run dev, then sign in with that password. Or set ADMIN_PASSWORD and CMS_SECRET in .env manually.';

@@ -3,18 +3,48 @@
     "id": "s1",
     "sortOrder": 0,
     "name": "Methodology & strategy",
-    "skills": ["ADDIE & SAM Methodology", "Design Thinking", "Needs analysis", "User research", "Program management", "Customer education"]
+    "skills": [
+      "ADDIE & SAM Methodology",
+      "Design Thinking",
+      "Needs analysis",
+      "User research",
+      "Program management",
+      "Customer education",
+      "AI-augmented content development",
+      "Design systems",
+      "Vendor partnership management"
+    ]
   },
   {
     "id": "s2",
     "sortOrder": 1,
     "name": "Authoring & media",
-    "skills": ["Articulate 360", "eLearning", "Content development", "Camtasia / SnagIt", "Figma", "Parta.io"]
+    "skills": [
+      "Articulate 360",
+      "Parta.io",
+      "eLearning",
+      "Content development",
+      "Camtasia / SnagIt",
+      "Figma",
+      "Airtable",
+      "Gemini Enterprise",
+      "Claude Code"
+    ]
   },
   {
     "id": "s3",
     "sortOrder": 2,
-    "name": "Platforms & delivery",
-    "skills": ["LMS administration", "Training delivery", "Data analysis"]
+    "name": "Platforms, AI & delivery",
+    "skills": [
+      "LMS administration",
+      "Skilljar",
+      "Training delivery",
+      "Data analysis",
+      "Model Context Protocol (MCP)",
+      "Open WebUI",
+      "Google Workspace MCP",
+      "Figma MCP",
+      "Asana MCP"
+    ]
   }
 ]

@@ -129,7 +129,18 @@ export default function ProfilePage() {
           </div>
         ))}
         <div>
-          <label className="mb-1.5 block text-sm font-medium text-pine-800">Summary (hero)</label>
+          <label className="mb-1.5 block text-sm font-medium text-pine-800">Homepage intro (optional)</label>
+          <p className="mb-1.5 text-xs text-ink-muted">Short line under the tagline on the home page. Conversational is fine here.</p>
+          <textarea
+            value={form.heroIntro ?? ''}
+            onChange={(e) => set('heroIntro', e.target.value)}
+            rows={2}
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <label className="mb-1.5 block text-sm font-medium text-pine-800">Summary (background / CV / PDF)</label>
+          <p className="mb-1.5 text-xs text-ink-muted">Professional tone, third person. Avoid &quot;I&quot; for print-friendly export.</p>
           <textarea
             value={form.summary}
             onChange={(e) => set('summary', e.target.value)}
@@ -137,8 +148,22 @@ export default function ProfilePage() {
             className={inputClass}
           />
         </div>
+        <div>
+          <label className="mb-1.5 block text-sm font-medium text-pine-800">Hero photo URL</label>
+          <p className="mb-1.5 text-xs text-ink-muted">
+            Upload an image to <code className="rounded bg-pine-100 px-1">public/images/</code>, then set the path
+            (e.g. <code className="rounded bg-pine-100 px-1">/images/hero.jpg</code>).
+          </p>
+          <input
+            type="text"
+            value={form.heroImageUrl ?? ''}
+            onChange={(e) => set('heroImageUrl', e.target.value)}
+            placeholder="/images/hero.jpg"
+            className={inputClass}
+          />
+        </div>
         <StringArrayInput
-          label="Bio paragraphs (profile section)"
+          label="Bio paragraphs (optional)"
           values={form.bioParagraphs}
           onChange={(v) => set('bioParagraphs', v)}
         />

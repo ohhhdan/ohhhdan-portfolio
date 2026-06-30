@@ -2,11 +2,23 @@ export interface Profile {
   name: string;
   tagline: string;
   headline: string;
+  /** Professional summary for background page and print/PDF export. Third person, no "I". */
   summary: string;
+  /** Optional short line under the homepage tagline (marketing tone). */
+  heroIntro?: string;
   location: string;
   email: string;
   rolesLine: string;
   bioParagraphs: string[];
+  /** Hero portrait path or URL, e.g. /images/hero.jpg */
+  heroImageUrl?: string;
+}
+
+export interface ExperienceRole {
+  title: string;
+  period: string;
+  description?: string;
+  highlights: string[];
 }
 
 export interface ExperienceItem {
@@ -15,6 +27,10 @@ export interface ExperienceItem {
   title: string;
   company: string;
   period: string;
+  /** Optional promotion path (legacy); prefer `roles` for multi-role employers. */
+  roleProgression?: string;
+  /** Multiple roles at the same company, newest first. */
+  roles?: ExperienceRole[];
   description: string;
   highlights: string[];
   presentationUrl?: string;
@@ -70,16 +86,24 @@ export interface ProjectLink {
   embedOnSite?: boolean;
 }
 
+export type ProjectPortfolioGroup = 'platform' | 'sample';
+
 export interface Project {
   id: string;
   sortOrder: number;
   slug: string;
   title: string;
   client: string;
+  /** e.g. "2023 to present" — shown in platform-style headings. */
+  period?: string;
+  /** platform = programs & clients; sample = individual modules & demos. */
+  portfolioGroup?: ProjectPortfolioGroup;
   summary: string;
   body: string;
   technologies: string[];
   links: ProjectLink[];
+  /** Primary button label, e.g. "View demo" or "Visit site". */
+  ctaLabel?: string;
   /** Folder name under scorm-packages/ when hosted on this site */
   scormPackageId: string | null;
 }
