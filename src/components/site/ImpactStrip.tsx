@@ -34,7 +34,7 @@ function MetricCell({ metric, index }: { metric: Metric; index: number }) {
 
 export function ImpactStrip() {
   return (
-    <section aria-label="Key achievements" className="section-dark relative overflow-hidden">
+    <section aria-label="Career milestones" className="section-dark relative overflow-hidden">
       {/* Top accent line */}
       <div
         className="animate-shimmer absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-mint via-mustard to-teal"

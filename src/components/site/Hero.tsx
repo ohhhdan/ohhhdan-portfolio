@@ -69,8 +69,8 @@ export function Hero({ profile }: { profile: Profile }) {
               className="animate-fade-up mt-5 max-w-xl text-[15px] leading-relaxed text-ink sm:text-lg"
               style={{ animationDelay: '200ms' }}
             >
-              Fifteen years of designing customer education and interactive curriculum for enterprise
-              teams — from storyboard through shipment, from startup to Fortune 500.
+              Fifteen years in customer education, interactive curriculum, and learning experience design.
+              Started building storyboards, now leading teams that ship production-ready courses at enterprise scale.
             </p>
 
             <div
@@ -97,7 +97,7 @@ export function Hero({ profile }: { profile: Profile }) {
                 href="#career"
                 className="inline-flex h-12 w-full min-w-[10rem] max-w-xs items-center justify-center rounded-full bg-forest px-7 text-[15px] font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-pine-700 hover:shadow-lg motion-reduce:hover:translate-y-0 sm:w-auto"
               >
-                See the impact ↓
+                More below ↓
               </a>
               <a
                 href="#contact"

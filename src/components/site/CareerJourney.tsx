@@ -19,9 +19,9 @@ function buildHighlights(experience: ExperienceItem[]): CareerHighlight[] {
   const okta = experience.find((e) => e.company === 'Okta');
   if (okta) {
     const topAchievements = [
-      'Three promotions in three years — from curriculum developer to leading learning experience and digital design.',
-      'CEdMA Customer Education Pinnacle Award (Innovation, 2025). Okta\'s first CEdMA recognition since 2017.',
-      'Nearly 4× average learner course consumption through AI-powered simulation widgets.',
+      'Started as a curriculum developer, promoted three times in three years to lead learning experience and digital design.',
+      'Won the CEdMA Customer Education Pinnacle Award for Innovation (2025) — Okta\'s first CEdMA recognition since 2017.',
+      'Helped nearly quadruple average learner course consumption through AI-powered simulation widgets.',
     ];
     highlights.push({
       company: 'Okta',
@@ -41,9 +41,9 @@ function buildHighlights(experience: ExperienceItem[]): CareerHighlight[] {
       role: ds.title,
       period: ds.period,
       achievements: [
-        'Independent consulting practice across eLearning, video, LMS, and assessments.',
-        'Grew a client\'s training consumption 400% year-over-year by converting in-person to on-demand.',
-        'Migrated 250+ courses into a new LMS; advised through vendor selection.',
+        'Started an independent practice doing eLearning, video production, LMS work, and assessments for a range of clients.',
+        'Helped one client grow training consumption 400% year-over-year by converting in-person programs to on-demand.',
+        'Migrated 250+ courses into a new LMS for a veterinary CE client, advising through the full vendor selection process.',
       ],
       icon: <TrendingUp size={22} strokeWidth={2} />,
       accentColor: 'from-mustard to-mint',
@@ -60,9 +60,9 @@ function buildHighlights(experience: ExperienceItem[]): CareerHighlight[] {
       role: 'Program Management & Instructional Design',
       period: '2013 – 2020',
       achievements: [
-        'Program Manager and LMS Specialist at Amazon Advertising.',
-        'Instructional Designer and Program Manager at Microsoft GDCO.',
-        'Built training programs spanning global teams, compliance, and partner enablement.',
+        'Ran LMS operations and program management at Amazon Advertising.',
+        'Designed instructional programs and managed delivery at Microsoft GDCO.',
+        'Worked across global teams, compliance cycles, and partner enablement.',
       ],
       icon: <Briefcase size={22} strokeWidth={2} />,
       accentColor: 'from-teal to-forest',
@@ -77,9 +77,9 @@ function buildHighlights(experience: ExperienceItem[]): CareerHighlight[] {
       role: envestnet.title,
       period: envestnet.period,
       achievements: [
-        'Product education for a wealth-management platform with 300+ courses.',
-        'Built Storyline template system that cut QA by 2.5 business days per release.',
-        'JIRA workflow improvements saved the team ~20 hours per week.',
+        'Owned product education for a wealth-management platform with 300+ courses in the pipeline.',
+        'Built a Storyline template system that ended up cutting QA by 2.5 business days per release.',
+        'Introduced JIRA workflows that gave the team back about 20 hours a week.',
       ],
       icon: <Award size={22} strokeWidth={2} />,
       accentColor: 'from-forest to-mustard',
@@ -105,11 +105,11 @@ export function CareerJourney({ experience }: { experience: ExperienceItem[] }) 
               Career
             </p>
             <h2 className="font-heading mt-2 text-2xl font-bold uppercase tracking-[0.04em] text-forest sm:text-3xl">
-              From storyboard to strategy
+              Where the road has led
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
-              A track record built across enterprise platforms, consulting engagements, and some of the
-              biggest names in tech — with measurable outcomes at every stop.
+              A career shaped by enterprise platforms, independent consulting, and a few
+              of the biggest names in tech — each one a different kind of challenge.
             </p>
           </div>
         </Reveal>

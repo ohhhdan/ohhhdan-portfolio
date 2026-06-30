@@ -17,7 +17,7 @@ export function ClientLogos() {
       <Reveal>
         <div className="mx-auto max-w-5xl">
           <p className="mb-8 text-center text-xs font-bold uppercase tracking-[0.22em] text-ink-muted/60">
-            Trusted by teams at
+            Some of the teams along the way
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12">
             {companies.map((name) => (

@@ -21,9 +21,9 @@ export function WorkCTA() {
                 Work samples
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-ink-muted">
-                Interactive demos, course modules, and production samples spanning identity security,
-                compliance training, soft-skills curriculum, and more — built with
-                Articulate 360, Parta, Adobe Creative Suite, and AI-assisted workflows.
+                A selection of courses, demos, and interactive modules from across the years —
+                identity security at Okta, compliance at New York Life, soft-skills curriculum,
+                certification programs, and a few other things along the way.
               </p>
 
               <div className="mt-8">
@@ -31,7 +31,7 @@ export function WorkCTA() {
                   href="/work"
                   className="inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3.5 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-pine-600 hover:shadow-lg motion-reduce:hover:translate-y-0"
                 >
-                  Explore the portfolio
+                  Take a look
                   <ArrowRight size={16} strokeWidth={2.25} />
                 </Link>
               </div>
