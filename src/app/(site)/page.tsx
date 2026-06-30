@@ -1,11 +1,7 @@
 import { Hero } from '@/components/site/Hero';
-import { ImpactStrip } from '@/components/site/ImpactStrip';
-import { CareerJourney } from '@/components/site/CareerJourney';
-import { ClientLogos } from '@/components/site/ClientLogos';
-import { WorkCTA } from '@/components/site/WorkCTA';
 import { ContactForm } from '@/components/site/ContactForm';
-import { getCollection, getSingleton } from '@/lib/cms/db';
-import type { Profile, ExperienceItem } from '@/lib/cms/types';
+import { getSingleton } from '@/lib/cms/db';
+import type { Profile } from '@/lib/cms/types';
 
 export const dynamic = 'force-dynamic';
 
@@ -19,15 +15,9 @@ export default function HomePage() {
     );
   }
 
-  const experience = getCollection<ExperienceItem>('experience');
-
   return (
     <>
       <Hero profile={profile} />
-      <ImpactStrip />
-      <CareerJourney experience={experience} />
-      <ClientLogos />
-      <WorkCTA />
       <ContactForm />
     </>
   );
