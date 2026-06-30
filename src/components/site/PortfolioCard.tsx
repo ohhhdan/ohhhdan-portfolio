@@ -56,9 +56,6 @@ export function PortfolioCard({
             <h3 className="mt-2 font-heading text-lg font-bold uppercase leading-snug tracking-wide text-forest transition group-hover:text-pine-700">
               {project.title}
             </h3>
-            {project.period ? (
-              <p className="mt-1 text-xs font-medium text-ink-muted">{project.period}</p>
-            ) : null}
             <p className="mt-3 text-sm leading-relaxed text-ink">{narrative}</p>
           </div>
 

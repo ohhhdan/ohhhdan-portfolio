@@ -2,49 +2,40 @@
   {
     "id": "s1",
     "sortOrder": 0,
-    "name": "Methodology & strategy",
+    "name": "Learning strategy & architecture",
     "skills": [
-      "ADDIE & SAM Methodology",
-      "Design Thinking",
-      "Needs analysis",
-      "User research",
-      "Program management",
-      "Customer education",
-      "AI-augmented content development",
-      "Design systems",
-      "Vendor partnership management"
+      "Needs analysis & user research",
+      "ADDIE, SAM & Agile design methodologies",
+      "Curriculum mapping & path design",
+      "Design systems for learning (Ascentia)",
+      "Outcome measurement & analytics",
+      "Vendor & stakeholder management"
     ]
   },
   {
     "id": "s2",
     "sortOrder": 1,
-    "name": "Authoring & media",
+    "name": "Authoring, visual & interactive design",
     "skills": [
-      "Articulate 360",
-      "Parta.io",
-      "eLearning",
-      "Content development",
-      "Camtasia / SnagIt",
-      "Figma",
-      "Airtable",
-      "Gemini Enterprise",
-      "Claude Code"
+      "Articulate 360 (Storyline, Rise)",
+      "Parta.io interactive courseware",
+      "Figma visual layout & prototyping",
+      "Adobe Creative Cloud (Illustrator, Photoshop)",
+      "Video & audio production (Camtasia, Audition)",
+      "Interactive widgets & simulation design"
     ]
   },
   {
     "id": "s3",
     "sortOrder": 2,
-    "name": "Platforms, AI & delivery",
+    "name": "LMS, AI workflows & integrations",
     "skills": [
-      "LMS administration",
-      "Skilljar",
-      "Training delivery",
-      "Data analysis",
-      "Model Context Protocol (MCP)",
-      "Open WebUI",
-      "Google Workspace MCP",
-      "Figma MCP",
-      "Asana MCP"
+      "LMS administration & migrations (Skilljar, Moodle)",
+      "AI-assisted content & asset generation",
+      "LLM prompting & workflow automation",
+      "Model Context Protocol (MCP) tooling",
+      "Data integration (Salesforce, Gainsight, JIRA)",
+      "Localization & multi-language programs"
     ]
   }
 ]
