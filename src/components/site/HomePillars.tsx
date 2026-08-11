@@ -1,20 +1,17 @@
-/**
- * Parta-style capability strip: three tight value props, no stock art.
- * Keeps the homepage feeling like a landing page (scannable bands) vs. one endless essay.
- */
+/** Resume-summary style value props under the hero. */
 export function HomePillars() {
   const items = [
     {
       title: 'Design & build',
-      body: 'Storyline, Rise, and video—from storyboard to shipped modules.',
+      body: 'End-to-end learning design through shipped, production-ready experiences.',
     },
     {
       title: 'Customer & enterprise',
-      body: 'Programs that match brand, SMEs, and real delivery constraints.',
+      body: 'Programs that scale with brand standards, stakeholders, and delivery constraints.',
     },
     {
       title: 'Outcomes over slides',
-      body: 'Clarity first—learning people can finish and use.',
+      body: 'Completion, retention, and on-the-job use matter more than deck volume.',
     },
   ];
 

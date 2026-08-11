@@ -18,7 +18,7 @@ const display = Barlow_Condensed({
 export const metadata: Metadata = {
   title: 'Dan Winter | Learning Experience Designer',
   description:
-    'Full-stack learning experience designer with 15+ years in L&D and customer education—interactive curriculum, Articulate 360, and AI-enabled learning.',
+    'Dan Winter: learning experience designer with 15+ years in customer education, interactive curriculum, and AI-enabled learning.',
   metadataBase: new URL('https://www.ohhhdan.com'),
   openGraph: {
     title: 'Dan Winter | Learning Experience Designer',

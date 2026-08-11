@@ -2,19 +2,40 @@
   {
     "id": "s1",
     "sortOrder": 0,
-    "name": "Methodology & strategy",
-    "skills": ["ADDIE & SAM Methodology", "Design Thinking", "Needs analysis", "User research", "Program management", "Customer education"]
+    "name": "Learning strategy & architecture",
+    "skills": [
+      "Needs analysis & user research",
+      "ADDIE, SAM & Agile design methodologies",
+      "Curriculum mapping & path design",
+      "Design systems for learning (Ascentia)",
+      "Outcome measurement & analytics",
+      "Vendor & stakeholder management"
+    ]
   },
   {
     "id": "s2",
     "sortOrder": 1,
-    "name": "Authoring & media",
-    "skills": ["Articulate 360", "eLearning", "Content development", "Camtasia / SnagIt", "Figma", "Parta.io"]
+    "name": "Authoring, visual & interactive design",
+    "skills": [
+      "Articulate 360 (Storyline, Rise)",
+      "Parta.io interactive courseware",
+      "Figma visual layout & prototyping",
+      "Adobe Creative Cloud (Illustrator, Photoshop)",
+      "Video & audio production (Camtasia, Audition)",
+      "Interactive widgets & simulation design"
+    ]
   },
   {
     "id": "s3",
     "sortOrder": 2,
-    "name": "Platforms & delivery",
-    "skills": ["LMS administration", "Training delivery", "Data analysis"]
+    "name": "LMS, AI workflows & integrations",
+    "skills": [
+      "LMS administration & migrations (Skilljar, Moodle)",
+      "AI-assisted content & asset generation",
+      "LLM prompting & workflow automation",
+      "Model Context Protocol (MCP) tooling",
+      "Data integration (Salesforce, Gainsight, JIRA)",
+      "Localization & multi-language programs"
+    ]
   }
 ]

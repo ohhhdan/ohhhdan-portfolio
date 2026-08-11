@@ -2,7 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { SignJWT } from 'jose';
 import { CMS_COOKIE } from '@/lib/auth';
-import { readAdminBcryptHashRaw, readAdminLoginPlainDev, readCmsSecretRaw } from '@/lib/admin-env-read';
+import {
+  readAdminBcryptHashRaw,
+  readAdminLoginPlainDev,
+  readAdminPasswordPlain,
+  readCmsSecretRaw,
+} from '@/lib/admin-env-read';
 import {
   ADMIN_ENV_SETUP_STEPS,
   ADMIN_LOGIN_PASSWORD_HELP,
@@ -10,19 +15,37 @@ import {
   isAdminLoginEnvReady,
 } from '@/lib/admin-env-setup';
 
+function passwordMatches(input: string): boolean {
+  const plain = readAdminPasswordPlain();
+  if (plain && input === plain) return true;
+
+  const devPlain = readAdminLoginPlainDev();
+  if (devPlain && input === devPlain) return true;
+
+  const hash = readAdminBcryptHashRaw();
+  if (hash) {
+    try {
+      return bcrypt.compareSync(input, hash);
+    } catch {
+      return false;
+    }
+  }
+
+  return false;
+}
+
 export async function POST(request: NextRequest) {
   if (!isAdminLoginEnvReady()) {
     return NextResponse.json(
       {
-        error: 'Admin login isn’t configured on this server yet.',
+        error: 'Admin login is not configured yet.',
         issues: describeAdminLoginEnvIssues(),
         steps: [...ADMIN_ENV_SETUP_STEPS],
       },
-      { status: 503 }
+      { status: 503 },
     );
   }
 
-  const hashFinal = readAdminBcryptHashRaw();
   const secretFinal = readCmsSecretRaw();
 
   let body: { password?: string };
@@ -37,30 +60,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Password required' }, { status: 400 });
   }
 
-  const devPlain = readAdminLoginPlainDev();
-  let ok = Boolean(devPlain && password === devPlain);
-
-  if (!ok) {
-    try {
-      ok = bcrypt.compareSync(password, hashFinal);
-    } catch {
-      return NextResponse.json(
-        {
-          error: 'ADMIN_PASSWORD_BCRYPT in .env looks broken (not a valid bcrypt hash).',
-          hint: 'Run npm run setup-admin again, or fix the hash line (one line, starts with $2). Development: ADMIN_LOGIN_PLAIN in .env still lets you in.',
-        },
-        { status: 401 }
-      );
-    }
-  }
-
-  if (!ok) {
+  if (!passwordMatches(password)) {
     return NextResponse.json(
       {
         error: 'Incorrect password.',
         hint: ADMIN_LOGIN_PASSWORD_HELP,
       },
-      { status: 401 }
+      { status: 401 },
     );
   }
 

@@ -47,6 +47,7 @@ function writeEnvFile(filePath, prior) {
   if (out && !out.endsWith('\n')) out += '\n';
   if (out) out += '\n';
   out = upsertKey(out || '', 'CMS_SECRET', q(cmsSecret));
+  out = upsertKey(out, 'ADMIN_PASSWORD', q(plainPassword));
   out = upsertKey(out, 'ADMIN_PASSWORD_BCRYPT', q(bcryptHash));
   out = upsertKey(out, 'ADMIN_LOGIN_PLAIN', q(plainPassword));
   fs.writeFileSync(filePath, out.endsWith('\n') ? out : `${out}\n`, 'utf-8');

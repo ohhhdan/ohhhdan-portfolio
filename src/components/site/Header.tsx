@@ -1,11 +1,10 @@
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, Linkedin } from 'lucide-react';
 import { BowTieLogo } from './BowTieLogo';
 
 const nav = [
-  { href: '/#profile', label: 'About' },
   { href: '/background', label: 'Background' },
-  { href: '/#work', label: 'Portfolio' },
+  { href: '/work', label: 'Work' },
   { href: '/#contact', label: 'Contact' },
 ];
 
@@ -20,17 +19,28 @@ export function Header() {
           <BowTieLogo size="sm" className="!h-10 !w-10 shadow-md" />
           <span className="font-heading text-sm font-bold uppercase tracking-[0.12em]">Dan Winter</span>
         </Link>
-        <nav className="hidden flex-wrap items-center justify-end gap-x-1 sm:gap-x-2 md:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="link-underline-grow px-2 py-1.5 text-sm font-medium text-ink-muted transition-colors hover:text-forest"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden items-center gap-x-1 md:flex">
+          <nav className="flex flex-wrap items-center justify-end gap-x-1 sm:gap-x-2">
+            {nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="link-underline-grow px-2 py-1.5 text-sm font-medium text-ink-muted transition-colors hover:text-forest"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <a
+            href="https://www.linkedin.com/in/ohhhdan"
+            target="_blank"
+            rel="noreferrer"
+            className="ml-2 rounded-lg p-2 text-ink-muted/60 transition hover:bg-forest/5 hover:text-forest"
+            aria-label="LinkedIn profile"
+          >
+            <Linkedin size={18} />
+          </a>
+        </div>
         <details className="relative md:hidden">
           <summary className="cursor-pointer list-none rounded-lg border border-forest/15 p-2 text-forest [&::-webkit-details-marker]:hidden">
             <Menu size={20} />
@@ -45,6 +55,15 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <hr className="mx-4 my-2 border-forest/10" />
+            <a
+              href="https://www.linkedin.com/in/ohhhdan"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-ink transition hover:bg-paper hover:text-forest"
+            >
+              <Linkedin size={16} /> LinkedIn
+            </a>
           </div>
         </details>
       </div>

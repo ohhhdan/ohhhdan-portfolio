@@ -26,7 +26,7 @@ export function BackgroundIntro({ profile }: { profile: Profile }) {
             {profile.name}
           </h1>
           <p className="mt-1 text-ink-muted">{profile.headline}</p>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-muted">{profile.summary}</p>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink">{profile.summary}</p>
           <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-ink">
             <li>
               <a href={`mailto:${profile.email}`} className="font-medium text-forest underline decoration-mint underline-offset-2">

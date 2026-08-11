@@ -43,8 +43,11 @@ export function ContactForm() {
   return (
     <Section id="contact" eyebrow="Contact" title="Say hi" className="pb-8 sm:pb-10" align="center">
       <div className="mx-auto flex max-w-md flex-col gap-8">
-        <p className="text-sm leading-snug text-ink-muted sm:text-base">
-          Form below—or email in the header.
+        <p className="text-sm leading-relaxed text-ink-muted sm:text-base">
+          Get in touch via the form below, or directly at{' '}
+          <a href="mailto:dan@ohhhdan.com" className="font-semibold text-forest underline decoration-mint underline-offset-2 transition hover:text-mustard">
+            dan@ohhhdan.com
+          </a>.
         </p>
         <form onSubmit={handleSubmit} className="w-full space-y-4 text-left">
           <div>

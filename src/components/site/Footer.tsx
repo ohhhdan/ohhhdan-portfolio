@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail } from 'lucide-react';
+import { Mail, Linkedin } from 'lucide-react';
 import { getSingleton } from '@/lib/cms/db';
 import type { Profile } from '@/lib/cms/types';
 
@@ -16,7 +16,7 @@ export async function Footer() {
             {profile?.name ?? 'Dan Winter'}
           </p>
           <p className="mt-2 max-w-md text-sm leading-relaxed text-mint/90">
-            Learning experience design & customer education—sophisticated, approachable, and sharply detailed.
+            Learning experience design and customer education, with attention to detail from storyboard through ship.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:items-end">
@@ -26,8 +26,22 @@ export async function Footer() {
           >
             <Mail size={18} className="text-mustard" /> {email}
           </a>
+          <a
+            href="https://www.linkedin.com/in/ohhhdan"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-sm text-white/90 transition hover:translate-x-0.5 hover:text-mustard motion-reduce:hover:translate-x-0"
+          >
+            <Linkedin size={18} className="text-mustard" /> LinkedIn
+          </a>
           <Link href="/background" className="text-sm font-medium text-mint transition hover:text-white">
             Background &amp; print-friendly CV
+          </Link>
+          <Link
+            href="/work"
+            className="text-sm font-medium text-mint transition hover:text-white"
+          >
+            Work samples →
           </Link>
           <Link
             href="/#contact"

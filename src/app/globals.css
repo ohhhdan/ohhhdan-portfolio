@@ -137,6 +137,87 @@ body {
   }
 }
 
+/* ── Dark sections (Impact Strip, etc.) ───────────────────── */
+.section-dark {
+  @apply bg-pine-900 text-pine-100;
+}
+
+.section-dark .metric-value {
+  @apply font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl;
+}
+
+.section-dark .metric-label {
+  @apply mt-1 text-xs font-medium uppercase tracking-[0.18em] text-mint/80 sm:text-sm;
+}
+
+/* ── Gradient text accent ─────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-mint), var(--color-teal), var(--color-mustard));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hero mesh (enhanced) ─────────────────────────────────── */
+.hero-mesh-bold {
+  background:
+    radial-gradient(ellipse 90% 70% at 15% 25%, rgba(105, 188, 146, 0.28), transparent 55%),
+    radial-gradient(ellipse 80% 55% at 90% 10%, rgba(230, 159, 0, 0.18), transparent 50%),
+    radial-gradient(ellipse 55% 45% at 65% 85%, rgba(42, 157, 143, 0.16), transparent 45%),
+    radial-gradient(ellipse 40% 35% at 50% 50%, rgba(27, 74, 56, 0.06), transparent 50%),
+    linear-gradient(180deg, #f5f9f7 0%, #f0f5f2 100%);
+}
+
+/* ── Photo ring gradient ──────────────────────────────────── */
+.photo-ring {
+  background: conic-gradient(
+    from 45deg,
+    var(--color-forest),
+    var(--color-mint),
+    var(--color-teal),
+    var(--color-mustard),
+    var(--color-forest)
+  );
+}
+
+/* ── Client logo strip ────────────────────────────────────── */
+.logo-text {
+  @apply text-sm font-bold uppercase tracking-[0.14em] text-ink-muted/50 transition-colors duration-300;
+}
+.logo-text:hover {
+  @apply text-forest;
+}
+
+/* ── Staggered card entrance ──────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-slide-up {
+    animation: slide-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Subtle shimmer for section accents ───────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
 /* Print: background / CV page — hide chrome, plain paper */
 @media print {
   .no-print {
