@@ -24,9 +24,7 @@ export function ViewSampleButton({
   if (samples.length === 0) {
     return (
       <p className="text-sm text-ink-muted">
-        {project.client.includes('ACVIM')
-          ? 'Samples available to ACVIM members on request.'
-          : 'Interactive sample available on request.'}
+        {project.sampleNote?.trim() || '[SCREEN RECORDING]'}
       </p>
     );
   }

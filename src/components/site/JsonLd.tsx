@@ -12,7 +12,7 @@ export function JsonLd() {
         '@id': `${SITE_URL}/#person`,
         name: SITE_NAME,
         url: SITE_URL,
-        jobTitle: 'Learning Experience Designer',
+        jobTitle: 'Customer Education & Learning Experience Leader',
         description: SITE_DESCRIPTION,
         email: `mailto:${getSingleton<Profile>('profile')?.email || 'daniel.c.winter@live.com'}`,
         sameAs: ['https://www.linkedin.com/in/ohhhdan'],

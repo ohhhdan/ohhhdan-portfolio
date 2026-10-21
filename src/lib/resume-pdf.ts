@@ -15,10 +15,11 @@ const FOREST = '#1b4a38';
 const MINT = '#69bc92';
 const MUTED = '#5c6560';
 const RULE = '#d5e0da';
+const PAPER = '#f7faf8';
 const PAGE_W = 612;
 const PAGE_H = 792;
 const MARGIN = 36;
-const BOTTOM = 36;
+const BOTTOM = 44;
 const CONTENT_W = PAGE_W - MARGIN * 2;
 const COL_GAP = 20;
 const LEFT_W = 348;
@@ -62,16 +63,41 @@ export function buildResumePdf(): Promise<Buffer> {
     doc.on('error', reject);
   });
 
-  const nameY = 34;
-  drawName(doc, nameY);
-  const contact = [profile?.email, 'linkedin.com/in/ohhhdan', 'www.ohhhdan.com'].filter(Boolean) as string[];
-  drawContact(doc, contact, nameY);
-  const headerBottom = nameY + Math.max(26, contact.length * 11) + 8;
+  // Brand band
   doc.save();
-  doc.moveTo(MARGIN, headerBottom).lineTo(MARGIN + CONTENT_W, headerBottom).lineWidth(1).strokeColor(FOREST).stroke();
+  doc.rect(0, 0, PAGE_W, 8).fill(FOREST);
+  doc.rect(0, 8, PAGE_W, 3).fill(MINT);
   doc.restore();
 
-  const cursor: Cursor = { page: 0, y: headerBottom + 14 };
+  const nameY = 28;
+  drawName(doc, nameY);
+  const contact = [profile?.email, 'linkedin.com/in/ohhhdan', 'www.ohhhdan.com'].filter(Boolean) as string[];
+  drawContact(doc, contact, nameY + 2);
+
+  let headerBottom = nameY + 28;
+  const roles = profile?.rolesLine?.trim() || profile?.headline?.trim();
+  if (roles) {
+    doc.font('Helvetica').fontSize(8.5).fillColor(FOREST);
+    doc.text(plain(roles), MARGIN, nameY + 24, { width: CONTENT_W * 0.62, characterSpacing: 0.1 });
+    headerBottom = Math.max(headerBottom, nameY + 36);
+  }
+
+  doc.save();
+  doc
+    .moveTo(MARGIN, headerBottom + 4)
+    .lineTo(MARGIN + CONTENT_W, headerBottom + 4)
+    .lineWidth(1.25)
+    .strokeColor(FOREST)
+    .stroke();
+  doc
+    .moveTo(MARGIN, headerBottom + 7)
+    .lineTo(MARGIN + 48, headerBottom + 7)
+    .lineWidth(2.5)
+    .strokeColor(MINT)
+    .stroke();
+  doc.restore();
+
+  const cursor: Cursor = { page: 0, y: headerBottom + 18 };
   const start: Cursor = { page: cursor.page, y: cursor.y };
   const side: Cursor = { page: start.page, y: start.y };
   drawSidebar(doc, side, skills, education, awards, talks, engagements);
@@ -86,7 +112,7 @@ export function buildResumePdf(): Promise<Buffer> {
         doc,
         main,
         company.length < 28 ? company.toUpperCase() : company,
-        { font: 'Helvetica-Bold', size: 8, color: MUTED, gap: 2 },
+        { font: 'Helvetica-Bold', size: 8, color: FOREST, gap: 2 },
         leftBox,
       );
       if (job.description) {
@@ -102,7 +128,7 @@ export function buildResumePdf(): Promise<Buffer> {
         bullets(doc, main, role.highlights, leftBox);
       }
     } else if (job.lines?.length) {
-      write(doc, main, 'Earlier', { font: 'Helvetica-Bold', size: 8, color: MUTED, gap: 3 }, leftBox);
+      write(doc, main, 'Earlier', { font: 'Helvetica-Bold', size: 8, color: FOREST, gap: 3 }, leftBox);
       for (const line of job.lines) {
         pair(doc, main, plain(line.title), plain(line.period ?? ''), leftBox);
         write(doc, main, plain(line.company), { font: 'Helvetica', size: 8, color: MUTED, gap: 3 }, leftBox);
@@ -120,21 +146,33 @@ export function buildResumePdf(): Promise<Buffer> {
     main.y += 6;
   }
 
+  // Footer brand mark on each page
+  const range = doc.bufferedPageRange();
+  for (let i = 0; i < range.count; i += 1) {
+    doc.switchToPage(i);
+    doc.save();
+    doc.rect(0, PAGE_H - 10, PAGE_W, 10).fill(PAPER);
+    doc.rect(0, PAGE_H - 3, PAGE_W, 3).fill(FOREST);
+    doc.font('Helvetica').fontSize(7).fillColor(MUTED);
+    doc.text('www.ohhhdan.com', MARGIN, PAGE_H - 18, { lineBreak: false });
+    doc.restore();
+  }
+
   doc.end();
   return done;
 }
 
 function drawName(doc: PDFKit.PDFDocument, y: number) {
-  doc.font('Helvetica-Bold').fontSize(22).fillColor(INK);
+  doc.font('Helvetica-Bold').fontSize(24).fillColor(FOREST);
   const dan = 'DAN';
   const winter = 'WINTER';
-  const tracking = 1.4;
+  const tracking = 1.6;
   const danW = doc.widthOfString(dan) + tracking * (dan.length - 1);
-  const tieW = 26;
+  const tieW = 28;
   doc.text(dan, MARGIN, y, { characterSpacing: tracking, lineBreak: false });
-  drawBowtie(doc, MARGIN + danW + 7, y + 3, 16);
-  doc.font('Helvetica-Bold').fontSize(22).fillColor(INK);
-  doc.text(winter, MARGIN + danW + 7 + tieW + 7, y, { characterSpacing: tracking, lineBreak: false });
+  drawBowtie(doc, MARGIN + danW + 8, y + 4, 18);
+  doc.font('Helvetica-Bold').fontSize(24).fillColor(FOREST);
+  doc.text(winter, MARGIN + danW + 8 + tieW + 8, y, { characterSpacing: tracking, lineBreak: false });
 }
 
 function drawBowtie(doc: PDFKit.PDFDocument, x: number, y: number, h: number) {
@@ -247,7 +285,7 @@ function sideHead(doc: PDFKit.PDFDocument, cursor: Cursor, label: string) {
   ensure(doc, cursor, 46);
   doc.switchToPage(cursor.page);
   doc.save();
-  doc.moveTo(rightBox.x, cursor.y).lineTo(rightBox.x, cursor.y + 9).lineWidth(2.2).strokeColor(FOREST).stroke();
+  doc.moveTo(rightBox.x, cursor.y).lineTo(rightBox.x, cursor.y + 9).lineWidth(2.2).strokeColor(MINT).stroke();
   doc.restore();
   doc.font('Helvetica-Bold').fontSize(7.5).fillColor(FOREST);
   doc.text(label.toUpperCase(), rightBox.x + 7, cursor.y, { characterSpacing: 0.35, lineBreak: false });
@@ -267,6 +305,12 @@ function sectionRule(doc: PDFKit.PDFDocument, cursor: Cursor, label: string, box
     .lineTo(box.x + box.w, cursor.y + 5)
     .lineWidth(0.6)
     .strokeColor(RULE)
+    .stroke();
+  doc
+    .moveTo(box.x + labelW + 8, cursor.y + 5)
+    .lineTo(box.x + labelW + 28, cursor.y + 5)
+    .lineWidth(2)
+    .strokeColor(MINT)
     .stroke();
   doc.restore();
   cursor.y += 14;
@@ -300,7 +344,7 @@ function bullets(doc: PDFKit.PDFDocument, cursor: Cursor, items: string[], box: 
     ensure(doc, cursor, h);
     doc.switchToPage(cursor.page);
     doc.save();
-    doc.circle(box.x + 2, cursor.y + 4, 1.15).fill(FOREST);
+    doc.circle(box.x + 2, cursor.y + 4, 1.25).fill(MINT);
     doc.restore();
     doc.font('Helvetica').fontSize(8.5).fillColor(INK);
     doc.text(text, box.x + 8, cursor.y, { width: textW, lineGap: 0.4, characterSpacing: 0 });

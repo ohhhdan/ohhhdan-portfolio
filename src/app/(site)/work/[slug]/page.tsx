@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const description =
     project.summary ||
-    [project.problem, project.solution].filter(Boolean).join(' ') ||
+    [project.problem, project.context].filter(Boolean).join(' ') ||
     `${project.title} — case study by ${SITE_NAME}`;
 
   return {
@@ -41,6 +41,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+function CaseSection({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="mt-10">
+      <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest/70">{label}</h2>
+      <div className="mt-2">{children}</div>
+    </section>
+  );
+}
+
 export default async function WorkProjectPage({ params }: PageProps) {
   const { slug } = await params;
   const projects = getCollection<Project>('projects');
@@ -48,8 +63,11 @@ export default async function WorkProjectPage({ params }: PageProps) {
   if (!project) notFound();
 
   const hasLocalScorm = Boolean(project.scormPackageId && scormPackageExists(project.scormPackageId));
-  const hasCase = Boolean(project.problem?.trim() || project.solution?.trim());
   const pageUrl = `${SITE_URL}/work/${project.slug}`;
+  const heroImages = (project.screenshots ?? []).filter((s) => s.trim());
+  const tools = (project.technologies ?? []).filter((t) => t.trim());
+  const approach = (project.approach ?? []).filter((a) => a.trim());
+  const results = (project.results ?? []).filter((r) => r.trim());
 
   const creativeWorkLd = {
     '@context': 'https://schema.org',
@@ -63,7 +81,7 @@ export default async function WorkProjectPage({ params }: PageProps) {
       url: SITE_URL,
     },
     about: project.client,
-    keywords: (project.technologies ?? []).join(', '),
+    keywords: tools.join(', '),
   };
 
   return (
@@ -81,52 +99,86 @@ export default async function WorkProjectPage({ params }: PageProps) {
         </Link>
 
         <header className="mt-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-teal">{project.client}</p>
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-teal">{project.client}</p>
+            {project.engagementLabel?.trim() ? (
+              <span className="rounded-full border border-forest/15 bg-surface px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-forest">
+                {project.engagementLabel}
+              </span>
+            ) : null}
+          </div>
           <h1 className="mt-2 font-heading text-3xl font-bold tracking-wide text-forest sm:text-4xl">
             {project.title}
           </h1>
-          {project.period ? (
-            <p className="mt-2 text-sm text-ink-muted">{project.period}</p>
-          ) : null}
+          {project.period ? <p className="mt-2 text-sm text-ink-muted">{project.period}</p> : null}
           <p className="mt-4 text-base leading-relaxed text-ink-muted">{project.summary}</p>
         </header>
 
-        {(project.screenshots ?? []).some((s) => s.trim()) ? (
-          <div className="mt-8">
-            <ScreenshotCarousel images={project.screenshots ?? []} title={project.title} />
-          </div>
+        {project.roleLine?.trim() ? (
+          <CaseSection label="Role + team + timeframe">
+            <p className="text-sm leading-relaxed text-ink">{project.roleLine}</p>
+          </CaseSection>
         ) : null}
 
-        {hasCase ? (
-          <dl className="mt-10 grid gap-8 sm:grid-cols-2">
-            {project.problem?.trim() ? (
-              <div>
-                <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest/70">Problem</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-ink">{project.problem}</dd>
-              </div>
-            ) : null}
-            {project.solution?.trim() ? (
-              <div>
-                <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest/70">Solution</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-ink">{project.solution}</dd>
-              </div>
-            ) : null}
-          </dl>
-        ) : project.body?.trim() ? (
-          <p className="mt-10 text-sm leading-relaxed text-ink-muted">{project.body}</p>
+        {project.context?.trim() ? (
+          <CaseSection label="Context">
+            <p className="text-sm leading-relaxed text-ink">{project.context}</p>
+          </CaseSection>
         ) : null}
 
-        {project.technologies?.length ? (
-          <div className="mt-10">
-            <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest/70">Tools</h2>
-            <div className="mt-3">
-              <ToolChips tools={project.technologies} />
+        {project.problem?.trim() ? (
+          <CaseSection label="Problem">
+            <p className="text-sm leading-relaxed text-ink">{project.problem}</p>
+          </CaseSection>
+        ) : null}
+
+        {approach.length ? (
+          <CaseSection label="Approach">
+            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink marker:text-mint">
+              {approach.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </CaseSection>
+        ) : project.solution?.trim() ? (
+          <CaseSection label="Approach">
+            <p className="text-sm leading-relaxed text-ink">{project.solution}</p>
+          </CaseSection>
+        ) : null}
+
+        <CaseSection label="What I built">
+          {heroImages.length ? (
+            <ScreenshotCarousel images={heroImages} title={project.title} />
+          ) : (
+            <div className="flex aspect-[16/10] items-center justify-center rounded-xl border border-dashed border-forest/20 bg-surface px-6 text-center">
+              <p className="text-sm font-medium text-ink-muted">
+                {project.builtNote?.trim() || '[HERO MEDIA]'}
+              </p>
             </div>
-          </div>
+          )}
+        </CaseSection>
+
+        {results.length ? (
+          <CaseSection label="Results">
+            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink marker:text-mint">
+              {results.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </CaseSection>
+        ) : null}
+
+        {tools.length ? (
+          <CaseSection label="Tools">
+            <ToolChips tools={tools} />
+          </CaseSection>
         ) : null}
 
         <div className="mt-10 border-t border-forest/10 pt-8">
-          <ViewSampleButton project={project} hasLocalScorm={hasLocalScorm} />
+          <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-forest/70">Sample</h2>
+          <div className="mt-3">
+            <ViewSampleButton project={project} hasLocalScorm={hasLocalScorm} />
+          </div>
         </div>
       </div>
     </article>

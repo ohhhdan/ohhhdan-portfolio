@@ -1,15 +1,57 @@
 [
   {
-    "id": "p2",
+    "id": "p-simulations",
     "sortOrder": 0,
+    "slug": "simulations-inside-the-course",
+    "title": "Simulations inside the course",
+    "client": "Okta",
+    "period": "2025 to 2026",
+    "featured": true,
+    "engagementLabel": "",
+    "portfolioGroup": "platform",
+    "summary": "In-course simulations that raised course consumption and earned Okta’s first CEdMA Pinnacle Award for Innovation since 2017.",
+    "roleLine": "[Role / team of N], 2025 to 2026.",
+    "context": "Customer Acceleration needed practice inside courses, not only slide-style content. Okta Learning needed a way to raise how much learners used the catalog without a matching rise in hosting cost.",
+    "problem": "Average course consumption was low, and practice lived outside the course experience.",
+    "approach": [
+      "[How simulation scenarios were chosen and designed].",
+      "[How in-course simulations were built and where they sat in the course].",
+      "[How video analytics connected views to learners and informed catalog decisions]."
+    ],
+    "results": [
+      "Won the CEdMA Pinnacle Award for Innovation, Okta’s first CEdMA recognition since 2017, for placing simulations inside courses.",
+      "Raised average course consumption from 2.2 to 8+ across over 1500 learners with in-course simulations, with no matching increase in cost.",
+      "Grew course video views from 2,452 to 4,386 and connected viewership to learner activity, so we could see which views turned into learners."
+    ],
+    "builtNote": "[HERO MEDIA]",
+    "screenshots": [],
+    "technologies": ["[TOOLS]"],
+    "links": [],
+    "scormPackageId": null
+  },
+  {
+    "id": "p2",
+    "sortOrder": 1,
     "slug": "okta-explore-identity",
     "title": "Explore Identity and Access Management",
     "client": "Okta",
     "period": "2023 to present",
+    "featured": true,
+    "engagementLabel": "",
     "portfolioGroup": "platform",
     "summary": "Scenario-based identity fundamentals for Okta Learning, consistent across a large catalog.",
-    "problem": "Learners needed identity fundamentals they could finish on their own, at catalog scale, without a one-off look for every course.",
-    "solution": "Parta modules with AI-assisted interactions and illustration, consistent across a large catalog.",
+    "roleLine": "[Lead designer / led a team of N], 2023 to present.",
+    "context": "Okta Learning needed identity fundamentals customers could finish on their own. The catalog also needed one consistent experience instead of a one-off look for every course.",
+    "problem": "Learners needed to build identity fundamentals on their own, and the catalog needed one consistent experience instead of a one-off look for every course.",
+    "approach": [
+      "[Scenario design decision].",
+      "[How AI was used for interactions and illustration, and what you reviewed by hand].",
+      "[How the Parta block library kept courses consistent]."
+    ],
+    "results": [
+      "[courses shipped, completion, consumption, build time saved]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Parta.io", "Adobe Illustrator", "Google Gemini", "Claude"],
     "links": [
@@ -18,26 +60,33 @@
         "href": "https://s3.us-east-1.amazonaws.com/ohhhdan.com/portfolio/Explore+Identity+and+Access+Management/index.html",
         "kind": "external",
         "embedOnSite": true
-      },
-      {
-        "label": "Okta Learning platform",
-        "href": "https://learning.okta.com/",
-        "kind": "external"
       }
     ],
     "scormPackageId": null
   },
   {
     "id": "p3",
-    "sortOrder": 1,
+    "sortOrder": 2,
     "slug": "okta-threatinsight",
     "title": "Mitigate Threats Using ThreatInsight",
     "client": "Okta",
     "period": "2023 to present",
+    "featured": true,
+    "engagementLabel": "",
     "portfolioGroup": "platform",
     "summary": "Scenario-based ThreatInsight learning, with knowledge checks in realistic situations.",
-    "problem": "Customers needed ThreatInsight in realistic situations, and a way to check what they could do afterward.",
-    "solution": "Scenarios, on-screen visuals, and knowledge checks, held to one standard.",
+    "roleLine": "[Role / team of N], 2023 to present.",
+    "context": "Customers needed ThreatInsight practice they could finish on their own. The course had to stay consistent with the broader Okta Learning catalog.",
+    "problem": "Customers needed to practice ThreatInsight decisions in realistic situations and show afterward that they could apply it.",
+    "approach": [
+      "[How scenarios were chosen].",
+      "[How knowledge checks map to real tasks].",
+      "[Where the visuals came from]."
+    ],
+    "results": [
+      "[completion, scores, or customer feedback]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Parta.io", "Adobe Creative Suite", "AI tooling"],
     "links": [
@@ -51,43 +100,39 @@
     "scormPackageId": null
   },
   {
-    "id": "p4",
-    "sortOrder": 2,
-    "slug": "acvim",
-    "title": "Various projects",
-    "client": "American College of Veterinary Internal Medicine (ACVIM)",
-    "period": "2014 to present",
-    "portfolioGroup": "platform",
-    "summary": "Self-paced learning, video, assessments, and an LMS move for a national certifying body.",
-    "problem": "A national certifying organization needed reliable digital learning, assessments, and event media across many years and systems.",
-    "solution": "Ongoing course development, Forum recordings, an LMS move, and assessment workflows (Caveon, Cadmium) for members and certifying programs.",
-    "screenshots": [],
-    "technologies": ["Articulate 360", "Adobe Creative Suite", "Caveon", "Cadmium", "Moodle", "VetBloom"],
-    "links": [],
-    "scormPackageId": null
-  },
-  {
     "id": "p5",
     "sortOrder": 3,
     "slug": "superspeed-certified",
     "title": "SuperSpeed Certified",
     "client": "SuperSpeed",
     "period": "2018 to 2021",
+    "featured": true,
+    "engagementLabel": "Freelance",
     "portfolioGroup": "platform",
     "summary": "A three-level learning path for golf coaches, built to complete on their own.",
+    "roleLine": "Freelance instructional designer, 2018 to 2021.",
+    "context": "SuperSpeed needed a credential path coaches could finish without being in the room. The program had to cover three levels with practice and a capstone.",
     "problem": "Coaches needed a structured credential path that didn't depend on being in the room.",
-    "solution": "Three levels with video, Storyline interactions, knowledge checks, and a capstone on a virtual platform.",
+    "approach": [
+      "Structured the path as three progressive levels instead of a single long course.",
+      "Combined video, Storyline interactions, and knowledge checks so coaches could practice between sessions.",
+      "Closed the path with a capstone on a virtual platform."
+    ],
+    "results": [
+      "[completion or enrollment results]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Illustrator", "Photoshop", "Camtasia", "Moodle", "YouTube"],
     "links": [
       {
-        "label": "Level 1",
+        "label": "View sample",
         "href": "https://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed1/story_html5.html",
         "kind": "external",
         "embedOnSite": true
       },
       {
-        "label": "Level 2",
+        "label": "View sample",
         "href": "https://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed2/story_html5.html",
         "kind": "external",
         "embedOnSite": true
@@ -96,38 +141,115 @@
     "scormPackageId": null
   },
   {
-    "id": "p6",
+    "id": "p-parta-blocks",
     "sortOrder": 4,
+    "slug": "parta-block-library",
+    "title": "Parta block library",
+    "client": "Okta",
+    "period": "[DATE]",
+    "featured": false,
+    "engagementLabel": "",
+    "portfolioGroup": "platform",
+    "summary": "Shared Parta course blocks so new courses start from a template, not a blank page.",
+    "roleLine": "[Role / team of N], [DATE].",
+    "context": "New courses were starting from a blank page. Customer Acceleration needed reusable Parta blocks that kept courses consistent.",
+    "problem": "New courses started from scratch instead of a shared production foundation.",
+    "approach": [
+      "[How the block set was scoped].",
+      "[What each block type covered].",
+      "[How teams adopted the library]."
+    ],
+    "results": [
+      "[reuse, build time, or course volume]"
+    ],
+    "builtNote": "[HERO MEDIA]",
+    "screenshots": [],
+    "technologies": ["Parta"],
+    "links": [],
+    "sampleNote": "[PUBLIC SAMPLE?]",
+    "scormPackageId": null
+  },
+  {
+    "id": "p4",
+    "sortOrder": 10,
+    "slug": "acvim",
+    "title": "Various projects",
+    "client": "American College of Veterinary Internal Medicine (ACVIM)",
+    "period": "2014 to present",
+    "featured": false,
+    "engagementLabel": "Freelance",
+    "portfolioGroup": "platform",
+    "summary": "Self-paced learning, video, assessments, and an LMS move for a national certifying body.",
+    "roleLine": "Freelance instructional designer and media producer, 2014 to present.",
+    "context": "A national certifying organization needed reliable digital learning across many years and systems. Work spanned courses, assessments, Forum recordings, and an LMS move.",
+    "problem": "A national certifying organization needed reliable digital learning, assessments, and event media across many years and systems.",
+    "approach": [
+      "Built and maintained self-paced courses for members and certifying programs.",
+      "Produced Forum recordings and assessment workflows with Caveon and Cadmium.",
+      "Supported an LMS move across Moodle and VetBloom."
+    ],
+    "results": [
+      "[member or program outcomes]"
+    ],
+    "builtNote": "[HERO MEDIA]",
+    "screenshots": [],
+    "technologies": ["Articulate 360", "Adobe Creative Suite", "Caveon", "Cadmium", "Moodle", "VetBloom"],
+    "links": [],
+    "sampleNote": "[SCREEN RECORDING]",
+    "scormPackageId": null
+  },
+  {
+    "id": "p6",
+    "sortOrder": 11,
     "slug": "id9-performance",
     "title": "The Performance Company",
     "client": "id9",
     "period": "2016 to 2019",
+    "featured": false,
+    "engagementLabel": "Freelance",
     "portfolioGroup": "platform",
     "summary": "Soft-skills learning across 550+ pieces, held to one standard.",
+    "roleLine": "Freelance instructional designer, 2016 to 2019.",
+    "context": "id9 needed one quality bar across a global soft-skills catalog. Delivery had to hold at hundreds of modules, assessments, and job aids.",
     "problem": "A global catalog needed one quality bar across hundreds of pieces.",
-    "solution": "Modules, assessments, and job aids from Catherine Mattiske's frameworks, with delivery QA at scale.",
+    "approach": [
+      "Built modules, assessments, and job aids from Catherine Mattiske's frameworks.",
+      "Held production to one quality bar across 550+ pieces.",
+      "Ran delivery QA at catalog scale."
+    ],
+    "results": [
+      "Shipped soft-skills learning across 550+ pieces."
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Acrobat", "Illustrator", "InDesign", "Camtasia", "Moodle"],
-    "links": [
-      {
-        "label": "View sample",
-        "href": "https://360.articulate.com/review/content/7069f4ff-e05f-4263-96a6-4a8987fa7b3c/review",
-        "kind": "articulate"
-      }
-    ],
+    "links": [],
+    "sampleNote": "[SCREEN RECORDING — Articulate Review requires login]",
     "scormPackageId": null
   },
   {
     "id": "p7",
-    "sortOrder": 5,
+    "sortOrder": 12,
     "slug": "piano-technician-academy",
     "title": "Piano tuning & moving",
     "client": "Piano Technician Academy",
     "period": "2014",
+    "featured": false,
+    "engagementLabel": "Freelance",
     "portfolioGroup": "platform",
     "summary": "A certificate path from SME storyboards and raw video.",
+    "roleLine": "Freelance instructional designer and media producer, 2014.",
+    "context": "SMEs had storyboards and footage, but no finished interactive certificate path. The Piano Technicians Guild track needed a complete course on LearnUpon.",
     "problem": "SMEs had storyboards and footage, but no finished interactive certificate path for endorsement.",
-    "solution": "End-to-end Storyline courses and media production, deployed on LearnUpon for the Piano Technicians Guild track.",
+    "approach": [
+      "Turned SME storyboards into end-to-end Storyline courses.",
+      "Produced media from raw video and audio.",
+      "Deployed the path on LearnUpon for the Piano Technicians Guild track."
+    ],
+    "results": [
+      "[endorsement or completion results]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Captivate", "Audition", "Illustrator", "Premiere Pro", "LearnUpon"],
     "links": [
@@ -142,54 +264,68 @@
   },
   {
     "id": "p8",
-    "sortOrder": 10,
+    "sortOrder": 13,
     "slug": "ethosvet-ecg",
     "title": "ECG interpretations",
     "client": "EthosVet",
     "period": "2018",
+    "featured": false,
+    "engagementLabel": "Freelance",
     "portfolioGroup": "sample",
     "summary": "Interactive guide to heart rhythms on ECGs for domestic animals.",
+    "roleLine": "Freelance instructional designer, 2018.",
+    "context": "Clinicians needed ECG pattern practice without waiting on live caseload. The module had to mirror the clinical task: identify the rhythm, confirm, move on.",
     "problem": "Clinicians needed to rehearse ECG pattern recognition without waiting on live caseload.",
-    "solution": "Hotspots, narration, and video that mirror the clinical task: identify the rhythm, confirm, move on.",
+    "approach": [
+      "Mirrored the clinical task with hotspots, narration, and video.",
+      "Kept practice short so clinicians could rehearse pattern recognition on demand.",
+      "Built in Articulate Rise and Storyline with supporting media."
+    ],
+    "results": [
+      "[completion or feedback]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate Rise & Storyline", "Adobe Creative Suite", "Camtasia"],
     "links": [
       {
-        "label": "ECG interpretations",
+        "label": "View sample",
         "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/ECG%20Interpretation/story_html5.html",
         "kind": "external",
         "embedOnSite": true
       },
       {
-        "label": "7 Core Communication Skills (Rise)",
+        "label": "View sample",
         "href": "https://rise.articulate.com/share/NDntOY62g7g_XzD1jC1V1NmfEju0EzMD",
         "kind": "external",
         "embedOnSite": true
-      },
-      {
-        "label": "Interactive worksheet",
-        "href": "https://360.articulate.com/review/content/14f86eef-c3df-4ba2-a8d8-9441d163e5bd/review",
-        "kind": "articulate"
-      },
-      {
-        "label": "Conflict Management Styles Assessment",
-        "href": "https://360.articulate.com/review/content/5b45c446-e4e1-47f4-be06-549b8b51b238/review",
-        "kind": "articulate"
       }
     ],
     "scormPackageId": null
   },
   {
     "id": "p10",
-    "sortOrder": 11,
+    "sortOrder": 14,
     "slug": "circle-education-leadership",
     "title": "Contemporary leadership",
     "client": "Circle Education",
     "period": "2017",
+    "featured": false,
+    "engagementLabel": "Freelance",
     "portfolioGroup": "sample",
     "summary": "A facilitated program rebuilt as a self-paced learning path.",
+    "roleLine": "Freelance instructional designer, 2017.",
+    "context": "A facilitated virtual program for Australian educators needed an asynchronous path. The rebuild had to keep the feel of the original sessions.",
     "problem": "A facilitated virtual program for Australian educators needed an asynchronous path that still felt like the original sessions.",
-    "solution": "Self-paced Storyline modules with readings, video, and interactives that replace live sessions.",
+    "approach": [
+      "Rebuilt live sessions as self-paced Storyline modules.",
+      "Kept readings, video, and interactives that carried the original session design.",
+      "Deployed on MatrixONE LMS."
+    ],
+    "results": [
+      "[completion or feedback]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate Storyline", "Adobe Acrobat", "Illustrator", "MatrixONE LMS"],
     "links": [
@@ -204,15 +340,27 @@
   },
   {
     "id": "p11",
-    "sortOrder": 12,
+    "sortOrder": 15,
     "slug": "new-york-life-annuity",
     "title": "SECURE Fixed Term Annuity IV",
     "client": "New York Life",
     "period": "2016",
+    "featured": false,
+    "engagementLabel": "Freelance",
     "portfolioGroup": "sample",
     "summary": "A yearly required course for agents, rebuilt so they could finish it.",
+    "roleLine": "Freelance instructional designer, 2016.",
+    "context": "Agents had to complete a yearly required course. Legacy slide decks made that course tedious and hard to update.",
     "problem": "Legacy slide decks made the yearly required course tedious and hard to update.",
-    "solution": "Captivate interactions, media, and knowledge checks built for repeat yearly completion.",
+    "approach": [
+      "Rebuilt the course in Adobe Captivate with interactions and media.",
+      "Added knowledge checks built for repeat yearly completion.",
+      "Designed the experience so agents could finish the required course."
+    ],
+    "results": [
+      "[completion results]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Adobe Captivate"],
     "links": [
@@ -227,15 +375,27 @@
   },
   {
     "id": "p9",
-    "sortOrder": 13,
+    "sortOrder": 16,
     "slug": "randstad-singapore",
     "title": "Job specializations",
     "client": "Randstad Singapore",
     "period": "2015",
+    "featured": false,
+    "engagementLabel": "Freelance",
     "portfolioGroup": "sample",
     "summary": "Industry learning for recruiters, with a glossary they can search.",
+    "roleLine": "Freelance instructional designer, 2015.",
+    "context": "Recruiters needed credible industry language for specialized client verticals. The modules had to stay searchable on the job.",
     "problem": "Recruiters needed credible industry language for specialized client verticals.",
-    "solution": "Rise modules with media, interactions, and a searchable glossary for staffing teams.",
+    "approach": [
+      "Built Rise modules with media and interactions for staffing teams.",
+      "Added a searchable glossary recruiters could use while working.",
+      "Focused language on specialized client verticals."
+    ],
+    "results": [
+      "[completion or feedback]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate Rise", "Adobe Photoshop"],
     "links": [
@@ -250,15 +410,27 @@
   },
   {
     "id": "p1",
-    "sortOrder": 14,
+    "sortOrder": 17,
     "slug": "city-targeting-hasoffers",
     "title": "City Targeting in HasOffers",
     "client": "HasOffers",
     "period": "2013",
+    "featured": false,
+    "engagementLabel": "Freelance",
     "portfolioGroup": "sample",
     "summary": "Instructional video from a 40+ video series.",
+    "roleLine": "Freelance instructional designer and media producer, 2013.",
+    "context": "A technical audience needed short, clear explainers. This module was one piece in a series of 40+ videos.",
     "problem": "A technical audience needed short, clear explainers across a series of 40+ videos.",
-    "solution": "Tightly scripted motion graphics and edit for one module in a 40+ video library.",
+    "approach": [
+      "Scripted a tight motion-graphics explainer for one module.",
+      "Edited for a technical audience that needed clarity over length.",
+      "Delivered the piece as part of a 40+ video library."
+    ],
+    "results": [
+      "[view or series outcomes]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Adobe After Effects", "Premiere Pro", "Audition"],
     "links": [
@@ -272,24 +444,31 @@
   },
   {
     "id": "p0",
-    "sortOrder": 15,
+    "sortOrder": 18,
     "slug": "rise-for-dummies",
     "title": "Rise for Dummies",
     "client": "Skills demo",
     "period": "2024",
+    "featured": false,
+    "engagementLabel": "",
     "portfolioGroup": "sample",
     "summary": "A short Rise sample covering blocks, navigation, and layout.",
+    "roleLine": "Skills demo, 2024.",
+    "context": "Stakeholders needed a quick reference when evaluating Rise against Storyline for short lessons. The sample had to show blocks, navigation, and layout clearly.",
     "problem": "Stakeholders needed a quick reference when evaluating Rise against Storyline for short lessons.",
-    "solution": "A compact Rise build covering block types, navigation, and responsive layout.",
+    "approach": [
+      "Built a compact Rise sample covering block types.",
+      "Showed navigation patterns for short lessons.",
+      "Demonstrated responsive layout choices."
+    ],
+    "results": [
+      "[DEMO — no outcome metrics]"
+    ],
+    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate Rise 360"],
-    "links": [
-      {
-        "label": "View sample",
-        "href": "https://360.articulate.com/review/content/ca3eb161-564d-4358-9d22-b8f731ee300a/review",
-        "kind": "articulate"
-      }
-    ],
+    "links": [],
+    "sampleNote": "[SCREEN RECORDING — Articulate Review requires login]",
     "scormPackageId": null
   }
 ]

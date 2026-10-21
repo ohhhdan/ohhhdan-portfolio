@@ -116,14 +116,31 @@ export interface Project {
   client: string;
   /** e.g. "2023 to present" — shown in platform-style headings. */
   period?: string;
+  /** Featured section on /work when true. */
+  featured?: boolean;
+  /** Badge on cards, e.g. "Freelance". */
+  engagementLabel?: string;
   /** platform = programs & clients; sample = individual modules. */
   portfolioGroup?: ProjectPortfolioGroup;
   /** One-line card blurb. */
   summary: string;
-  /** Optional longer narrative (legacy); prefer problem/solution. */
+  /** Role + team + timeframe. */
+  roleLine?: string;
+  /** Two-sentence context. */
+  context?: string;
+  /** Optional longer narrative (legacy); prefer problem/approach/results. */
   body?: string;
   problem?: string;
+  /** Legacy; prefer approach bullets. */
   solution?: string;
+  /** Three approach bullets: what was researched/decided and why. */
+  approach?: string[];
+  /** Results with existing numbers only. */
+  results?: string[];
+  /** Shown when no hero screenshot yet, e.g. [HERO MEDIA]. */
+  builtNote?: string;
+  /** Shown when View sample is not login-free yet. */
+  sampleNote?: string;
   /** Public paths or absolute URLs, e.g. /images/work/okta-iam-1.webp */
   screenshots?: string[];
   technologies: string[];

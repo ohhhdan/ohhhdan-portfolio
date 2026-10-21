@@ -5,18 +5,18 @@
     "title": "Manager, Learning Experience and Digital Design",
     "company": "Okta",
     "period": "July 2023 to present",
-    "description": "Promoted three times in three years, from curriculum developer to leading customer education design.",
+    "description": "Promoted twice in under three years, from Senior Curriculum Developer to Manager of Learning Experience and Digital Design.",
     "highlights": [],
     "roles": [
       {
         "title": "Manager, Learning Experience and Digital Design",
         "period": "April 2026 to present",
-        "description": "Lead design and production for customer education.",
+        "description": "Lead design and production of customer education for Okta Customer Acceleration, with a team of 3.",
         "highlights": [
-          "Came up with a learning recommendation agent, the first one Okta could put in front of customers, and pitched it to executive leadership.",
-          "Content for Okta for AI Agents reached 1,500+ views and 155 logged-in customers within weeks.",
-          "Scaled learning for strategic business reviews set the production bar and led to a video series for 500+ customer success managers.",
-          "Built the Oktane kiosk. One year it issued skill badges. This year it was Authcade."
+          "Proposed Okta’s first customer-facing learning recommendation agent and pitched it to executive leadership. It shipped.",
+          "Content for Okta for AI Agents reached 1,500+ views and 155 logged-in customers in its first 2 weeks.",
+          "Designed a scalable learning approach for strategic business reviews that became the production standard for a video series serving 500+ customer success managers.",
+          "Designed and built Okta’s Oktane conference kiosk: a skill badge experience, and a gamified arcade-style learning moment."
         ]
       },
       {
@@ -24,12 +24,12 @@
         "period": "July 2025 to April 2026",
         "description": "Designed courses and simulations for Customer Acceleration.",
         "highlights": [
-          "Won the CEdMA Pinnacle Award for Innovation, Okta's first since 2017.",
-          "Raised average course consumption from 2.2 to 8+ courses a year with in-course simulations, without a matching rise in hosting cost.",
-          "Built a shared library of course blocks so new courses didn't start from scratch.",
-          "Brought Customer Acceleration under one standard across the learning platform, the site, communities, and support.",
-          "Course videos went from 2,452 to 4,386 views, and we could see which views became learners.",
-          "Gave the Next Generation Learning webinar, and a hands-on session at CEdMA Austin on shipping courses built with AI."
+          "Won the CEdMA Pinnacle Award for Innovation, Okta’s first CEdMA recognition since 2017, for placing simulations inside courses.",
+          "Raised average course consumption from 2.2 to 8+ across over 1500 learners with in-course simulations, with no matching increase in cost.",
+          "Built a shared library of Parta course blocks so new courses start from a template, not a blank page.",
+          "Aligned Customer Acceleration’s learning platform, site, communities, and support content to a single design standard.",
+          "Grew course video views from 2,452 to 4,386 and connected viewership to learner activity, so we could see which views turned into learners.",
+          "Presented the Next Generation Learning webinar and led a hands-on CEdMA Austin session on shipping courses built with AI."
         ],
         "presentationLabel": "Watch \"Next Generation Learning\"",
         "presentationUrl": "https://youtu.be/IE3jG8aDrds?si=ER1Y9mrMdKf3Zv4q"
@@ -39,9 +39,9 @@
         "period": "July 2023 to July 2025",
         "description": "Built the catalog's feedback loop and added certification courses.",
         "highlights": [
-          "Built the first loop from learner feedback and video analytics back into the catalog, and archived 247+ courses almost nobody took.",
-          "Added 10+ certification courses over 13 months.",
-          "Got the team producing courses with AI in the workflow."
+          "Built Okta’s first feedback loop connecting learner feedback and video analytics to catalog decisions, and archived 247+ courses with little to no usage.",
+          "Added 10+ certification courses in 13 months.",
+          "Introduced AI into the team’s course production workflow, resulting in a 2 week savings in time to production."
         ]
       }
     ]
@@ -55,9 +55,9 @@
     "description": "Owned quarterly releases and QA for 300+ courses.",
     "highlights": [
       "Shipped quarterly updates for customers and employees with video, simulations, and knowledge checks.",
-      "Set one way of building 300 courses and cut QA by 2.5 business days per release.",
-      "Set up Jira workflows that saved the team about 20 hours a week.",
-      "Started a development program for the learning team."
+      "Standardized the build process across 300+ courses, cutting QA time by 2.5 business days per release.",
+      "Built Jira workflows that saved the team about 20 hours a week.",
+      "Launched a professional development program for the learning team."
     ]
   },
   {
@@ -70,7 +70,7 @@
     "highlights": [
       "Localized the platform and the courses for five languages.",
       "Kept employee and partner courses current across 1,200+ titles.",
-      "Set one way of authoring for seven instructional designers.",
+      "Standardized authoring practices for seven instructional designers.",
       "Raised completion of required courses from 70% to 95%.",
       "Connected learner data to Salesforce so partners could see certifications.",
       "Ran the required-course cycle from assignment through completion."
@@ -102,7 +102,8 @@
       },
       {
         "title": "Learning and Development Manager",
-        "company": "P2 Solutions, Microsoft Retail"
+        "company": "P2 Solutions, Microsoft Retail",
+        "period": "2012 to 2013"
       }
     ]
   }
