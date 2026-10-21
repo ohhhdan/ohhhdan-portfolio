@@ -21,6 +21,10 @@ yarn-error.log*
 
 .env
 .env*.local
+docker/synology/.env
+docker/synology/production.env
+deploy-agent.config.json
+.deploy-state.json
 
 .vercel
 *.tsbuildinfo

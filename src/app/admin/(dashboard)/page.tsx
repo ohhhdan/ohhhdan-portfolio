@@ -12,9 +12,10 @@ export default function AdminHomePage() {
       <div className="mt-4 max-w-2xl rounded-lg border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-sm text-amber-950">
         <p className="font-medium">Saving changes</p>
         <p className="mt-1 text-amber-900/90">
-          Content is stored as JSON files under the <code className="rounded bg-amber-100/80 px-1">data/</code>{' '}
-          folder. Editing works when the app can write to disk (typical on your own machine). Many serverless hosts
-          are read-only—if saves fail, run locally or deploy to a host with persistent storage.
+          Content lives in <code className="rounded bg-amber-100/80 px-1">data/</code> JSON files. Edit and save
+          locally (<code className="rounded bg-amber-100/80 px-1">npm run dev</code>), commit the updated files,
+          and push to GitHub so Vercel redeploys. On Vercel the disk is read-only—admin saves there will not
+          persist.
         </p>
       </div>
       <ul className="mt-8 grid gap-3 sm:grid-cols-2">

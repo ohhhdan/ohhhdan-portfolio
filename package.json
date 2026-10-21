@@ -8,7 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "hash-password": "node scripts/hash-password.mjs",
-    "setup-admin": "node scripts/setup-admin-env.mjs"
+    "setup-admin": "node scripts/setup-admin-env.mjs",
+    "generate-prod-env": "node scripts/generate-production-env.mjs",
+    "copy-to-nas": "powershell -ExecutionPolicy Bypass -File scripts/copy-to-nas.ps1",
+    "setup-deploy-agent": "node scripts/setup-deploy-agent.mjs",
+    "deploy-agent": "node scripts/deploy-agent.mjs",
+    "deploy-agent:force": "node scripts/deploy-agent.mjs --force",
+    "deploy-agent:serve": "node scripts/deploy-agent-server.mjs",
+    "install-weekly-deploy": "powershell -ExecutionPolicy Bypass -File scripts/install-weekly-deploy.ps1"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
