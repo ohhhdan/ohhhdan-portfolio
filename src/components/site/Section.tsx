@@ -7,12 +7,14 @@ export function Section({
   children,
   className = '',
   align = 'start',
+  action,
 }: {
   id: string;
   eyebrow?: string;
   title: string;
   children: React.ReactNode;
   className?: string;
+  action?: React.ReactNode;
   /** `center` — homepage / landing-style blocks. `start` — long-form pages (e.g. background). */
   align?: 'start' | 'center';
 }) {
@@ -21,10 +23,13 @@ export function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-24 px-4 py-12 sm:px-6 sm:py-14 ${centered ? 'text-center' : ''} ${className}`}
+      className={`scroll-mt-24 px-4 py-8 sm:px-6 sm:py-10 ${centered ? 'text-center' : ''} ${className}`}
     >
       <div className="mx-auto max-w-5xl">
         <Reveal>
+          <div
+            className={`flex flex-wrap items-end gap-4 ${centered ? 'justify-center' : 'justify-between'}`}
+          >
           <header
             className={
               centered
@@ -45,6 +50,8 @@ export function Section({
               {title}
             </h2>
           </header>
+          {action}
+          </div>
         </Reveal>
         <Reveal delayMs={90} className={`mt-6 ${centered ? 'mx-auto max-w-3xl' : ''}`}>
           {children}

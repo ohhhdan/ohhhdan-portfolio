@@ -39,10 +39,7 @@ export default function HomePage() {
     <>
       <Hero profile={profile} />
       <div id="background" className="scroll-mt-24">
-        <div className="mx-auto max-w-5xl px-4 pt-8 sm:px-6">
-          <PrintPageButton />
-        </div>
-        <ExperienceBlock items={experience} />
+        <ExperienceBlock items={experience} action={<PrintPageButton />} />
       </div>
       <SkillsBlock categories={skills} />
       <EducationBlock education={education} credentials={credentials} />

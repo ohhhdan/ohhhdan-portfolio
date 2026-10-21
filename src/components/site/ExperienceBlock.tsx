@@ -62,10 +62,10 @@ function EarlierList({ lines }: { lines: EarlierRole[] }) {
   );
 }
 
-export function ExperienceBlock({ items }: { items: ExperienceItem[] }) {
+export function ExperienceBlock({ items, action }: { items: ExperienceItem[]; action?: React.ReactNode }) {
   return (
-    <Section id="experience" eyebrow="Experience" title="Work history">
-      <div className="space-y-10">
+    <Section id="experience" eyebrow="Experience" title="Work history" action={action} className="!pt-6 sm:!pt-8">
+      <div className="space-y-6">
         {items.map((job, i) => {
           if (job.lines?.length) {
             return (
