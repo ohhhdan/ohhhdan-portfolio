@@ -1,16 +1,20 @@
 import fs from 'fs';
 import path from 'path';
 
-const DATA_DIR = process.env.DATA_DIR || path.join(process.cwd(), 'data');
+function dataDir(): string {
+  if (process.env.DATA_DIR) return process.env.DATA_DIR;
+  return path.join(/*turbopackIgnore: true*/ process.cwd(), 'data');
+}
 
 function ensureDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  const dir = dataDir();
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
   }
 }
 
 function filePath(name: string): string {
-  return path.join(DATA_DIR, `${name}.json`);
+  return path.join(dataDir(), `${name}.json`);
 }
 
 export function getCollection<T>(name: string): T[] {
@@ -35,7 +39,7 @@ function writeErrorMessage(err: unknown): string {
   const msg = err instanceof Error ? err.message : String(err);
   const lower = msg.toLowerCase();
   if (lower.includes('erofs') || lower.includes('eperm') || lower.includes('read-only')) {
-    return 'Disk is read-only on this host. Run the app on your computer (npm run dev) or use hosting with a writable data folder so saves can persist.';
+    return 'Disk is read-only on this host. Edit locally with npm run dev, commit data/, and push so Vercel redeploys.';
   }
   return `Could not save: ${msg}`;
 }

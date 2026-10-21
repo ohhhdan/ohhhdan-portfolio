@@ -1,4 +1,13 @@
-export const metadata = { title: 'Site editor | Dan Winter' };
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Site editor',
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
+};
 
 export default function AdminRootLayout({ children }: { children: React.ReactNode }) {
   return children;

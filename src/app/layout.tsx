@@ -1,5 +1,15 @@
 import type { Metadata } from 'next';
 import { DM_Sans, Barlow_Condensed } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { JsonLd } from '@/components/site/JsonLd';
+import {
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+} from '@/lib/site';
 import './globals.css';
 
 const dmSans = DM_Sans({
@@ -16,15 +26,40 @@ const display = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: 'Dan Winter | Learning Experience Designer',
-  description:
-    'Dan Winter: learning experience designer with 15+ years in customer education, interactive curriculum, and AI-enabled learning.',
-  metadataBase: new URL('https://www.ohhhdan.com'),
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Dan Winter | Learning Experience Designer',
-    description: 'Portfolio and professional background in learning design, development, and customer education.',
     type: 'website',
-    url: 'https://www.ohhhdan.com',
+    locale: 'en_US',
+    url: SITE_URL,
+    siteName: `${SITE_NAME} — Portfolio`,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -36,7 +71,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="font-sans" suppressHydrationWarning>
+        <JsonLd />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

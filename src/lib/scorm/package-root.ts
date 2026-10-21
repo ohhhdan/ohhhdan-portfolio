@@ -2,7 +2,11 @@ import path from 'path';
 import fs from 'fs';
 
 export function getScormRoot(): string {
-  return process.env.SCORM_PACKAGES_PATH || path.join(process.cwd(), 'scorm-packages');
+  if (process.env.SCORM_PACKAGES_PATH) {
+    return process.env.SCORM_PACKAGES_PATH;
+  }
+  // Scope filesystem tracing to scorm-packages/ (not the whole repo)
+  return path.join(/*turbopackIgnore: true*/ process.cwd(), 'scorm-packages');
 }
 
 export function scormPackageExists(packageId: string): boolean {

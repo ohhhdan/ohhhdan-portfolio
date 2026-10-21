@@ -15,12 +15,17 @@ import type {
   EngagementItem,
 } from '@/lib/cms/types';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
-  title: 'Background | Dan Winter',
+  title: 'Background',
   description:
-    'Experience, skills, education, and recognition in learning design and customer education.',
+    'Experience, skills, education, and recognition — learning experience design and customer education background for hiring teams.',
+  alternates: { canonical: '/background' },
+  openGraph: {
+    title: 'Background | Dan Winter',
+    description:
+      'Experience, skills, education, and recognition — learning experience design and customer education background for hiring teams.',
+    url: '/background',
+  },
 };
 
 export default function BackgroundPage() {

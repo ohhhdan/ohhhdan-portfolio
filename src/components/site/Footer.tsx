@@ -41,7 +41,7 @@ export async function Footer() {
             href="/work"
             className="text-sm font-medium text-mint transition hover:text-white"
           >
-            Work samples →
+            Work →
           </Link>
           <Link
             href="/#contact"

@@ -39,7 +39,7 @@ export function ScormPlayer({ packageId, launchUrl, title, version }: ScormPlaye
     <div className="flex h-screen flex-col bg-pine-900">
       <div className="flex items-center gap-4 border-b border-pine-700 bg-pine-950 px-4 py-3">
         <Link
-          href="/#work"
+          href="/work"
           className="flex items-center gap-1 text-sm text-pine-300 transition hover:text-pine-100"
         >
           <ArrowLeft size={16} />

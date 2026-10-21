@@ -96,13 +96,19 @@ export interface Project {
   client: string;
   /** e.g. "2023 to present" — shown in platform-style headings. */
   period?: string;
-  /** platform = programs & clients; sample = individual modules & demos. */
+  /** platform = programs & clients; sample = individual modules. */
   portfolioGroup?: ProjectPortfolioGroup;
+  /** One-line card blurb. */
   summary: string;
-  body: string;
+  /** Optional longer narrative (legacy); prefer problem/solution. */
+  body?: string;
+  problem?: string;
+  solution?: string;
+  /** Public paths or absolute URLs, e.g. /images/work/okta-iam-1.webp */
+  screenshots?: string[];
   technologies: string[];
   links: ProjectLink[];
-  /** Primary button label, e.g. "View demo" or "Visit site". */
+  /** @deprecated UI always uses "View sample". */
   ctaLabel?: string;
   /** Folder name under scorm-packages/ when hosted on this site */
   scormPackageId: string | null;

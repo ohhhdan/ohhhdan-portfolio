@@ -2,24 +2,23 @@ import { NextResponse } from 'next/server';
 import { parseManifest } from '@/lib/scorm/manifest-parser';
 import path from 'path';
 import fs from 'fs';
-
-const SCORM_DIR =
-  process.env.SCORM_PACKAGES_PATH || path.join(process.cwd(), 'scorm-packages');
+import { getScormRoot } from '@/lib/scorm/package-root';
 
 export async function GET() {
   try {
-    if (!fs.existsSync(SCORM_DIR)) {
+    const scormDir = getScormRoot();
+    if (!fs.existsSync(scormDir)) {
       return NextResponse.json([]);
     }
 
-    const entries = fs.readdirSync(SCORM_DIR, { withFileTypes: true });
+    const entries = fs.readdirSync(scormDir, { withFileTypes: true });
     const packages = [];
 
     for (const entry of entries) {
       if (!entry.isDirectory()) continue;
       if (entry.name.startsWith('.')) continue;
 
-      const packagePath = path.join(SCORM_DIR, entry.name);
+      const packagePath = path.join(scormDir, entry.name);
       const manifestPath = path.join(packagePath, 'imsmanifest.xml');
 
       if (!fs.existsSync(manifestPath)) continue;

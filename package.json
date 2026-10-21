@@ -3,21 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "hash-password": "node scripts/hash-password.mjs",
-    "setup-admin": "node scripts/setup-admin-env.mjs",
-    "generate-prod-env": "node scripts/generate-production-env.mjs",
-    "copy-to-nas": "powershell -ExecutionPolicy Bypass -File scripts/copy-to-nas.ps1",
-    "setup-deploy-agent": "node scripts/setup-deploy-agent.mjs",
-    "deploy-agent": "node scripts/deploy-agent.mjs",
-    "deploy-agent:force": "node scripts/deploy-agent.mjs --force",
-    "deploy-agent:serve": "node scripts/deploy-agent-server.mjs",
-    "install-weekly-deploy": "powershell -ExecutionPolicy Bypass -File scripts/install-weekly-deploy.ps1"
+    "setup-admin": "node scripts/setup-admin-env.mjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "bcryptjs": "^3.0.2",
     "fast-xml-parser": "^5.5.8",
     "jose": "^6.1.0",

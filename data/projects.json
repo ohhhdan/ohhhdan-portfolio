@@ -8,11 +8,13 @@
     "period": "2023 to present",
     "portfolioGroup": "platform",
     "summary": "Identity security courseware with AI-assisted interactions for Okta Learning.",
-    "body": "Customer education for Okta Learning and Customer Advancement: identity and access management courseware authored in Parta with AI-generated interactions, custom illustration, and production workflows aligned to brand. The sample below is representative of modules shipping on the public learning platform; the full catalog lives on Okta Learning.",
+    "problem": "Learners needed clear, brand-aligned identity fundamentals that could ship at platform scale without slowing production.",
+    "solution": "Parta modules with AI-assisted interactions, custom illustration, and production workflows tied to the Okta Learning design system.",
+    "screenshots": [],
     "technologies": ["Parta.io", "Adobe Illustrator", "Google Gemini", "Claude"],
     "links": [
       {
-        "label": "Launch sample (hosted)",
+        "label": "View sample",
         "href": "https://s3.us-east-1.amazonaws.com/ohhhdan.com/portfolio/Explore+Identity+and+Access+Management/index.html",
         "kind": "external",
         "embedOnSite": true
@@ -23,7 +25,6 @@
         "kind": "external"
       }
     ],
-    "ctaLabel": "View demo",
     "scormPackageId": null
   },
   {
@@ -34,18 +35,19 @@
     "client": "Okta",
     "period": "2023 to present",
     "portfolioGroup": "platform",
-    "summary": "Customer education module for ThreatInsight.",
-    "body": "Customer-facing ThreatInsight training for Okta Learning: scenario-based instruction, product visuals, and knowledge checks aligned to Customer Advancement standards and the Ascentia design system.",
+    "summary": "Scenario-based ThreatInsight module for Okta Learning.",
+    "problem": "Customers needed to understand ThreatInsight in realistic product contexts, not slide-deck theory.",
+    "solution": "Scenario-based instruction, product visuals, and knowledge checks aligned to Customer Advancement standards and Ascentia.",
+    "screenshots": [],
     "technologies": ["Parta.io", "Adobe Creative Suite", "AI tooling"],
     "links": [
       {
-        "label": "Launch sample (hosted)",
+        "label": "View sample",
         "href": "https://s3.us-east-1.amazonaws.com/ohhhdan.com/portfolio/Mitigate+Threats+Using+ThreatInsight/index.html",
         "kind": "external",
         "embedOnSite": true
       }
     ],
-    "ctaLabel": "View demo",
     "scormPackageId": null
   },
   {
@@ -57,7 +59,9 @@
     "period": "2014 to present",
     "portfolioGroup": "platform",
     "summary": "eLearning, video, LMS transition, and on-demand builds for a national certifying body.",
-    "body": "Long-term engagement with ACVIM, the national certifying organization for veterinary specialists: eLearning development, annual Forum recordings, LMS transition and administration, Caveon and Cadmium assessment workflows, and on-demand builds for members and certifying programs.",
+    "problem": "A national certifying organization needed reliable digital learning, assessments, and event media across many years and systems.",
+    "solution": "Ongoing eLearning development, Forum recordings, LMS transition, and assessment workflows (Caveon, Cadmium) for members and certifying programs.",
+    "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Creative Suite", "Caveon", "Cadmium", "Moodle", "VetBloom"],
     "links": [],
     "scormPackageId": null
@@ -71,7 +75,9 @@
     "period": "2018 to 2021",
     "portfolioGroup": "platform",
     "summary": "Three-level PGA-accredited credential for golf coaches worldwide.",
-    "body": "Three-level PGA-accredited certification program for golf coaches: video production, Storyline interactions, quizzes, and capstone assessment delivered on a virtual platform. Built for coaches who needed structured progression without in-person-only access.",
+    "problem": "Coaches needed structured credential progression without relying on in-person-only delivery.",
+    "solution": "Three-level program with video, Storyline interactions, quizzes, and a capstone assessment on a virtual platform.",
+    "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Illustrator", "Photoshop", "Camtasia", "Moodle", "YouTube"],
     "links": [
       {
@@ -87,7 +93,6 @@
         "embedOnSite": true
       }
     ],
-    "ctaLabel": "View demo",
     "scormPackageId": null
   },
   {
@@ -99,16 +104,17 @@
     "period": "2016 to 2019",
     "portfolioGroup": "platform",
     "summary": "Global soft-skills curriculum across 550+ products.",
-    "body": "Soft-skills curriculum based on Catherine Mattiske's frameworks: immersive modules, assessments, job aids, animated video, learning journals, and activity booklets. Managed global delivery quality and template standards across 550+ products.",
+    "problem": "A global soft-skills catalog needed consistent quality and templates across hundreds of products.",
+    "solution": "Immersive modules, assessments, job aids, and media standards based on Catherine Mattiske frameworks, with delivery QA at scale.",
+    "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Acrobat", "Illustrator", "InDesign", "Camtasia", "Moodle"],
     "links": [
       {
-        "label": "View sample (Articulate Review)",
+        "label": "View sample",
         "href": "https://360.articulate.com/review/content/7069f4ff-e05f-4263-96a6-4a8987fa7b3c/review",
         "kind": "articulate"
       }
     ],
-    "ctaLabel": "View demo",
     "scormPackageId": null
   },
   {
@@ -120,7 +126,9 @@
     "period": "2014",
     "portfolioGroup": "platform",
     "summary": "Online certificate program from SME storyboards and raw video.",
-    "body": "End-to-end development of interactive certificate courses from SME storyboards and raw footage: Storyline authoring, media production in Adobe Creative Suite, and deployment on LearnUpon. Program supports the Piano Technicians Guild endorsement track for piano tuning and moving.",
+    "problem": "SMEs had storyboards and footage, but no finished interactive certificate path for endorsement.",
+    "solution": "End-to-end Storyline courses and media production, deployed on LearnUpon for the Piano Technicians Guild track.",
+    "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Captivate", "Audition", "Illustrator", "Premiere Pro", "LearnUpon"],
     "links": [
       {
@@ -130,7 +138,6 @@
         "embedOnSite": true
       }
     ],
-    "ctaLabel": "View demo",
     "scormPackageId": null
   },
   {
@@ -142,7 +149,9 @@
     "period": "2018",
     "portfolioGroup": "sample",
     "summary": "Interactive guide to heart rhythms on ECGs for domestic animals.",
-    "body": "Responsive learning aid for heart rhythms on domestic-animal ECGs. Hotspots, narration, and video let clinicians rehearse pattern recognition without waiting on live caseload. Constructivist interactions mirror the clinical task: identify the rhythm, confirm the finding, move on.",
+    "problem": "Clinicians needed to rehearse ECG pattern recognition without waiting on live caseload.",
+    "solution": "Hotspots, narration, and video that mirror the clinical task: identify the rhythm, confirm, move on.",
+    "screenshots": [],
     "technologies": ["Articulate Rise & Storyline", "Adobe Creative Suite", "Camtasia"],
     "links": [
       {
@@ -168,7 +177,6 @@
         "kind": "articulate"
       }
     ],
-    "ctaLabel": "View experience",
     "scormPackageId": null
   },
   {
@@ -179,8 +187,10 @@
     "client": "Circle Education",
     "period": "2017",
     "portfolioGroup": "sample",
-    "summary": "Self-paced WBT converted from live virtual training.",
-    "body": "Converted synchronous virtual training into self-paced WBT for Australian primary-school educators. External readings, video, and Storyline interactives replaced live sessions while keeping the facilitated feel of the original program.",
+    "summary": "Self-paced modules converted from live virtual sessions.",
+    "problem": "A facilitated virtual program for Australian educators needed an asynchronous path without losing the original feel.",
+    "solution": "Self-paced Storyline modules with readings, video, and interactives that replace live sessions.",
+    "screenshots": [],
     "technologies": ["Articulate Storyline", "Adobe Acrobat", "Illustrator", "MatrixONE LMS"],
     "links": [
       {
@@ -190,7 +200,6 @@
         "embedOnSite": true
       }
     ],
-    "ctaLabel": "View course",
     "scormPackageId": null
   },
   {
@@ -201,18 +210,19 @@
     "client": "New York Life",
     "period": "2016",
     "portfolioGroup": "sample",
-    "summary": "Modernized compliance eLearning for annual training.",
-    "body": "Modernized compliance eLearning for annual agent training: Captivate interactions, media, and knowledge checks replacing legacy slide decks. Built for repeat yearly completion without learner fatigue.",
+    "summary": "Modernized compliance eLearning for annual agent completion.",
+    "problem": "Legacy slide decks made yearly compliance completion fatiguing and hard to update.",
+    "solution": "Captivate interactions, media, and knowledge checks built for repeat yearly completion.",
+    "screenshots": [],
     "technologies": ["Adobe Captivate"],
     "links": [
       {
-        "label": "View course",
+        "label": "View sample",
         "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/NYL/story.html",
         "kind": "external",
         "embedOnSite": true
       }
     ],
-    "ctaLabel": "View course",
     "scormPackageId": null
   },
   {
@@ -224,7 +234,9 @@
     "period": "2015",
     "portfolioGroup": "sample",
     "summary": "Industry knowledge courses for recruiters.",
-    "body": "Industry knowledge courses for recruiters and business development staff. Rise modules with media, interactions, and a searchable glossary so staffing teams could speak credibly to clients in specialized verticals.",
+    "problem": "Recruiters needed credible industry language for specialized client verticals.",
+    "solution": "Rise modules with media, interactions, and a searchable glossary for staffing teams.",
+    "screenshots": [],
     "technologies": ["Articulate Rise", "Adobe Photoshop"],
     "links": [
       {
@@ -234,7 +246,6 @@
         "embedOnSite": true
       }
     ],
-    "ctaLabel": "View experience",
     "scormPackageId": null
   },
   {
@@ -246,16 +257,17 @@
     "period": "2013",
     "portfolioGroup": "sample",
     "summary": "Instructional video from a 40+ video series.",
-    "body": "One module in a series of 40+ instructional videos for the HasOffers ad platform. Produced in After Effects, Premiere Pro, and Audition with tight scripting for a technical SMB audience.",
+    "problem": "A technical SMB audience needed short, clear explainers across a large product video series.",
+    "solution": "Tightly scripted motion graphics and edit for one module in a 40+ video library.",
+    "screenshots": [],
     "technologies": ["Adobe After Effects", "Premiere Pro", "Audition"],
     "links": [
       {
-        "label": "Watch on YouTube",
+        "label": "View sample",
         "href": "https://www.youtube.com/watch?v=fAPSvcnNhMI&list=PLyboL9e2rDWjQwSD2OGwnXFRh1eIgLIRL&index=3",
         "kind": "video"
       }
     ],
-    "ctaLabel": "View demo",
     "scormPackageId": null
   },
   {
@@ -267,16 +279,17 @@
     "period": "2024",
     "portfolioGroup": "sample",
     "summary": "Articulate Rise 360 skills demonstration.",
-    "body": "Quick-turn Rise 360 demonstration covering block types, navigation, and responsive layout. Built as a reusable reference for stakeholders evaluating Rise against Storyline for short-form product training.",
+    "problem": "Stakeholders needed a quick reference when evaluating Rise against Storyline for short-form product learning.",
+    "solution": "A compact Rise build covering block types, navigation, and responsive layout.",
+    "screenshots": [],
     "technologies": ["Articulate Rise 360"],
     "links": [
       {
-        "label": "Open in Articulate Review",
+        "label": "View sample",
         "href": "https://360.articulate.com/review/content/ca3eb161-564d-4358-9d22-b8f731ee300a/review",
         "kind": "articulate"
       }
     ],
-    "ctaLabel": "View demo",
     "scormPackageId": null
   }
 ]

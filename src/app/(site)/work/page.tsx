@@ -5,51 +5,48 @@ import { getCollection } from '@/lib/cms/db';
 import type { Project } from '@/lib/cms/types';
 import { PortfolioGrid } from '@/components/site/PortfolioGrid';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
-  title: 'Work | Dan Winter',
+  title: 'Work',
   description:
-    'Interactive demos, course modules, and production samples in customer education, identity security, and learning experience design.',
+    'Selected learning experience and customer education case studies — problem, solution, tools, and samples.',
+  alternates: { canonical: '/work' },
+  openGraph: {
+    title: 'Work | Dan Winter',
+    description:
+      'Selected learning experience and customer education case studies — problem, solution, tools, and samples.',
+    url: '/work',
+  },
 };
 
 export default function WorkPage() {
   const projects = getCollection<Project>('projects');
 
   return (
-    <div className="bg-paper pb-10 sm:pb-12">
-      <div className="border-b border-forest/10 bg-paper px-4 py-4 sm:px-6">
-        <div className="mx-auto flex max-w-5xl items-center justify-between">
+    <div className="bg-paper pb-16 sm:pb-20">
+      <div className="border-b border-forest/10 px-4 py-4 sm:px-6">
+        <div className="mx-auto max-w-5xl">
           <Link
             href="/"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-forest transition hover:text-mustard"
+            className="inline-flex items-center gap-1 text-sm font-medium text-forest/80 transition hover:text-forest"
           >
             <ArrowLeft size={16} aria-hidden />
-            Back to home
+            Home
           </Link>
         </div>
       </div>
 
-      <div className="border-b border-forest/10 bg-surface/80 px-4 py-8 sm:px-6 sm:py-10">
-        <div className="mx-auto max-w-5xl text-center">
-          <div
-            className="mx-auto mb-4 h-1 w-12 rounded-full bg-gradient-to-r from-mint to-teal"
-            aria-hidden
-          />
-          <p className="font-heading text-xs font-bold uppercase tracking-[0.22em] text-forest/80">
-            Portfolio
-          </p>
-          <h1 className="font-heading mt-2 text-3xl font-bold uppercase tracking-wide text-forest sm:text-4xl">
-            Work samples
-          </h1>
-          <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-ink-muted">
-            A selection of interactive demos, course modules, and production samples.
-            Spanning identity security, compliance, soft-skills curriculum, certification programs, and more.
+      <div className="px-4 pt-10 sm:px-6 sm:pt-12">
+        <div className="mx-auto max-w-5xl">
+          <h1 className="font-heading text-3xl font-bold tracking-wide text-forest sm:text-4xl">Work</h1>
+          <p className="mt-2 max-w-xl text-sm text-ink-muted sm:text-base">
+            Case studies and samples from customer education and learning experience design.
           </p>
         </div>
       </div>
 
-      <PortfolioGrid projects={projects} />
+      <div className="mt-10 px-4 sm:px-6">
+        <PortfolioGrid projects={projects} />
+      </div>
     </div>
   );
 }

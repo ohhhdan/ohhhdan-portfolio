@@ -1,139 +1,81 @@
 import Link from 'next/link';
-import { Linkedin, ArrowRight, FileText, Mail } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import type { Profile } from '@/lib/cms/types';
 
 function HeroPortrait({ imageUrl }: { imageUrl?: string }) {
   if (imageUrl?.trim()) {
     return (
-      <div className="relative mx-auto h-40 w-40 sm:h-48 sm:w-48">
-        <div className="photo-ring absolute -inset-1 rounded-full blur-[2px]" aria-hidden />
-        <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-surface shadow-xl">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={imageUrl} alt="" className="h-full w-full object-cover" />
-        </div>
+      <div className="mx-auto h-28 w-28 overflow-hidden rounded-full border border-forest/15 bg-surface sm:h-32 sm:w-32">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={imageUrl} alt="" className="h-full w-full object-cover" />
       </div>
     );
   }
 
   return (
-    <div className="relative mx-auto h-40 w-40 sm:h-48 sm:w-48">
-      <div className="photo-ring absolute -inset-1 rounded-full blur-[2px]" aria-hidden />
-      <div className="relative flex h-full w-full items-center justify-center rounded-full border-4 border-surface bg-forest shadow-xl">
-        <span className="font-heading text-5xl font-bold text-white/90 sm:text-6xl">DW</span>
-      </div>
+    <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-forest/15 bg-forest sm:h-32 sm:w-32">
+      <span className="font-heading text-3xl font-bold text-white/90 sm:text-4xl">DW</span>
     </div>
   );
 }
 
 const doors = [
-  {
-    href: '/work',
-    label: 'Work samples',
-    description: 'Courses, demos, and interactive modules from across the years.',
-    icon: <ArrowRight size={18} strokeWidth={2} />,
-  },
-  {
-    href: '/background',
-    label: 'Background & CV',
-    description: 'Experience, skills, education, and a print-friendly résumé.',
-    icon: <FileText size={18} strokeWidth={2} />,
-  },
-  {
-    href: '#contact',
-    label: 'Get in touch',
-    description: 'Drop a note or grab the email.',
-    icon: <Mail size={18} strokeWidth={2} />,
-  },
+  { href: '/work', label: 'Work', description: 'Case studies and samples' },
+  { href: '/background', label: 'Background', description: 'Experience and CV' },
+  { href: '#contact', label: 'Contact', description: 'Say hello' },
 ];
 
 export function Hero({ profile }: { profile: Profile }) {
   return (
     <section
       id="top"
-      className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden border-b border-forest/10 bg-paper px-4 py-16 sm:px-6 sm:py-20"
+      className="relative flex min-h-[calc(100vh-4rem)] items-center border-b border-forest/10 bg-paper px-4 py-16 sm:px-6 sm:py-20"
     >
-      {/* Background mesh */}
-      <div className="hero-mesh-bold hero-mesh-animated pointer-events-none absolute inset-0" aria-hidden />
+      <div className="hero-mesh pointer-events-none absolute inset-0 opacity-80" aria-hidden />
 
-      {/* Ambient blobs */}
-      <div className="pointer-events-none absolute -right-24 top-8 h-80 w-80 rounded-full bg-mustard/10 blur-3xl" aria-hidden />
-      <div className="pointer-events-none absolute bottom-0 left-1/4 h-56 w-56 rounded-full bg-teal/12 blur-3xl" aria-hidden />
-      <div className="pointer-events-none absolute -left-16 top-1/3 h-64 w-64 rounded-full bg-mint/8 blur-3xl" aria-hidden />
-
-      <div className="relative mx-auto w-full max-w-4xl">
-        {/* Identity */}
+      <div className="relative mx-auto w-full max-w-3xl">
         <div className="text-center">
-          <div className="animate-fade-up" style={{ animationDelay: '40ms' }}>
-            <HeroPortrait imageUrl={profile.heroImageUrl} />
-          </div>
+          <HeroPortrait imageUrl={profile.heroImageUrl} />
 
-          <p
-            className="animate-fade-up mt-6 text-[11px] font-medium uppercase tracking-[0.22em] text-ink-muted sm:text-xs"
-            style={{ animationDelay: '80ms' }}
-          >
+          <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.2em] text-ink-muted">
             {profile.rolesLine}
           </p>
 
-          <h1
-            className="animate-fade-up mt-4 font-heading text-5xl font-bold leading-[1.08] tracking-tight text-forest sm:text-6xl sm:leading-[1.06] lg:text-7xl"
-            style={{ animationDelay: '140ms' }}
-          >
+          <h1 className="mt-4 font-heading text-5xl font-bold tracking-tight text-forest sm:text-6xl">
             Dan Winter
           </h1>
 
-          <p
-            className="animate-fade-up mx-auto mt-6 max-w-xl text-lg font-medium text-teal sm:text-xl"
-            style={{ animationDelay: '200ms' }}
-          >
-            Designing and building interactive customer education.
+          <p className="mx-auto mt-5 max-w-md text-lg text-ink-muted">
+            Learning experience design for customer education.
           </p>
 
-          <p
-            className="animate-fade-up mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-ink-muted sm:text-base"
-            style={{ animationDelay: '230ms' }}
-          >
-            Currently leading learning experience and digital design at Okta.
+          <p className="mx-auto mt-2 max-w-md text-sm text-ink-muted/90">
+            Leading learning experience and digital design at Okta.
           </p>
 
-          <div
-            className="animate-fade-up mt-6 flex items-center justify-center gap-2 text-sm text-ink-muted"
-            style={{ animationDelay: '250ms' }}
+          <a
+            href="https://www.linkedin.com/in/ohhhdan"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex items-center gap-2 text-sm text-forest/70 transition hover:text-forest"
           >
-            <Linkedin size={15} className="text-forest/50" />
-            <a
-              href="https://www.linkedin.com/in/ohhhdan"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium text-forest/70 transition hover:text-forest"
-            >
-              linkedin.com/in/ohhhdan
-            </a>
-          </div>
+            <Linkedin size={15} />
+            linkedin.com/in/ohhhdan
+          </a>
         </div>
 
-        {/* Doors */}
         <nav
-          className="animate-fade-up mx-auto mt-16 grid max-w-4xl gap-6 sm:grid-cols-3"
-          style={{ animationDelay: '320ms' }}
+          className="mx-auto mt-14 grid max-w-2xl gap-3 sm:grid-cols-3"
           aria-label="Primary navigation"
         >
           {doors.map((door) => (
             <Link
               key={door.href}
               href={door.href}
-              className="group flex flex-col items-center gap-4 rounded-3xl border-2 border-forest/15 bg-surface p-8 text-center shadow-md transition duration-300 hover:-translate-y-1.5 hover:border-mustard hover:shadow-2xl motion-reduce:hover:translate-y-0"
+              className="rounded-lg border border-forest/12 bg-surface/80 px-4 py-5 text-center transition hover:border-forest/30 hover:bg-surface"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-forest/8 text-forest transition duration-300 group-hover:bg-forest group-hover:text-white">
-                {door.icon}
-              </div>
-              <div>
-                <p className="font-heading text-lg font-bold uppercase tracking-wider text-forest sm:text-xl">
-                  {door.label}
-                </p>
-                <p className="mt-2 text-xs leading-relaxed text-ink-muted sm:text-sm">
-                  {door.description}
-                </p>
-              </div>
+              <p className="font-heading text-base font-bold tracking-wide text-forest">{door.label}</p>
+              <p className="mt-1 text-xs text-ink-muted">{door.description}</p>
             </Link>
           ))}
         </nav>

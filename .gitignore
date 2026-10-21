@@ -21,14 +21,10 @@ yarn-error.log*
 
 .env
 .env*.local
-docker/synology/.env
-docker/synology/production.env
-deploy-agent.config.json
-.deploy-state.json
 
 .vercel
 *.tsbuildinfo
 
-# Large SCORM extracts (add each package folder locally or in deploy volume)
+# Large SCORM extracts (add locally if needed)
 /scorm-packages/*
 !/scorm-packages/.gitkeep

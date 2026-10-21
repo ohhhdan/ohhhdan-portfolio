@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 import fs from 'fs';
-
-const SCORM_DIR =
-  process.env.SCORM_PACKAGES_PATH || path.join(process.cwd(), 'scorm-packages');
+import { getScormRoot } from '@/lib/scorm/package-root';
 
 // Allowlisted file extensions for security
 const ALLOWED_EXTENSIONS = new Set([
@@ -72,8 +70,9 @@ export async function GET(_request: NextRequest, { params }: RouteParams) {
     );
   }
 
-  const absolutePath = path.resolve(SCORM_DIR, packageId, relativePath);
-  const packageRoot = path.resolve(SCORM_DIR, packageId);
+  const scormDir = getScormRoot();
+  const absolutePath = path.resolve(scormDir, packageId, relativePath);
+  const packageRoot = path.resolve(scormDir, packageId);
 
   // Double-check resolved path stays within package directory
   if (!absolutePath.startsWith(packageRoot + path.sep) && absolutePath !== packageRoot) {

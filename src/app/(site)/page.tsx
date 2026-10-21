@@ -3,8 +3,6 @@ import { ContactForm } from '@/components/site/ContactForm';
 import { getSingleton } from '@/lib/cms/db';
 import type { Profile } from '@/lib/cms/types';
 
-export const dynamic = 'force-dynamic';
-
 export default function HomePage() {
   const profile = getSingleton<Profile>('profile');
   if (!profile) {

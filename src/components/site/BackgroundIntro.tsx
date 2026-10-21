@@ -35,7 +35,7 @@ export function BackgroundIntro({ profile }: { profile: Profile }) {
             </li>
             {profile.location ? <li>{profile.location}</li> : null}
             <li className="no-print">
-              <Link href="/#work" className="font-medium text-forest underline decoration-mint underline-offset-2">
+              <Link href="/work" className="font-medium text-forest underline decoration-mint underline-offset-2">
                 View portfolio
               </Link>
             </li>
