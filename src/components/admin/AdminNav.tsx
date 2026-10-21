@@ -4,6 +4,7 @@ import {
   FolderOpen,
   GraduationCap,
   Award,
+  Mic,
   Users,
   Layers,
   UserCircle,
@@ -17,6 +18,7 @@ const icons: Record<string, React.ReactNode> = {
   education: <GraduationCap size={18} />,
   credentials: <ScrollText size={18} />,
   awards: <Award size={18} />,
+  presentations: <Mic size={18} />,
   engagements: <Users size={18} />,
   skills: <Layers size={18} />,
 };

@@ -69,6 +69,13 @@ export const COLLECTION_FIELDS: Record<string, FieldDef[]> = {
     { type: 'text', key: 'year', label: 'Year' },
     { type: 'textarea', key: 'description', label: 'Description' },
   ],
+  presentations: [
+    { type: 'text', key: 'name', label: 'Title', required: true },
+    { type: 'text', key: 'event', label: 'Event', required: true },
+    { type: 'text', key: 'year', label: 'Year' },
+    { type: 'textarea', key: 'description', label: 'Description' },
+    { type: 'text', key: 'url', label: 'URL' },
+  ],
   engagements: [
     { type: 'text', key: 'name', label: 'Organization', required: true },
     { type: 'text', key: 'role', label: 'Role', required: true },
@@ -86,6 +93,7 @@ export const COLLECTION_LABELS: Record<string, string> = {
   education: 'Education',
   credentials: 'Credentials',
   awards: 'Awards',
+  presentations: 'Presentations',
   engagements: 'Engagements',
   skills: 'Skills',
 };

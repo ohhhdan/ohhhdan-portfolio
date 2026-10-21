@@ -4,7 +4,7 @@ import { Reveal } from './Reveal';
 
 export function SkillsBlock({ categories }: { categories: SkillCategory[] }) {
   return (
-    <Section id="skills" eyebrow="Skills" title="Tools, methods & platforms">
+    <Section id="skills" eyebrow="Skills" title="Design, build, systems">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((cat, i) => (
           <Reveal key={cat.id} delayMs={i * 60}>

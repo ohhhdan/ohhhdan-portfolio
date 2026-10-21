@@ -1,7 +1,21 @@
 import { Hero } from '@/components/site/Hero';
 import { ContactForm } from '@/components/site/ContactForm';
-import { getSingleton } from '@/lib/cms/db';
-import type { Profile } from '@/lib/cms/types';
+import { ExperienceBlock } from '@/components/site/ExperienceBlock';
+import { SkillsBlock } from '@/components/site/SkillsBlock';
+import { EducationBlock } from '@/components/site/EducationBlock';
+import { AwardsBlock } from '@/components/site/AwardsBlock';
+import { PrintPageButton } from '@/components/site/PrintPageButton';
+import { getCollection, getSingleton } from '@/lib/cms/db';
+import type {
+  AwardItem,
+  CredentialItem,
+  TalkItem,
+  EducationItem,
+  EngagementItem,
+  ExperienceItem,
+  Profile,
+  SkillCategory,
+} from '@/lib/cms/types';
 
 export default function HomePage() {
   const profile = getSingleton<Profile>('profile');
@@ -13,9 +27,26 @@ export default function HomePage() {
     );
   }
 
+  const experience = getCollection<ExperienceItem>('experience');
+  const skills = getCollection<SkillCategory>('skills');
+  const education = getCollection<EducationItem>('education');
+  const credentials = getCollection<CredentialItem>('credentials');
+  const awards = getCollection<AwardItem>('awards');
+  const talks = getCollection<TalkItem>('presentations');
+  const engagements = getCollection<EngagementItem>('engagements');
+
   return (
     <>
       <Hero profile={profile} />
+      <div id="background" className="scroll-mt-24">
+        <div className="mx-auto max-w-5xl px-4 pt-8 sm:px-6">
+          <PrintPageButton />
+        </div>
+        <ExperienceBlock items={experience} />
+      </div>
+      <SkillsBlock categories={skills} />
+      <EducationBlock education={education} credentials={credentials} />
+      <AwardsBlock awards={awards} talks={talks} engagements={engagements} />
       <ContactForm email={profile.email} />
     </>
   );

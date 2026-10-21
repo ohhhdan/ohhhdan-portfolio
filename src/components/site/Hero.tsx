@@ -26,7 +26,7 @@ export function Hero({ profile }: { profile: Profile }) {
             </span>
           </Link>
           <Link
-            href="/background"
+            href="/#background"
             className="inline-flex items-center rounded-full border border-forest/15 bg-surface px-5 py-2.5 text-sm font-medium text-forest transition hover:border-forest/35 hover:bg-white"
           >
             Background

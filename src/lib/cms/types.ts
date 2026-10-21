@@ -2,7 +2,7 @@ export interface Profile {
   name: string;
   tagline: string;
   headline: string;
-  /** Professional summary for background page and print/PDF export. Third person, no "I". */
+  /** Background and PDF summary. Plain first person. */
   summary: string;
   /** Optional short line under the homepage tagline (marketing tone). */
   heroIntro?: string;
@@ -19,6 +19,14 @@ export interface ExperienceRole {
   period: string;
   description?: string;
   highlights: string[];
+  presentationUrl?: string;
+  presentationLabel?: string;
+}
+
+export interface EarlierRole {
+  title: string;
+  company: string;
+  period?: string;
 }
 
 export interface ExperienceItem {
@@ -35,6 +43,8 @@ export interface ExperienceItem {
   highlights: string[];
   presentationUrl?: string;
   presentationLabel?: string;
+  /** Compressed earlier jobs, rendered as a list rather than a case study. */
+  lines?: EarlierRole[];
 }
 
 export interface SkillCategory {
@@ -68,6 +78,16 @@ export interface AwardItem {
   org: string;
   year?: string;
   description?: string;
+}
+
+export interface TalkItem {
+  id: string;
+  sortOrder: number;
+  name: string;
+  event: string;
+  year?: string;
+  description?: string;
+  url?: string;
 }
 
 export interface EngagementItem {

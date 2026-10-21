@@ -9,14 +9,22 @@ export function EducationBlock({
   education: EducationItem[];
   credentials: CredentialItem[];
 }) {
+  const listed = credentials.filter((c) => c.name?.trim());
+
   return (
-    <Section id="education" eyebrow="Education & credentials" title="Formal learning">
-      <div className="grid gap-10 lg:grid-cols-2">
-        <div className="rounded-2xl border border-forest/10 bg-surface p-6 shadow-sm transition hover:shadow-md">
-          <h3 className="flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wide text-forest">
-            <GraduationCap size={20} className="text-teal" strokeWidth={2} /> Education
-          </h3>
-          <ul className="mt-4 space-y-4">
+    <Section
+      id="education"
+      eyebrow={listed.length ? 'Education & credentials' : 'Education'}
+      title="Education"
+    >
+      <div className={listed.length ? 'grid gap-10 lg:grid-cols-2' : ''}>
+        <div className="rounded-2xl border border-forest/10 bg-surface p-6 shadow-sm">
+          {listed.length ? (
+            <h3 className="mb-4 flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wide text-forest">
+              <GraduationCap size={20} className="text-teal" strokeWidth={2} /> Education
+            </h3>
+          ) : null}
+          <ul className="space-y-4">
             {education.map((e) => (
               <li key={e.id} className="border-b border-forest/5 pb-4 last:border-0">
                 <p className="font-semibold text-ink">{e.degree}</p>
@@ -27,15 +35,13 @@ export function EducationBlock({
             ))}
           </ul>
         </div>
-        <div className="rounded-2xl border border-forest/10 bg-surface p-6 shadow-sm transition hover:shadow-md">
-          <h3 className="flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wide text-forest">
-            <Award size={20} className="text-mustard" strokeWidth={2} /> Credentials
-          </h3>
-          {credentials.length === 0 ? (
-            <p className="mt-4 text-sm text-ink-muted">No credentials listed.</p>
-          ) : (
+        {listed.length ? (
+          <div className="rounded-2xl border border-forest/10 bg-surface p-6 shadow-sm">
+            <h3 className="flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wide text-forest">
+              <Award size={20} className="text-mustard" strokeWidth={2} /> Credentials
+            </h3>
             <ul className="mt-4 space-y-3">
-              {credentials.map((c) => (
+              {listed.map((c) => (
                 <li key={c.id}>
                   <p className="font-semibold text-ink">{c.name}</p>
                   <p className="text-sm text-ink-muted">
@@ -45,8 +51,8 @@ export function EducationBlock({
                 </li>
               ))}
             </ul>
-          )}
-        </div>
+          </div>
+        ) : null}
       </div>
     </Section>
   );

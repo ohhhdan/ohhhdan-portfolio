@@ -5,105 +5,105 @@
     "title": "Manager, Learning Experience and Digital Design",
     "company": "Okta",
     "period": "July 2023 to present",
-    "description": "Customer education for Okta Learning and Customer Advancement. Three promotions in three years, from curriculum developer to leading learning experience and digital design, with emphasis on AI-assisted production and measurable learner engagement.",
+    "description": "Promoted three times in three years, from curriculum developer to leading customer education design.",
     "highlights": [],
     "roles": [
       {
         "title": "Manager, Learning Experience and Digital Design",
         "period": "April 2026 to present",
-        "description": "Leadership of the learning experience and digital design function: AI enablement and program direction for customer education.",
+        "description": "Lead design and production for customer education.",
         "highlights": [
-          "Won three GCAS awards in FY26, including Drive What's Next for AI in customer education and Top Customer First Performer (Q2).",
-          "Shipped Okta's first production-ready agentic learning demo (Learning Recommendation Agent, 2nd at CS/CA Hackapalooza) and presented results to executive leadership.",
-          "O4AA Early Adopter Learning Path reached 1,500+ views and 155 logged-in customers within weeks of the March 2026 launch.",
-          "AI-assisted Strategic Business Review eLearning set org-wide production benchmark and enabled a CSM video series with 500+ practitioners.",
-          "CEdMA Austin award (2026) for AI-forward live course development.",
-          "Executive AI learning strategy sessions; Oktane skill-badge kiosk."
+          "Came up with a learning recommendation agent, the first one Okta could put in front of customers, and pitched it to executive leadership.",
+          "Content for Okta for AI Agents reached 1,500+ views and 155 logged-in customers within weeks.",
+          "Scaled learning for strategic business reviews set the production bar and led to a video series for 500+ customer success managers.",
+          "Built the Oktane kiosk. One year it issued skill badges. This year it was Authcade."
         ]
       },
       {
         "title": "Staff Learning Experience Designer",
         "period": "July 2025 to April 2026",
-        "description": "Staff individual contributor across curriculum, brand, and AI tooling. Delivered Project Jazzy, CEdMA Pinnacle recognition, and Customer Advancement rebrand.",
+        "description": "Designed courses and simulations for Customer Acceleration.",
         "highlights": [
-          "Won CEdMA Customer Education Pinnacle (Innovation, 2025). Okta's first CEdMA recognition since 2017.",
-          "Nearly 4x average learner course consumption (2.2 to 8+ courses/year) via Project Jazzy and Gemini-powered simulation widgets, without proportional hosting cost growth.",
-          "Launched Ascentia Blocks Library: 12+ modular Parta blocks for on-brand, AI-ready production across the curriculum organization.",
-          "Unified Customer Advancement across 55+ digital touchpoints (Skilljar, Parta, AEM, Gainsight, communities, support).",
-          "Scaled Parta as primary authoring platform; hype video views increased 79% (2,452 to 4,386) with funnel attribution.",
-          "Presented \"Next Generation Learning\" AI/LX webinar and at CEdMA Austin."
-        ]
+          "Won the CEdMA Pinnacle Award for Innovation, Okta's first since 2017.",
+          "Raised average course consumption from 2.2 to 8+ courses a year with in-course simulations, without a matching rise in hosting cost.",
+          "Built a shared library of course blocks so new courses didn't start from scratch.",
+          "Brought Customer Acceleration under one standard across the learning platform, the site, communities, and support.",
+          "Course videos went from 2,452 to 4,386 views, and we could see which views became learners.",
+          "Gave the Next Generation Learning webinar, and a hands-on session at CEdMA Austin on shipping courses built with AI."
+        ],
+        "presentationLabel": "Watch \"Next Generation Learning\"",
+        "presentationUrl": "https://youtu.be/IE3jG8aDrds?si=ER1Y9mrMdKf3Zv4q"
       },
       {
         "title": "Senior Curriculum Developer",
         "period": "July 2023 to July 2025",
-        "description": "Established Parta as the team's authoring platform, built learner analytics and feedback loops, and expanded the identity security certification catalog.",
+        "description": "Built the catalog's feedback loop and added certification courses.",
         "highlights": [
-          "Built Okta Learning's first data-driven improvement loop: Skilljar feedback, Pendo YouTube-to-learning attribution, archived 247+ low-traffic courses to reduce platform overhead.",
-          "Added 10+ OSIC certification courses in Parta over 13 months.",
-          "Set a shared foundation for AI-enabled curriculum production."
+          "Built the first loop from learner feedback and video analytics back into the catalog, and archived 247+ courses almost nobody took.",
+          "Added 10+ certification courses over 13 months.",
+          "Got the team producing courses with AI in the workflow."
         ]
       }
-    ],
-    "presentationLabel": "Watch \"Next Generation Learning\" (Parta webinar)",
-    "presentationUrl": "https://youtu.be/IE3jG8aDrds?si=ER1Y9mrMdKf3Zv4q"
-  },
-  {
-    "id": "e2",
-    "sortOrder": 1,
-    "title": "Founder & Learning Evangelist",
-    "company": "DS Group, LLC",
-    "period": "2014 to present",
-    "description": "Independent consulting practice delivering eLearning, video production, LMS migrations, assessments, and large-scale course implementation for client teams.",
-    "highlights": [
-      "Built a steady client book across eLearning, video, audio, interactive games, and LMS administration.",
-      "Moved a client's in-person curriculum to on-demand format and grew consumption 400% year over year.",
-      "Migrated 250+ courses into a new LMS for a veterinary CE client; advised through vendor selection.",
-      "Reduced time-to-value by two months with a shared approach and a tighter delivery plan."
     ]
   },
   {
     "id": "e3",
-    "sortOrder": 2,
+    "sortOrder": 1,
     "title": "Learning Experience Designer",
     "company": "Envestnet",
     "period": "2022 to 2023",
-    "description": "Learning for a wealth-management platform with 300+ courses in the pipeline. Owned the release cadence and QA workflow for quarterly updates.",
+    "description": "Owned quarterly releases and QA for 300+ courses.",
     "highlights": [
-      "Delivered quarterly updates for customers and employees using video, simulations, and knowledge checks.",
-      "Built a shared Storyline approach for 300 courses, aligned to brand standards; reduced QA by 2.5 business days per release.",
-      "Implemented JIRA workflows saving the team approximately 20 hours per week.",
-      "Launched professional development program for the learning team."
+      "Shipped quarterly updates for customers and employees with video, simulations, and knowledge checks.",
+      "Set one way of building 300 courses and cut QA by 2.5 business days per release.",
+      "Set up Jira workflows that saved the team about 20 hours a week.",
+      "Started a development program for the learning team."
     ]
   },
   {
     "id": "e4",
-    "sortOrder": 3,
-    "title": "LMS Analyst (Sales Enablement)",
+    "sortOrder": 2,
+    "title": "LMS Analyst, Sales Enablement",
     "company": "Intermedia",
     "period": "2020 to 2022",
-    "description": "LMS operations for a global UCaaS provider: 1,200+ courses, five-language localization, Salesforce integration, and compliance learning with 95% completion rate.",
+    "description": "Ran a learning platform of 1,200+ courses in five languages, connected to Salesforce.",
     "highlights": [
-      "Localized platform and content for five languages.",
-      "Maintained employee and partner LMS content across 1,200+ courses.",
-      "Created a shared way of authoring for seven instructional designers.",
-      "Raised compliance completion from 70% to 95% through a revised internal learning strategy.",
-      "Integrated LMS data with Salesforce for partner certification visibility.",
-      "Managed employee compliance cycle end to end."
+      "Localized the platform and the courses for five languages.",
+      "Kept employee and partner courses current across 1,200+ titles.",
+      "Set one way of authoring for seven instructional designers.",
+      "Raised completion of required courses from 70% to 95%.",
+      "Connected learner data to Salesforce so partners could see certifications.",
+      "Ran the required-course cycle from assignment through completion."
     ]
   },
   {
     "id": "e5",
-    "sortOrder": 4,
-    "title": "Additional experience",
-    "company": "Amazon, Microsoft, Tune, P2 Solutions (Microsoft Retail), and more",
+    "sortOrder": 3,
+    "title": "Earlier",
+    "company": "",
     "period": "2013 to 2020",
     "description": "",
-    "highlights": [
-      "Program Manager, LMS Specialist · Amazon Advertising (2018 to 2020)",
-      "Instructional Designer / Program Manager · Microsoft GDCO (2014 to 2017, RIF)",
-      "Senior Training Program Manager · Tune (2013 to 2014, contract)",
-      "Learning & Development Manager · P2 Solutions, Microsoft Retail"
+    "highlights": [],
+    "lines": [
+      {
+        "title": "Program Manager, LMS Specialist",
+        "company": "Amazon Advertising",
+        "period": "2018 to 2020"
+      },
+      {
+        "title": "Instructional Designer and Program Manager",
+        "company": "Microsoft",
+        "period": "2014 to 2017"
+      },
+      {
+        "title": "Senior Training Program Manager",
+        "company": "Tune",
+        "period": "2013 to 2014"
+      },
+      {
+        "title": "Learning and Development Manager",
+        "company": "P2 Solutions, Microsoft Retail"
+      }
     ]
   }
 ]

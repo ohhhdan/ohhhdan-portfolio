@@ -1,5 +1,5 @@
 import { Briefcase } from 'lucide-react';
-import type { ExperienceItem } from '@/lib/cms/types';
+import type { EarlierRole, ExperienceItem } from '@/lib/cms/types';
 import { Section } from './Section';
 import { Reveal } from './Reveal';
 
@@ -28,9 +28,37 @@ function ExperienceRoles({ roles }: { roles: NonNullable<ExperienceItem['roles']
             <p className="mt-3 text-[15px] leading-relaxed text-ink">{role.description}</p>
           ) : null}
           <RoleHighlights highlights={role.highlights} />
+          {role.presentationUrl ? (
+            <p className="mt-4">
+              <a
+                href={role.presentationUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-semibold text-forest underline decoration-mustard decoration-2 underline-offset-4 transition hover:text-mustard"
+              >
+                {role.presentationLabel ?? 'Watch presentation'}
+              </a>
+            </p>
+          ) : null}
         </div>
       ))}
     </div>
+  );
+}
+
+function EarlierList({ lines }: { lines: EarlierRole[] }) {
+  return (
+    <ul className="divide-y divide-forest/10 overflow-hidden rounded-xl border border-forest/10 bg-surface">
+      {lines.map((line) => (
+        <li key={line.title + line.company} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-4 py-3 sm:px-5">
+          <p className="text-sm text-ink">
+            <span className="font-semibold">{line.title}</span>
+            <span className="text-ink-muted"> · {line.company}</span>
+          </p>
+          {line.period ? <p className="text-sm font-semibold text-teal">{line.period}</p> : null}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -39,6 +67,17 @@ export function ExperienceBlock({ items }: { items: ExperienceItem[] }) {
     <Section id="experience" eyebrow="Experience" title="Work history">
       <div className="space-y-10">
         {items.map((job, i) => {
+          if (job.lines?.length) {
+            return (
+              <Reveal key={job.id} delayMs={i * 45}>
+                <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-forest">Earlier</h3>
+                <div className="mt-3">
+                  <EarlierList lines={job.lines} />
+                </div>
+              </Reveal>
+            );
+          }
+
           const hasRoles = Boolean(job.roles?.length);
 
           return (

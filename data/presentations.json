@@ -1,0 +1,19 @@
+[
+  {
+    "id": "t1",
+    "sortOrder": 0,
+    "name": "Next Generation Learning",
+    "event": "Webinar",
+    "year": "2025",
+    "description": "",
+    "url": "https://youtu.be/IE3jG8aDrds?si=ER1Y9mrMdKf3Zv4q"
+  },
+  {
+    "id": "t2",
+    "sortOrder": 1,
+    "name": "Shipping courses built with AI",
+    "event": "CEdMA Austin",
+    "year": "2026",
+    "description": "A hands-on session."
+  }
+]

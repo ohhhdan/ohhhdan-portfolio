@@ -13,6 +13,7 @@ import type {
   CredentialItem,
   AwardItem,
   EngagementItem,
+  TalkItem,
 } from '@/lib/cms/types';
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export default function BackgroundPage() {
   const education = getCollection<EducationItem>('education');
   const credentials = getCollection<CredentialItem>('credentials');
   const awards = getCollection<AwardItem>('awards');
+  const talks = getCollection<TalkItem>('presentations');
   const engagements = getCollection<EngagementItem>('engagements');
 
   return (
@@ -51,7 +53,7 @@ export default function BackgroundPage() {
       <ExperienceBlock items={experience} />
       <SkillsBlock categories={skills} />
       <EducationBlock education={education} credentials={credentials} />
-      <AwardsBlock awards={awards} engagements={engagements} />
+      <AwardsBlock awards={awards} talks={talks} engagements={engagements} />
     </div>
   );
 }

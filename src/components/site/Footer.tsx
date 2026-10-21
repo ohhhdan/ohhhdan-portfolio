@@ -31,7 +31,7 @@ export async function Footer() {
           >
             <Linkedin size={18} className="text-white" aria-hidden /> LinkedIn
           </a>
-          <Link href="/background" className="text-sm font-medium text-mint transition hover:text-white">
+          <Link href="/#background" className="text-sm font-medium text-mint transition hover:text-white">
             Background
           </Link>
           <Link

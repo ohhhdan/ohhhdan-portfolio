@@ -140,7 +140,7 @@ export default function ProfilePage() {
         </div>
         <div>
           <label className="mb-1.5 block text-sm font-medium text-pine-800">Summary (background / CV / PDF)</label>
-          <p className="mb-1.5 text-xs text-ink-muted">Professional tone, third person.</p>
+          <p className="mb-1.5 text-xs text-ink-muted">Plain sentences, first person.</p>
           <textarea
             value={form.summary}
             onChange={(e) => set('summary', e.target.value)}

@@ -8,7 +8,7 @@ export const SITE_KEYWORDS = [
   'customer education',
   'instructional design',
   'LXD',
-  'eLearning portfolio',
+  'course design',
   'Dan Winter',
   'Okta',
   'curriculum design',

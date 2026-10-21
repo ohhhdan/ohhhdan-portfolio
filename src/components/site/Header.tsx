@@ -3,7 +3,7 @@ import { Menu, Linkedin } from 'lucide-react';
 import { BowTieLogo } from './BowTieLogo';
 
 const nav = [
-  { href: '/background', label: 'Background' },
+  { href: '/#background', label: 'Background' },
   { href: '/work', label: 'Work' },
   { href: '/#contact', label: 'Contact' },
 ];

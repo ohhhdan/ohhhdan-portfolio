@@ -1,16 +1,18 @@
-import { Trophy, Users } from 'lucide-react';
-import type { AwardItem, EngagementItem } from '@/lib/cms/types';
+import { Mic, Trophy, Users } from 'lucide-react';
+import type { AwardItem, EngagementItem, TalkItem } from '@/lib/cms/types';
 import { Section } from './Section';
 
 export function AwardsBlock({
   awards,
+  talks,
   engagements,
 }: {
   awards: AwardItem[];
+  talks: TalkItem[];
   engagements: EngagementItem[];
 }) {
   return (
-    <Section id="awards" eyebrow="Awards & engagement" title="Recognition & community">
+    <Section id="awards" eyebrow="Recognition" title="Awards, talks, and memberships">
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="rounded-2xl border border-forest/10 bg-surface p-6 shadow-sm">
           <h3 className="flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wide text-forest">
@@ -31,19 +33,48 @@ export function AwardsBlock({
         </div>
         <div className="rounded-2xl border border-forest/10 bg-surface p-6 shadow-sm">
           <h3 className="flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wide text-forest">
-            <Users size={20} className="text-mint" strokeWidth={2} /> Engagement
+            <Mic size={20} className="text-mint" strokeWidth={2} /> Talks
           </h3>
           <ul className="mt-4 space-y-4">
-            {engagements.map((g) => (
-              <li key={g.id}>
-                <p className="font-semibold text-ink">{g.name}</p>
-                <p className="text-sm text-pine-700">{g.role}</p>
-                {g.description ? <p className="mt-2 text-sm text-ink-muted">{g.description}</p> : null}
+            {talks.map((talk) => (
+              <li key={talk.id}>
+                <p className="font-semibold text-ink">
+                  {talk.url ? (
+                    <a href={talk.url} target="_blank" rel="noreferrer" className="underline decoration-mint underline-offset-4 hover:text-forest">
+                      {talk.name}
+                    </a>
+                  ) : (
+                    talk.name
+                  )}
+                </p>
+                <p className="text-sm text-teal">
+                  {talk.event}
+                  {talk.year ? ` · ${talk.year}` : ''}
+                </p>
+                {talk.description ? <p className="mt-2 text-sm text-ink-muted">{talk.description}</p> : null}
               </li>
             ))}
           </ul>
         </div>
       </div>
+      {engagements.length ? (
+        <div className="mt-10 rounded-2xl border border-forest/10 bg-surface p-6 shadow-sm">
+          <h3 className="flex items-center gap-2 font-heading text-sm font-bold uppercase tracking-wide text-forest">
+            <Users size={20} className="text-mint" strokeWidth={2} /> Memberships
+          </h3>
+          <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+            {engagements.map((g) => (
+              <li key={g.id}>
+                <p className="font-semibold text-ink">{g.name}</p>
+                <p className="text-sm text-pine-700">
+                  {g.role}
+                  {g.description ? ` · ${g.description}` : ''}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
     </Section>
   );
 }
