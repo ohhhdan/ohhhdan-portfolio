@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <>
       <Hero profile={profile} />
-      <ContactForm />
+      <ContactForm email={profile.email} />
     </>
   );
 }

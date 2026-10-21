@@ -4,18 +4,10 @@ import { ToolChips } from './ToolChips';
 
 function CardVisual({ project }: { project: Project }) {
   const src = project.screenshots?.find((s) => s.trim());
-  if (src) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img src={src} alt="" className="h-full w-full object-cover object-top" />
-    );
-  }
+  if (!src) return null;
   return (
-    <div className="flex h-full w-full items-end bg-gradient-to-br from-forest/90 via-pine-700 to-teal/80 p-4">
-      <p className="font-heading text-xs font-bold uppercase tracking-[0.18em] text-white/70">
-        {project.client}
-      </p>
-    </div>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt="" className="h-full w-full object-cover object-top" />
   );
 }
 
@@ -25,9 +17,13 @@ export function PortfolioCard({ project }: { project: Project }) {
       href={`/work/${project.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-xl border border-forest/10 bg-surface transition hover:border-forest/25"
     >
-      <div className="aspect-[16/10] w-full overflow-hidden bg-paper">
-        <CardVisual project={project} />
-      </div>
+      {project.screenshots?.some((s) => s.trim()) ? (
+        <div className="aspect-[16/10] w-full overflow-hidden bg-paper">
+          <CardVisual project={project} />
+        </div>
+      ) : (
+        <div className="h-1.5 bg-forest" aria-hidden />
+      )}
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-teal">{project.client}</p>

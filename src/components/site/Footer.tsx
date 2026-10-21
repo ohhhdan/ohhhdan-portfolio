@@ -5,7 +5,7 @@ import type { Profile } from '@/lib/cms/types';
 
 export async function Footer() {
   const profile = getSingleton<Profile>('profile');
-  const email = profile?.email ?? 'dan@ohhhdan.com';
+  const email = profile?.email ?? 'daniel.c.winter@live.com';
 
   return (
     <footer className="relative border-t border-mint/25 bg-forest text-pine-100">
@@ -14,9 +14,6 @@ export async function Footer() {
         <div>
           <p className="font-heading text-lg font-bold uppercase tracking-wide text-white">
             {profile?.name ?? 'Dan Winter'}
-          </p>
-          <p className="mt-2 max-w-md text-sm leading-relaxed text-mint/90">
-            Learning experience design and customer education, with attention to detail from storyboard through ship.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:items-end">
@@ -32,22 +29,16 @@ export async function Footer() {
             rel="noreferrer"
             className="flex items-center gap-2 text-sm text-white/90 transition hover:translate-x-0.5 hover:text-mustard motion-reduce:hover:translate-x-0"
           >
-            <Linkedin size={18} className="text-mustard" /> LinkedIn
+            <Linkedin size={18} className="text-white" aria-hidden /> LinkedIn
           </a>
           <Link href="/background" className="text-sm font-medium text-mint transition hover:text-white">
-            Background &amp; print-friendly CV
+            Background
           </Link>
           <Link
             href="/work"
             className="text-sm font-medium text-mint transition hover:text-white"
           >
             Work →
-          </Link>
-          <Link
-            href="/#contact"
-            className="text-sm font-medium text-mint transition hover:text-white"
-          >
-            Contact form →
           </Link>
         </div>
       </div>

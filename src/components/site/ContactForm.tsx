@@ -1,10 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { ArrowUpRight, CheckCircle, AlertCircle } from 'lucide-react';
 import { Section } from './Section';
 
-export function ContactForm() {
+const fieldClass =
+  'mt-2 w-full rounded-2xl bg-paper px-4 py-3 text-base text-ink outline-none ring-1 ring-forest/10 transition placeholder:text-ink-muted/45 focus:bg-surface focus:ring-2 focus:ring-forest/25';
+
+export function ContactForm({ email }: { email: string }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'err'>('idle');
   const [message, setMessage] = useState('');
 
@@ -17,7 +20,6 @@ export function ContactForm() {
     const payload = {
       name: fd.get('name'),
       email: fd.get('email'),
-      subject: fd.get('subject'),
       message: fd.get('message'),
     };
     try {
@@ -29,90 +31,69 @@ export function ContactForm() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         setStatus('err');
-        setMessage(data.error ?? 'Something went wrong.');
+        setMessage(data.error ?? 'Couldn’t send. Email me directly instead.');
         return;
       }
       setStatus('ok');
       form.reset();
     } catch {
       setStatus('err');
-      setMessage('Network error.');
+      setMessage('Couldn’t reach the server. Email me directly instead.');
     }
   }
 
   return (
-    <Section id="contact" eyebrow="Contact" title="Get in touch" className="pb-8 sm:pb-10" align="center">
+    <Section id="contact" title="Get in touch" className="pb-8 sm:pb-10" align="center">
       <div className="mx-auto flex max-w-md flex-col gap-8">
         <p className="text-sm text-ink-muted">
-          <a href="mailto:dan@ohhhdan.com" className="font-semibold text-forest underline decoration-mint underline-offset-2 transition hover:text-mustard">
-            dan@ohhhdan.com
+          <a
+            href={`mailto:${email}`}
+            className="font-medium text-forest underline decoration-mint underline-offset-4 transition hover:decoration-forest"
+          >
+            {email}
           </a>
         </p>
-        <form onSubmit={handleSubmit} className="w-full space-y-4 text-left">
-          <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-forest">
-              Name
-            </label>
-            <input
-              id="name"
-              name="name"
-              required
-              className="mt-1 w-full rounded-lg border border-forest/15 bg-surface px-3 py-2 text-sm text-ink outline-none transition placeholder:text-ink-muted/60 focus:border-mustard focus:ring-2 focus:ring-mustard/25"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-forest">
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              className="mt-1 w-full rounded-lg border border-forest/15 bg-surface px-3 py-2 text-sm text-ink outline-none transition focus:border-mustard focus:ring-2 focus:ring-mustard/25"
-            />
-          </div>
-          <div>
-            <label htmlFor="subject" className="block text-sm font-semibold text-forest">
-              Subject
-            </label>
-            <input
-              id="subject"
-              name="subject"
-              required
-              className="mt-1 w-full rounded-lg border border-forest/15 bg-surface px-3 py-2 text-sm text-ink outline-none transition focus:border-mustard focus:ring-2 focus:ring-mustard/25"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-sm font-semibold text-forest">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={5}
-              className="mt-1 w-full rounded-lg border border-forest/15 bg-surface px-3 py-2 text-sm text-ink outline-none transition focus:border-mustard focus:ring-2 focus:ring-mustard/25"
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={status === 'sending'}
-            className="inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-pine-600 hover:shadow-lg disabled:opacity-60 motion-reduce:hover:translate-y-0"
-          >
-            <Send size={16} /> {status === 'sending' ? 'Sending…' : 'Send'}
-          </button>
-          {status === 'ok' ? (
-            <p className="flex items-center gap-2 text-sm text-pine-600">
-              <CheckCircle size={16} /> Sent. I’ll get back to you soon.
-            </p>
-          ) : null}
-          {status === 'err' ? (
-            <p className="flex items-center gap-2 text-sm text-red-600">
-              <AlertCircle size={16} /> {message}
-            </p>
-          ) : null}
-        </form>
+        {status === 'ok' ? (
+          <p className="flex items-start justify-center gap-2 rounded-2xl bg-forest/5 px-4 py-4 text-left text-sm leading-relaxed text-forest">
+            <CheckCircle size={16} className="mt-0.5 shrink-0" aria-hidden />
+            Got it. I’ll reply to the email you entered.
+          </p>
+        ) : (
+          <form onSubmit={handleSubmit} className="w-full space-y-5 text-left">
+            <div>
+              <label htmlFor="name" className="text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
+                Name
+              </label>
+              <input id="name" name="name" required autoComplete="name" className={fieldClass} />
+            </div>
+            <div>
+              <label htmlFor="email" className="text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
+                Email
+              </label>
+              <input id="email" name="email" type="email" required autoComplete="email" className={fieldClass} />
+            </div>
+            <div>
+              <label htmlFor="message" className="text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
+                Message
+              </label>
+              <textarea id="message" name="message" required rows={5} className={`${fieldClass} resize-y`} />
+            </div>
+            {status === 'err' ? (
+              <p className="flex items-start gap-2 text-sm text-crimson" role="alert">
+                <AlertCircle size={16} className="mt-0.5 shrink-0" aria-hidden />
+                {message}
+              </p>
+            ) : null}
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-forest px-5 py-3 text-sm font-semibold text-white transition hover:bg-pine-600 disabled:opacity-60"
+            >
+              {status === 'sending' ? 'Sending…' : 'Send'}
+              {status === 'sending' ? null : <ArrowUpRight size={16} aria-hidden />}
+            </button>
+          </form>
+        )}
       </div>
     </Section>
   );

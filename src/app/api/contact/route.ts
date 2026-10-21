@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
       replyTo: data.email,
       subject: `[ohhhdan.com] ${data.subject}`,
       text: `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`,
-      html: `<p><strong>Name:</strong> ${esc(data.name)}</p><p><strong>Email:</strong> ${esc(data.email)}</p><p><strong>Subject:</strong> ${esc(data.subject)}</p><hr/><p>${esc(data.message).replace(/\n/g, '<br/>')}</p>`,
+      html: `<p><strong>Name:</strong> ${esc(data.name)}</p><p><strong>Email:</strong> ${esc(data.email)}</p><hr/><p>${esc(data.message).replace(/\n/g, '<br/>')}</p>`,
     });
 
     return NextResponse.json({ success: true });

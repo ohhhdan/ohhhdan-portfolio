@@ -9,7 +9,7 @@ export function Section({
   align = 'start',
 }: {
   id: string;
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   children: React.ReactNode;
   className?: string;
@@ -38,8 +38,10 @@ export function Section({
                 aria-hidden
               />
             ) : null}
-            <p className="font-heading text-xs font-bold uppercase tracking-[0.22em] text-forest/80">{eyebrow}</p>
-            <h2 className="font-heading mt-2 text-2xl font-bold uppercase tracking-[0.04em] text-forest sm:text-3xl">
+            {eyebrow ? (
+              <p className="font-heading text-xs font-bold uppercase tracking-[0.22em] text-forest/80">{eyebrow}</p>
+            ) : null}
+            <h2 className={`font-heading text-2xl font-bold uppercase tracking-[0.04em] text-forest sm:text-3xl ${eyebrow ? 'mt-2' : ''}`}>
               {title}
             </h2>
           </header>

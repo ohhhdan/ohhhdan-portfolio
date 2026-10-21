@@ -8,12 +8,12 @@ import { PortfolioGrid } from '@/components/site/PortfolioGrid';
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Selected learning experience and customer education case studies — problem, solution, tools, and samples.',
+    'Selected customer education work — problem, solution, tools, and a sample.',
   alternates: { canonical: '/work' },
   openGraph: {
     title: 'Work | Dan Winter',
     description:
-      'Selected learning experience and customer education case studies — problem, solution, tools, and samples.',
+      'Selected customer education work — problem, solution, tools, and a sample.',
     url: '/work',
   },
 };
@@ -39,7 +39,7 @@ export default function WorkPage() {
         <div className="mx-auto max-w-5xl">
           <h1 className="font-heading text-3xl font-bold tracking-wide text-forest sm:text-4xl">Work</h1>
           <p className="mt-2 max-w-xl text-sm text-ink-muted sm:text-base">
-            Case studies and samples from customer education and learning experience design.
+            Selected customer education work. Problem, solution, tools, and a sample.
           </p>
         </div>
       </div>

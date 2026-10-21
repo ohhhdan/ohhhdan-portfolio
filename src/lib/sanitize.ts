@@ -24,10 +24,10 @@ export function sanitizeContactForm(data: unknown): SanitizedContactForm | null 
   const o = data as Record<string, unknown>;
   const name = sanitizeString(String(o.name ?? ''), 120);
   const email = sanitizeString(String(o.email ?? ''), 200);
-  const subject = sanitizeString(String(o.subject ?? ''), 200);
+  const providedSubject = sanitizeString(String(o.subject ?? ''), 200);
   const message = sanitizeString(String(o.message ?? ''), 8000);
-  if (name.length < 2 || !validateEmail(email) || subject.length < 2 || message.length < 10) {
+  if (name.length < 2 || !validateEmail(email) || message.length < 10) {
     return null;
   }
-  return { name, email, subject, message };
+  return { name, email, subject: providedSubject || `Message from ${name}`, message };
 }

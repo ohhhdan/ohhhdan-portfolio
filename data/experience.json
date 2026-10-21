@@ -11,7 +11,7 @@
       {
         "title": "Manager, Learning Experience and Digital Design",
         "period": "April 2026 to present",
-        "description": "Leadership of the learning experience and digital design function: AI product enablement, production standards, and program direction for customer education.",
+        "description": "Leadership of the learning experience and digital design function: AI enablement and program direction for customer education.",
         "highlights": [
           "Won three GCAS awards in FY26, including Drive What's Next for AI in customer education and Top Customer First Performer (Q2).",
           "Shipped Okta's first production-ready agentic learning demo (Learning Recommendation Agent, 2nd at CS/CA Hackapalooza) and presented results to executive leadership.",
@@ -41,7 +41,7 @@
         "highlights": [
           "Built Okta Learning's first data-driven improvement loop: Skilljar feedback, Pendo YouTube-to-learning attribution, archived 247+ low-traffic courses to reduce platform overhead.",
           "Added 10+ OSIC certification courses in Parta over 13 months.",
-          "Set design-system and template foundation for AI-enabled curriculum production."
+          "Set a shared foundation for AI-enabled curriculum production."
         ]
       }
     ],
@@ -59,7 +59,7 @@
       "Built a steady client book across eLearning, video, audio, interactive games, and LMS administration.",
       "Moved a client's in-person curriculum to on-demand format and grew consumption 400% year over year.",
       "Migrated 250+ courses into a new LMS for a veterinary CE client; advised through vendor selection.",
-      "Reduced time-to-value by two months with templates and an optimized delivery plan."
+      "Reduced time-to-value by two months with a shared approach and a tighter delivery plan."
     ]
   },
   {
@@ -68,10 +68,10 @@
     "title": "Learning Experience Designer",
     "company": "Envestnet",
     "period": "2022 to 2023",
-    "description": "Product education for a wealth-management platform with 300+ courses in the pipeline. Owned template systems, release cadence, and QA workflow for quarterly product updates.",
+    "description": "Learning for a wealth-management platform with 300+ courses in the pipeline. Owned the release cadence and QA workflow for quarterly updates.",
     "highlights": [
-      "Delivered quarterly product updates for customers and employees using video, simulations, and knowledge checks.",
-      "Built a Storyline template system for 300 courses aligned to brand standards; reduced QA by 2.5 business days per release.",
+      "Delivered quarterly updates for customers and employees using video, simulations, and knowledge checks.",
+      "Built a shared Storyline approach for 300 courses, aligned to brand standards; reduced QA by 2.5 business days per release.",
       "Implemented JIRA workflows saving the team approximately 20 hours per week.",
       "Launched professional development program for the learning team."
     ]
@@ -86,7 +86,7 @@
     "highlights": [
       "Localized platform and content for five languages.",
       "Maintained employee and partner LMS content across 1,200+ courses.",
-      "Created shared authoring template for seven instructional designers.",
+      "Created a shared way of authoring for seven instructional designers.",
       "Raised compliance completion from 70% to 95% through a revised internal learning strategy.",
       "Integrated LMS data with Salesforce for partner certification visibility.",
       "Managed employee compliance cycle end to end."

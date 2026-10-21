@@ -18,12 +18,12 @@ import type {
 export const metadata: Metadata = {
   title: 'Background',
   description:
-    'Experience, skills, education, and recognition — learning experience design and customer education background for hiring teams.',
+    'Experience, skills, and education in learning experience design and customer education.',
   alternates: { canonical: '/background' },
   openGraph: {
     title: 'Background | Dan Winter',
     description:
-      'Experience, skills, education, and recognition — learning experience design and customer education background for hiring teams.',
+      'Experience, skills, and education in learning experience design and customer education.',
     url: '/background',
   },
 };

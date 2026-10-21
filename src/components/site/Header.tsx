@@ -38,7 +38,7 @@ export function Header() {
             className="ml-2 rounded-lg p-2 text-ink-muted/60 transition hover:bg-forest/5 hover:text-forest"
             aria-label="LinkedIn profile"
           >
-            <Linkedin size={18} />
+            <Linkedin size={18} className="text-ink" />
           </a>
         </div>
         <details className="relative md:hidden">
@@ -62,7 +62,7 @@ export function Header() {
               rel="noreferrer"
               className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-ink transition hover:bg-paper hover:text-forest"
             >
-              <Linkedin size={16} /> LinkedIn
+              <Linkedin size={16} className="text-ink" /> LinkedIn
             </a>
           </div>
         </details>

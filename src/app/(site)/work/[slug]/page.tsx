@@ -91,9 +91,11 @@ export default async function WorkProjectPage({ params }: PageProps) {
           <p className="mt-4 text-base leading-relaxed text-ink-muted">{project.summary}</p>
         </header>
 
-        <div className="mt-8">
-          <ScreenshotCarousel images={project.screenshots ?? []} title={project.title} />
-        </div>
+        {(project.screenshots ?? []).some((s) => s.trim()) ? (
+          <div className="mt-8">
+            <ScreenshotCarousel images={project.screenshots ?? []} title={project.title} />
+          </div>
+        ) : null}
 
         {hasCase ? (
           <dl className="mt-10 grid gap-8 sm:grid-cols-2">

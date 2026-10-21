@@ -1,3 +1,5 @@
+import { getSingleton } from '@/lib/cms/db';
+import type { Profile } from '@/lib/cms/types';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
 
 /** Person + WebSite schema for hiring/search engines — invisible to visitors. */
@@ -12,7 +14,7 @@ export function JsonLd() {
         url: SITE_URL,
         jobTitle: 'Learning Experience Designer',
         description: SITE_DESCRIPTION,
-        email: 'mailto:dan@ohhhdan.com',
+        email: `mailto:${getSingleton<Profile>('profile')?.email || 'daniel.c.winter@live.com'}`,
         sameAs: ['https://www.linkedin.com/in/ohhhdan'],
         worksFor: {
           '@type': 'Organization',
