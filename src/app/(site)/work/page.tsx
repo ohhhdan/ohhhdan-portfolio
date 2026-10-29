@@ -47,6 +47,17 @@ export default function WorkPage() {
           <p className="mt-2 max-w-xl text-sm text-ink-muted sm:text-base">
             Selected customer education work. Role, problem, approach, results, and a sample.
           </p>
+          <div
+            role="status"
+            className="mt-6 max-w-2xl rounded-xl border border-mint/40 bg-pine-50 px-4 py-3 sm:px-5"
+          >
+            <p className="font-heading text-xs font-bold uppercase tracking-[0.16em] text-forest">
+              Under construction
+            </p>
+            <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
+              Case studies and samples on this page are still being updated. Content may be incomplete.
+            </p>
+          </div>
         </div>
       </div>
 
