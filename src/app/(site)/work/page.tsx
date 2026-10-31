@@ -6,14 +6,14 @@ import type { Project } from '@/lib/cms/types';
 import { PortfolioGrid } from '@/components/site/PortfolioGrid';
 
 export const metadata: Metadata = {
-  title: 'Work',
+  title: 'Portfolio',
   description:
-    'Selected customer education work — problem, approach, tools, and a sample.',
+    'Selected learning experience design work — problem, approach, tools, and a sample.',
   alternates: { canonical: '/work' },
   openGraph: {
-    title: 'Work | Dan Winter',
+    title: 'Portfolio | Dan Winter',
     description:
-      'Selected customer education work — problem, approach, tools, and a sample.',
+      'Selected learning experience design work — problem, approach, tools, and a sample.',
     url: '/work',
   },
 };
@@ -43,9 +43,9 @@ export default function WorkPage() {
 
       <div className="px-4 pt-10 sm:px-6 sm:pt-12">
         <div className="mx-auto max-w-5xl">
-          <h1 className="font-heading text-3xl font-bold tracking-wide text-forest sm:text-4xl">Work</h1>
+          <h1 className="font-heading text-3xl font-bold tracking-wide text-forest sm:text-4xl">Portfolio</h1>
           <p className="mt-2 max-w-xl text-sm text-ink-muted sm:text-base">
-            Selected customer education work. Role, problem, approach, results, and a sample.
+            Selected learning experience design work. Role, problem, approach, results, and a sample.
           </p>
           <div
             role="status"

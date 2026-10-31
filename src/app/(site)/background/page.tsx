@@ -17,14 +17,14 @@ import type {
 } from '@/lib/cms/types';
 
 export const metadata: Metadata = {
-  title: 'Background',
+  title: 'Bio',
   description:
-    'Experience, skills, and education in learning experience design and customer education.',
+    'Background, experience, and skills in learning experience design and customer education.',
   alternates: { canonical: '/background' },
   openGraph: {
-    title: 'Background | Dan Winter',
+    title: 'Bio | Dan Winter',
     description:
-      'Experience, skills, and education in learning experience design and customer education.',
+      'Background, experience, and skills in learning experience design and customer education.',
     url: '/background',
   },
 };

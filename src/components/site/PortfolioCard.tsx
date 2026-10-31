@@ -96,7 +96,7 @@ export function PortfolioCard({
               {hasSamples ? (
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-forest underline decoration-mint/60 underline-offset-4">
                   {preferExternal ? <ExternalLink size={14} aria-hidden /> : <Play size={14} strokeWidth={2.25} aria-hidden />}
-                  View sample
+                  View sample.
                 </span>
               ) : (
                 <span className="text-sm text-ink-muted">

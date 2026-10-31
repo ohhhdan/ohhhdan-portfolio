@@ -12,7 +12,7 @@ export function JsonLd() {
         '@id': `${SITE_URL}/#person`,
         name: SITE_NAME,
         url: SITE_URL,
-        jobTitle: 'Customer Education & Learning Experience Leader',
+        jobTitle: 'Learning Experience Design Leader',
         description: SITE_DESCRIPTION,
         email: `mailto:${getSingleton<Profile>('profile')?.email || 'daniel.c.winter@live.com'}`,
         sameAs: ['https://www.linkedin.com/in/ohhhdan'],
@@ -23,8 +23,9 @@ export function JsonLd() {
         knowsAbout: [
           'Learning experience design',
           'Customer education',
-          'Interactive curriculum',
+          'Scenario-based learning',
           'Digital design',
+          'AI-assisted course production',
         ],
       },
       {

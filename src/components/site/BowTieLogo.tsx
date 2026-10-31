@@ -4,17 +4,24 @@
 export function BowTieLogo({
   className = '',
   size = 'md',
+  tone = 'onLight',
 }: {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
+  /** `onDark` for forest/cover surfaces (softer box, still mint detail). */
+  tone?: 'onLight' | 'onDark';
 }) {
   const box = size === 'lg' ? 'h-24 w-24' : size === 'sm' ? 'h-11 w-11' : 'h-16 w-16';
   const svgW = size === 'lg' ? 48 : size === 'sm' ? 22 : 32;
   const svgH = size === 'lg' ? 30 : size === 'sm' ? 14 : 20;
+  const shell =
+    tone === 'onDark'
+      ? 'bg-pine-700/80 shadow-none ring-1 ring-white/25'
+      : 'bg-forest shadow-lg ring-1 ring-ink/10 hover:shadow-xl motion-reduce:hover:shadow-lg';
 
   return (
     <div
-      className={`inline-flex shrink-0 -rotate-3 items-center justify-center rounded-lg bg-forest shadow-lg ring-1 ring-ink/10 transition-transform duration-300 ease-out hover:-rotate-6 hover:shadow-xl motion-reduce:hover:-rotate-3 motion-reduce:hover:shadow-lg ${box} ${className}`}
+      className={`inline-flex shrink-0 -rotate-3 items-center justify-center rounded-lg transition-transform duration-300 ease-out hover:-rotate-6 motion-reduce:hover:-rotate-3 ${shell} ${box} ${className}`}
       aria-hidden
     >
       <div className="animate-float-soft motion-reduce:animate-none">

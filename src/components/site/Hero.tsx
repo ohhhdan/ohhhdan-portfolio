@@ -1,46 +1,96 @@
 import Link from 'next/link';
-import { ArrowUpRight, Linkedin } from 'lucide-react';
 import type { Profile } from '@/lib/cms/types';
+import { BowTieLogo } from './BowTieLogo';
+
+const paths: Array<{ href: string; label: string; download?: boolean }> = [
+  { href: '/background', label: 'Bio' },
+  { href: '/background/resume', label: 'CV', download: true },
+  { href: '/work', label: 'Portfolio' },
+  { href: '/#contact', label: 'Contact' },
+];
 
 export function Hero({ profile }: { profile: Profile }) {
+  const positioning = profile.tagline?.trim();
+  const role = profile.rolesLine?.trim() || profile.headline?.trim();
+
   return (
-    <section id="top" className="border-b border-forest/10 bg-paper px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-14">
-      <div className="mx-auto max-w-5xl">
-        <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-ink-muted">
-          {profile.rolesLine}
-        </p>
-        <h1 className="mt-3 max-w-3xl font-heading text-5xl font-bold tracking-tight text-forest sm:text-6xl">
+    <section
+      id="top"
+      className="relative flex min-h-[calc(100dvh-4.25rem)] flex-col justify-center overflow-hidden bg-forest px-4 py-16 text-center sm:px-6 sm:py-20"
+      aria-label="Introduction"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-90 hero-cover-mesh hero-cover-mesh-animated"
+        aria-hidden
+      />
+      <div className="relative mx-auto flex w-full max-w-xl flex-col items-center">
+        <div className="animate-fade-up" style={{ animationDelay: '40ms' }}>
+          <div className="inline-flex rounded-sm border border-white/35 p-3 sm:p-3.5">
+            <BowTieLogo size="md" tone="onDark" className="!shadow-none !ring-white/20" />
+          </div>
+        </div>
+
+        <h1
+          className="animate-fade-up mt-8 font-heading text-5xl font-bold uppercase tracking-[0.14em] text-white sm:text-6xl sm:tracking-[0.16em]"
+          style={{ animationDelay: '140ms' }}
+        >
           {profile.name}
         </h1>
-        <p className="mt-4 max-w-xl text-xl leading-snug text-ink sm:text-2xl">
-          {profile.tagline}
-        </p>
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <Link
-            href="/work"
-            className="group inline-flex items-center gap-3 rounded-full bg-forest py-2 pl-5 pr-2 text-sm font-semibold text-white shadow-[0_10px_28px_-14px_rgba(27,74,56,0.9)] transition hover:bg-pine-600"
+
+        {role ? (
+          <p
+            className="animate-fade-up mt-4 max-w-md text-[11px] font-medium uppercase tracking-[0.22em] text-mint"
+            style={{ animationDelay: '220ms' }}
           >
-            View work
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-mint text-forest transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0">
-              <ArrowUpRight size={16} aria-hidden />
+            {role}
+          </p>
+        ) : null}
+
+        <div
+          className="animate-fade-up mt-6 h-px w-16 bg-gradient-to-r from-transparent via-mustard/80 to-transparent"
+          style={{ animationDelay: '280ms' }}
+          aria-hidden
+        />
+
+        {positioning ? (
+          <p
+            className="animate-fade-up mt-6 max-w-md text-lg leading-snug text-pine-100/95 sm:text-xl"
+            style={{ animationDelay: '340ms' }}
+          >
+            {positioning}
+          </p>
+        ) : null}
+
+        <nav
+          className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-x-1 gap-y-3 sm:gap-x-2"
+          style={{ animationDelay: '440ms' }}
+          aria-label="Site paths"
+        >
+          {paths.map((path, i) => (
+            <span key={path.href} className="contents">
+              {i > 0 ? (
+                <span className="hidden text-white/25 sm:inline" aria-hidden>
+                  ·
+                </span>
+              ) : null}
+              {path.download ? (
+                <a
+                  href={path.href}
+                  className="hub-path rounded-full px-4 py-2 text-sm font-semibold tracking-wide text-white/90 transition hover:bg-white/10 hover:text-white"
+                >
+                  {path.label}
+                </a>
+              ) : (
+                <Link
+                  href={path.href}
+                  className="hub-path rounded-full px-4 py-2 text-sm font-semibold tracking-wide text-white/90 transition hover:bg-white/10 hover:text-white"
+                >
+                  {path.label}
+                </Link>
+              )}
             </span>
-          </Link>
-          <Link
-            href="/#background"
-            className="inline-flex items-center rounded-full border border-forest/15 bg-surface px-5 py-2.5 text-sm font-medium text-forest transition hover:border-forest/35 hover:bg-white"
-          >
-            Background
-          </Link>
-          <a
-            href="https://www.linkedin.com/in/ohhhdan"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-surface px-4 py-2.5 text-sm font-medium text-forest transition hover:border-forest/35 hover:bg-white"
-          >
-            <Linkedin size={15} className="text-ink" aria-hidden />
-            LinkedIn
-          </a>
-        </div>
+          ))}
+        </nav>
       </div>
     </section>
   );

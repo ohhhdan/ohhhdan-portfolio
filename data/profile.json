@@ -1,12 +1,16 @@
 {
   "name": "Dan Winter",
-  "tagline": "Customer education and digital design leader, leading the strategy for building meaningful learning experiences that people actually care about at scale.",
-  "headline": "Learning experience leader · Customer education",
-  "summary": "",
+  "tagline": "I design applied learning for customer and partner teams — and I still build the courses.",
+  "headline": "Learning experience design leader",
+  "summary": "I design learning for customer and partner teams, and I still build the courses. Fifteen years in customer education. At Okta I lead learning experience and digital design: the standards, how AI-assisted work gets reviewed, and the courses themselves.",
   "heroIntro": "",
-  "location": "",
+  "location": "Seattle, WA",
   "email": "daniel.c.winter@live.com",
-  "rolesLine": "Learning experience leader · Customer education",
-  "bioParagraphs": [],
+  "rolesLine": "Learning experience design · Customer education",
+  "bioParagraphs": [
+    "I design applied, scenario-based learning so customer and partner teams can use what they learn in the flow of work.",
+    "Promoted twice in under three years at Okta to lead learning experience and digital design. Recipient of the CEdMA Pinnacle Award for Innovation.",
+    "I set content standards, govern AI-assisted authoring, and stay hands-on — building courses, simulations, and the systems that help teams ship quality at scale."
+  ],
   "heroImageUrl": ""
 }

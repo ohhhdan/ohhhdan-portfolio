@@ -43,9 +43,10 @@ export function ContactForm({ email }: { email: string }) {
   }
 
   return (
-    <Section id="contact" title="Get in touch" className="pb-8 sm:pb-10" align="center">
+    <Section id="contact" title="Contact" className="border-t border-forest/10 bg-paper pb-10 sm:pb-14" align="center">
       <div className="mx-auto flex max-w-md flex-col gap-8">
         <p className="text-sm text-ink-muted">
+          Say hello —{' '}
           <a
             href={`mailto:${email}`}
             className="font-medium text-forest underline decoration-mint underline-offset-4 transition hover:decoration-forest"

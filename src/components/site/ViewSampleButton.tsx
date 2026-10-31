@@ -40,7 +40,7 @@ export function ViewSampleButton({
         rel="noreferrer"
         className="inline-flex items-center gap-2 text-sm font-semibold text-forest underline decoration-mint/60 underline-offset-4 transition hover:text-pine-700"
       >
-        View sample <ExternalLink size={14} />
+        View sample. <ExternalLink size={14} />
       </a>
     );
   }
@@ -53,7 +53,7 @@ export function ViewSampleButton({
         className="inline-flex items-center gap-2 text-sm font-semibold text-forest underline decoration-mint/60 underline-offset-4 transition hover:text-pine-700"
       >
         <Play size={14} strokeWidth={2.25} />
-        View sample
+        View sample.
       </button>
       <SampleViewerModal
         samples={samples}

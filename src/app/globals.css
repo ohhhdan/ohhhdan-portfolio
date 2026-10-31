@@ -57,9 +57,22 @@ body {
     linear-gradient(180deg, #f5f9f7 0%, #fafcfb 100%);
 }
 
+/* Cover intro beat (homepage hub — forest field, quiet light) */
+.hero-cover-mesh {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(105, 188, 146, 0.22), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(42, 157, 143, 0.14), transparent 55%),
+    radial-gradient(ellipse 45% 35% at 90% 70%, rgba(230, 159, 0, 0.1), transparent 50%),
+    linear-gradient(180deg, #163d2e 0%, #1b4a38 48%, #112f24 100%);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-mesh-animated {
     animation: mesh-breathe 14s ease-in-out infinite alternate;
+  }
+
+  .hero-cover-mesh-animated {
+    animation: cover-breathe 16s ease-in-out infinite alternate;
   }
 
   .animate-fade-up {
@@ -68,6 +81,17 @@ body {
 
   .animate-float-soft {
     animation: float-soft 7s ease-in-out infinite;
+  }
+
+  .hub-path {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hub-path:hover {
+    transform: translateY(-2px);
   }
 
   .link-underline-grow {
@@ -95,8 +119,13 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up,
   .animate-float-soft,
-  .hero-mesh-animated {
+  .hero-mesh-animated,
+  .hero-cover-mesh-animated {
     animation: none !important;
+  }
+
+  .hub-path:hover {
+    transform: none;
   }
 
   .link-underline-grow::after {
@@ -124,6 +153,17 @@ body {
   100% {
     filter: hue-rotate(4deg) saturate(1.05);
     transform: scale(1.03) translate(-1%, 0.5%);
+  }
+}
+
+@keyframes cover-breathe {
+  0% {
+    opacity: 0.88;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.04);
   }
 }
 

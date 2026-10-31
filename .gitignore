@@ -24,6 +24,7 @@ yarn-error.log*
 
 .vercel
 *.tsbuildinfo
+.tmp-resume-previews/
 
 # Large SCORM extracts (add locally if needed)
 /scorm-packages/*

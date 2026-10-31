@@ -97,7 +97,16 @@ export function buildResumePdf(): Promise<Buffer> {
     .stroke();
   doc.restore();
 
-  const cursor: Cursor = { page: 0, y: headerBottom + 18 };
+  let afterHeader = headerBottom + 18;
+  const summary = profile?.summary?.trim();
+  if (summary) {
+    doc.font('Helvetica').fontSize(9).fillColor(INK);
+    const summaryH = doc.heightOfString(plain(summary), { width: CONTENT_W, lineGap: 1.2 });
+    doc.text(plain(summary), MARGIN, afterHeader, { width: CONTENT_W, lineGap: 1.2 });
+    afterHeader += summaryH + 12;
+  }
+
+  const cursor: Cursor = { page: 0, y: afterHeader };
   const start: Cursor = { page: cursor.page, y: cursor.y };
   const side: Cursor = { page: start.page, y: start.y };
   drawSidebar(doc, side, skills, education, awards, talks, engagements);
