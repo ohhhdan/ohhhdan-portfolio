@@ -29,3 +29,4 @@ yarn-error.log*
 # Large SCORM extracts (add locally if needed)
 /scorm-packages/*
 !/scorm-packages/.gitkeep
+.env*
