@@ -23,10 +23,16 @@
       "Raised average course consumption from 2.2 to 8+ across over 1500 learners with in-course simulations, with no matching increase in cost.",
       "Grew course video views from 2,452 to 4,386 and connected viewership to learner activity, so we could see which views turned into learners."
     ],
-    "builtNote": "[HERO MEDIA]",
-    "screenshots": [],
+    "screenshots": ["/images/work/simulations-inside-the-course.jpg"],
     "technologies": ["[TOOLS]"],
-    "links": [],
+    "links": [
+      {
+        "label": "View in-course sample",
+        "href": "https://s3.us-east-1.amazonaws.com/ohhhdan.com/portfolio/Explore+Identity+and+Access+Management/index.html",
+        "kind": "external",
+        "embedOnSite": true
+      }
+    ],
     "scormPackageId": null
   },
   {
@@ -51,8 +57,7 @@
     "results": [
       "[courses shipped, completion, consumption, build time saved]"
     ],
-    "builtNote": "[HERO MEDIA]",
-    "screenshots": [],
+    "screenshots": ["/images/work/okta-explore-identity.jpg"],
     "technologies": ["Parta.io", "Adobe Illustrator", "Google Gemini", "Claude"],
     "links": [
       {
@@ -86,8 +91,7 @@
     "results": [
       "[completion, scores, or customer feedback]"
     ],
-    "builtNote": "[HERO MEDIA]",
-    "screenshots": [],
+    "screenshots": ["/images/work/okta-threatinsight.jpg"],
     "technologies": ["Parta.io", "Adobe Creative Suite", "AI tooling"],
     "links": [
       {
@@ -121,18 +125,17 @@
     "results": [
       "[completion or enrollment results]"
     ],
-    "builtNote": "[HERO MEDIA]",
-    "screenshots": [],
+    "screenshots": ["/images/work/superspeed-certified.jpg"],
     "technologies": ["Articulate 360", "Adobe Illustrator", "Photoshop", "Camtasia", "Moodle", "YouTube"],
     "links": [
       {
-        "label": "View sample",
+        "label": "Level 1",
         "href": "https://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed1/story_html5.html",
         "kind": "external",
         "embedOnSite": true
       },
       {
-        "label": "View sample",
+        "label": "Level 2",
         "href": "https://s3.amazonaws.com/ohhhdan.com/portfolio/SuperSpeed2/story_html5.html",
         "kind": "external",
         "embedOnSite": true
@@ -162,11 +165,16 @@
     "results": [
       "[reuse, build time, or course volume]"
     ],
-    "builtNote": "[HERO MEDIA]",
-    "screenshots": [],
+    "screenshots": ["/images/work/parta-block-library.jpg"],
     "technologies": ["Parta"],
-    "links": [],
-    "sampleNote": "[PUBLIC SAMPLE?]",
+    "links": [
+      {
+        "label": "View Parta sample",
+        "href": "https://app.parta.io/#/public/a216351c-938b-42d4-8759-ba0b333d9276",
+        "kind": "external",
+        "embedOnSite": false
+      }
+    ],
     "scormPackageId": null
   },
   {
@@ -191,11 +199,10 @@
     "results": [
       "[member or program outcomes]"
     ],
-    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Creative Suite", "Caveon", "Cadmium", "Moodle", "VetBloom"],
     "links": [],
-    "sampleNote": "[SCREEN RECORDING]",
+    "sampleNote": "Samples available to ACVIM members and registered students.",
     "scormPackageId": null
   },
   {
@@ -220,11 +227,10 @@
     "results": [
       "Shipped soft-skills learning across 550+ pieces."
     ],
-    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Acrobat", "Illustrator", "InDesign", "Camtasia", "Moodle"],
     "links": [],
-    "sampleNote": "[SCREEN RECORDING — Articulate Review requires login]",
+    "sampleNote": "Historical Articulate Review sample requires login; no public host found.",
     "scormPackageId": null
   },
   {
@@ -249,17 +255,10 @@
     "results": [
       "[endorsement or completion results]"
     ],
-    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate 360", "Adobe Captivate", "Audition", "Illustrator", "Premiere Pro", "LearnUpon"],
-    "links": [
-      {
-        "label": "View sample",
-        "href": "https://www.elearningandtraining.com/wp-content/uploads/articulate_uploads/PTA/story_html5.html",
-        "kind": "external",
-        "embedOnSite": true
-      }
-    ],
+    "links": [],
+    "sampleNote": "Historical host (elearningandtraining.com) no longer resolves.",
     "scormPackageId": null
   },
   {
@@ -284,23 +283,23 @@
     "results": [
       "[completion or feedback]"
     ],
-    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate Rise & Storyline", "Adobe Creative Suite", "Camtasia"],
     "links": [
       {
-        "label": "View sample",
+        "label": "ECG interpretations",
         "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/ECG%20Interpretation/story_html5.html",
         "kind": "external",
         "embedOnSite": true
       },
       {
-        "label": "View sample",
+        "label": "7 Core Communication Skills (Rise)",
         "href": "https://rise.articulate.com/share/NDntOY62g7g_XzD1jC1V1NmfEju0EzMD",
         "kind": "external",
         "embedOnSite": true
       }
     ],
+    "sampleNote": "Storyline media assets on S3 return Access Denied; Rise share remains available.",
     "scormPackageId": null
   },
   {
@@ -325,13 +324,12 @@
     "results": [
       "[completion or feedback]"
     ],
-    "builtNote": "[HERO MEDIA]",
-    "screenshots": [],
+    "screenshots": ["/images/work/circle-education-leadership.jpg"],
     "technologies": ["Articulate Storyline", "Adobe Acrobat", "Illustrator", "MatrixONE LMS"],
     "links": [
       {
         "label": "View sample",
-        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/course1/story.html",
+        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/Circle/story_html5.html",
         "kind": "external",
         "embedOnSite": true
       }
@@ -360,13 +358,12 @@
     "results": [
       "[completion results]"
     ],
-    "builtNote": "[HERO MEDIA]",
-    "screenshots": [],
+    "screenshots": ["/images/work/new-york-life-annuity.jpg"],
     "technologies": ["Adobe Captivate"],
     "links": [
       {
         "label": "View sample",
-        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/NYL/story.html",
+        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/NYL/story_html5.html",
         "kind": "external",
         "embedOnSite": true
       }
@@ -395,13 +392,12 @@
     "results": [
       "[completion or feedback]"
     ],
-    "builtNote": "[HERO MEDIA]",
-    "screenshots": [],
+    "screenshots": ["/images/work/randstad-singapore.jpg"],
     "technologies": ["Articulate Rise", "Adobe Photoshop"],
     "links": [
       {
         "label": "View sample",
-        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/accounting/index.html#/?_k=ojo2nu",
+        "href": "https://danwinterportfoliodemo.s3.amazonaws.com/portfolio/accounting/index.html",
         "kind": "external",
         "embedOnSite": true
       }
@@ -430,12 +426,11 @@
     "results": [
       "[view or series outcomes]"
     ],
-    "builtNote": "[HERO MEDIA]",
-    "screenshots": [],
+    "screenshots": ["/images/work/city-targeting-hasoffers.jpg"],
     "technologies": ["Adobe After Effects", "Premiere Pro", "Audition"],
     "links": [
       {
-        "label": "View sample",
+        "label": "Watch on YouTube",
         "href": "https://www.youtube.com/watch?v=fAPSvcnNhMI&list=PLyboL9e2rDWjQwSD2OGwnXFRh1eIgLIRL&index=3",
         "kind": "video"
       }
@@ -464,11 +459,10 @@
     "results": [
       "[DEMO — no outcome metrics]"
     ],
-    "builtNote": "[HERO MEDIA]",
     "screenshots": [],
     "technologies": ["Articulate Rise 360"],
     "links": [],
-    "sampleNote": "[SCREEN RECORDING — Articulate Review requires login]",
+    "sampleNote": "Historical Articulate Review sample requires login; no public host found.",
     "scormPackageId": null
   }
 ]
