@@ -7,24 +7,30 @@
     "client": "Okta",
     "period": "2025 to 2026",
     "featured": true,
-    "engagementLabel": "",
+    "engagementLabel": "work sample",
     "portfolioGroup": "platform",
-    "summary": "In-course simulations that raised course consumption and earned Okta’s first CEdMA Pinnacle Award for Innovation since 2017.",
-    "roleLine": "[Role / team of N], 2025 to 2026.",
+    "summary": "In-course simulations to improve course engagement and earned CEdMA's first Pinnacle Award for Innovation in 2025.",
+    "roleLine": "Staff Learning Experience Designer, 2025",
     "context": "Customer Acceleration needed practice inside courses, not only slide-style content. Okta Learning needed a way to raise how much learners used the catalog without a matching rise in hosting cost.",
-    "problem": "Average course consumption was low, and practice lived outside the course experience.",
+    "problem": "Average course consumption was low, and practice lived outside the course experience. Lab environments are expensive and challenging to maintain, so I brought in the concept of real-life application within a course context to drive engagement and connect concepts to practice.",
     "approach": [
       "[How simulation scenarios were chosen and designed].",
       "[How in-course simulations were built and where they sat in the course].",
       "[How video analytics connected views to learners and informed catalog decisions]."
     ],
     "results": [
-      "Won the CEdMA Pinnacle Award for Innovation, Okta’s first CEdMA recognition since 2017, for placing simulations inside courses.",
-      "Raised average course consumption from 2.2 to 8+ across over 1500 learners with in-course simulations, with no matching increase in cost.",
-      "Grew course video views from 2,452 to 4,386 and connected viewership to learner activity, so we could see which views turned into learners."
+      "Won the CEdMA Pinnacle Award for Innovation in 2025, for implementing vibe coded simulations inside courses.",
+      "Raised average courses taken per learner from 2.2 to 8+ a year for 1,500+ learners by putting simulations in the course, without a matching increase in cost.",
+      "Grew course video views from 2,452 to 4,386 and connected viewership to in-product actions.."
     ],
-    "screenshots": ["/images/work/simulations-inside-the-course.jpg"],
-    "technologies": ["[TOOLS]"],
+    "screenshots": [
+      "/images/work/simulations-inside-the-course.jpg"
+    ],
+    "technologies": [
+      "Parta.io",
+      "Claude",
+      "Figma"
+    ],
     "links": [
       {
         "label": "View in-course sample",
@@ -57,8 +63,15 @@
     "results": [
       "[courses shipped, completion, consumption, build time saved]"
     ],
-    "screenshots": ["/images/work/okta-explore-identity.jpg"],
-    "technologies": ["Parta.io", "Adobe Illustrator", "Google Gemini", "Claude"],
+    "screenshots": [
+      "/images/work/okta-explore-identity.jpg"
+    ],
+    "technologies": [
+      "Parta.io",
+      "Adobe Illustrator",
+      "Google Gemini",
+      "Claude"
+    ],
     "links": [
       {
         "label": "View sample",
@@ -91,8 +104,14 @@
     "results": [
       "[completion, scores, or customer feedback]"
     ],
-    "screenshots": ["/images/work/okta-threatinsight.jpg"],
-    "technologies": ["Parta.io", "Adobe Creative Suite", "AI tooling"],
+    "screenshots": [
+      "/images/work/okta-threatinsight.jpg"
+    ],
+    "technologies": [
+      "Parta.io",
+      "Adobe Creative Suite",
+      "AI tooling"
+    ],
     "links": [
       {
         "label": "View sample",
@@ -125,8 +144,17 @@
     "results": [
       "[completion or enrollment results]"
     ],
-    "screenshots": ["/images/work/superspeed-certified.jpg"],
-    "technologies": ["Articulate 360", "Adobe Illustrator", "Photoshop", "Camtasia", "Moodle", "YouTube"],
+    "screenshots": [
+      "/images/work/superspeed-certified.jpg"
+    ],
+    "technologies": [
+      "Articulate 360",
+      "Adobe Illustrator",
+      "Photoshop",
+      "Camtasia",
+      "Moodle",
+      "YouTube"
+    ],
     "links": [
       {
         "label": "Level 1",
@@ -167,7 +195,9 @@
     ],
     "builtNote": "[HERO MEDIA]",
     "screenshots": [],
-    "technologies": ["Parta"],
+    "technologies": [
+      "Parta"
+    ],
     "links": [],
     "sampleNote": "No public sample; internal Okta Learning template library.",
     "scormPackageId": null
@@ -194,8 +224,12 @@
     "results": [
       "[DEMO — no outcome metrics]"
     ],
-    "screenshots": ["/images/work/me-and-making-ai-click.jpg"],
-    "technologies": ["Parta"],
+    "screenshots": [
+      "/images/work/me-and-making-ai-click.jpg"
+    ],
+    "technologies": [
+      "Parta"
+    ],
     "links": [
       {
         "label": "View Parta sample",
@@ -229,7 +263,14 @@
       "[member or program outcomes]"
     ],
     "screenshots": [],
-    "technologies": ["Articulate 360", "Adobe Creative Suite", "Caveon", "Cadmium", "Moodle", "VetBloom"],
+    "technologies": [
+      "Articulate 360",
+      "Adobe Creative Suite",
+      "Caveon",
+      "Cadmium",
+      "Moodle",
+      "VetBloom"
+    ],
     "links": [],
     "sampleNote": "Samples available to ACVIM members and registered students.",
     "scormPackageId": null
@@ -257,7 +298,14 @@
       "Shipped soft-skills learning across 550+ pieces."
     ],
     "screenshots": [],
-    "technologies": ["Articulate 360", "Adobe Acrobat", "Illustrator", "InDesign", "Camtasia", "Moodle"],
+    "technologies": [
+      "Articulate 360",
+      "Adobe Acrobat",
+      "Illustrator",
+      "InDesign",
+      "Camtasia",
+      "Moodle"
+    ],
     "links": [],
     "sampleNote": "Historical Articulate Review sample requires login; no public host found.",
     "scormPackageId": null
@@ -285,7 +333,14 @@
       "[endorsement or completion results]"
     ],
     "screenshots": [],
-    "technologies": ["Articulate 360", "Adobe Captivate", "Audition", "Illustrator", "Premiere Pro", "LearnUpon"],
+    "technologies": [
+      "Articulate 360",
+      "Adobe Captivate",
+      "Audition",
+      "Illustrator",
+      "Premiere Pro",
+      "LearnUpon"
+    ],
     "links": [],
     "sampleNote": "Historical host (elearningandtraining.com) no longer resolves.",
     "scormPackageId": null
@@ -313,7 +368,11 @@
       "[completion or feedback]"
     ],
     "screenshots": [],
-    "technologies": ["Articulate Rise & Storyline", "Adobe Creative Suite", "Camtasia"],
+    "technologies": [
+      "Articulate Rise & Storyline",
+      "Adobe Creative Suite",
+      "Camtasia"
+    ],
     "links": [
       {
         "label": "ECG interpretations",
@@ -353,8 +412,15 @@
     "results": [
       "[completion or feedback]"
     ],
-    "screenshots": ["/images/work/circle-education-leadership.jpg"],
-    "technologies": ["Articulate Storyline", "Adobe Acrobat", "Illustrator", "MatrixONE LMS"],
+    "screenshots": [
+      "/images/work/circle-education-leadership.jpg"
+    ],
+    "technologies": [
+      "Articulate Storyline",
+      "Adobe Acrobat",
+      "Illustrator",
+      "MatrixONE LMS"
+    ],
     "links": [
       {
         "label": "View sample",
@@ -387,8 +453,12 @@
     "results": [
       "[completion results]"
     ],
-    "screenshots": ["/images/work/new-york-life-annuity.jpg"],
-    "technologies": ["Adobe Captivate"],
+    "screenshots": [
+      "/images/work/new-york-life-annuity.jpg"
+    ],
+    "technologies": [
+      "Adobe Captivate"
+    ],
     "links": [
       {
         "label": "View sample",
@@ -421,8 +491,13 @@
     "results": [
       "[completion or feedback]"
     ],
-    "screenshots": ["/images/work/randstad-singapore.jpg"],
-    "technologies": ["Articulate Rise", "Adobe Photoshop"],
+    "screenshots": [
+      "/images/work/randstad-singapore.jpg"
+    ],
+    "technologies": [
+      "Articulate Rise",
+      "Adobe Photoshop"
+    ],
     "links": [
       {
         "label": "View sample",
@@ -455,8 +530,14 @@
     "results": [
       "[view or series outcomes]"
     ],
-    "screenshots": ["/images/work/city-targeting-hasoffers.jpg"],
-    "technologies": ["Adobe After Effects", "Premiere Pro", "Audition"],
+    "screenshots": [
+      "/images/work/city-targeting-hasoffers.jpg"
+    ],
+    "technologies": [
+      "Adobe After Effects",
+      "Premiere Pro",
+      "Audition"
+    ],
     "links": [
       {
         "label": "Watch on YouTube",
@@ -488,8 +569,12 @@
     "results": [
       "[DEMO — no outcome metrics]"
     ],
-    "screenshots": ["/images/work/rise-for-dummies.jpg"],
-    "technologies": ["Articulate Rise 360"],
+    "screenshots": [
+      "/images/work/rise-for-dummies.jpg"
+    ],
+    "technologies": [
+      "Articulate Rise 360"
+    ],
     "links": [
       {
         "label": "View sample",
