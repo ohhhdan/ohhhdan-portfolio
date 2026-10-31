@@ -1,8 +1,8 @@
 {
   "name": "Dan Winter",
-  "tagline": "I design learning people can use on the job. I still build the courses.",
+  "tagline": "I design learning people can use on the job.",
   "headline": "Learning experience design leader",
-  "summary": "I design courses and simulations for customer and partner teams who have to do complicated work in a product. At Okta I lead learning experience and digital design: the standards, how we use AI in production, and the courses I still build myself. Fifteen years in customer education. Promoted twice in under three years. CEdMA Pinnacle Award for Innovation.",
+  "summary": "I design courses and simulations for customer and partner teams who have to do complicated work in a product. At Okta I lead learning experience and digital design: the standards, how we use AI in production, and the courses that come out of that work. Fifteen years in customer education. Promoted twice in under three years. CEdMA Pinnacle Award for Innovation.",
   "heroIntro": "",
   "location": "Seattle, WA",
   "email": "daniel.c.winter@live.com",
@@ -10,7 +10,7 @@
   "bioParagraphs": [
     "I design courses and simulations for people who have to do complicated work in a product — customers, partners, and the teams that sell and support them.",
     "At Okta I lead learning experience and digital design for customer education. I was promoted twice in under three years. That chapter of the work earned a CEdMA Pinnacle Award for Innovation.",
-    "I set the bar for how we build and how we use AI when we build, and I stay in the work. I still ship the courses myself. I've been doing this for fifteen years."
+    "I set the bar for how we build and how we use AI when we build. I've been doing this for fifteen years."
   ],
   "heroImageUrl": ""
 }
