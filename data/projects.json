@@ -165,7 +165,36 @@
     "results": [
       "[reuse, build time, or course volume]"
     ],
-    "screenshots": ["/images/work/parta-block-library.jpg"],
+    "builtNote": "[HERO MEDIA]",
+    "screenshots": [],
+    "technologies": ["Parta"],
+    "links": [],
+    "sampleNote": "No public sample; internal Okta Learning template library.",
+    "scormPackageId": null
+  },
+  {
+    "id": "p-me-making-ai-click",
+    "sortOrder": 5,
+    "slug": "me-and-making-ai-click",
+    "title": "Me & Making AI Click",
+    "client": "Writer",
+    "period": "March 2024",
+    "featured": false,
+    "engagementLabel": "",
+    "portfolioGroup": "sample",
+    "summary": "A Parta presentation — Me & Making AI Click — with a Learning NotebookLM path.",
+    "roleLine": "Lead Learning Experience Designer, Enterprise AI, March 2024.",
+    "context": "A Writer presentation introducing how learning experience design makes AI click for enterprise teams.",
+    "problem": "[PROBLEM]",
+    "approach": [
+      "[How the presentation was structured].",
+      "[How mission, vision, and habits were framed].",
+      "[How Learning NotebookLM connected as follow-on practice]."
+    ],
+    "results": [
+      "[DEMO — no outcome metrics]"
+    ],
+    "screenshots": ["/images/work/me-and-making-ai-click.jpg"],
     "technologies": ["Parta"],
     "links": [
       {
@@ -459,10 +488,16 @@
     "results": [
       "[DEMO — no outcome metrics]"
     ],
-    "screenshots": [],
+    "screenshots": ["/images/work/rise-for-dummies.jpg"],
     "technologies": ["Articulate Rise 360"],
-    "links": [],
-    "sampleNote": "Historical Articulate Review sample requires login; no public host found.",
+    "links": [
+      {
+        "label": "View sample",
+        "href": "https://360.articulate.com/review/content/ca3eb161-564d-4358-9d22-b8f731ee300a/review",
+        "kind": "articulate",
+        "embedOnSite": false
+      }
+    ],
     "scormPackageId": null
   }
 ]
